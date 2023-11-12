@@ -1,6 +1,6 @@
 /* Estilos para el header */
 header {
-    border: 2px solid #000;
+    border: 1px solid #999;
     border-radius: 10px;
     background-color: #fff;
     color: #000;
@@ -8,8 +8,9 @@ header {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
+ 
 .header-content {
     flex: 1; 
 }
@@ -51,6 +52,8 @@ li {
 
 li a {
     text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
     color: #000;
     padding: 22px 20px; 
     border: 2px solid #000; 
@@ -95,8 +98,143 @@ footer {
 
 #Empleados{
     background-color: #33CAFF;
+    color: #fff;
 }
 
 #Iniciar-seccion{
     background-color: #1ecf59;
+    color: #fff;
+}
+/*Botones*/
+#Empleados:hover {
+    color: #5D6D7E;
+    border-color: #5D6D7E; 
+}
+#Iniciar-seccion:hover {
+    color: #5D6D7E;
+    border-color: #5D6D7E; 
+}
+
+/*Logo*/
+.imgLogo{
+    width: 350px; 
+    height: auto; 
+}
+
+/*Footer*/
+
+.footer {
+    background-color: #fff;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer h2 {
+    font-size: 20px;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer a:hover {
+    color: #33CAFF;
+  }
+  
+  .social-icon img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icon a:hover img {
+    transform: scale(1.2); 
+  }
+
+  /*ICONOS*/
+  .social-icon {
+    background-color: #222;
+    border-radius: 50%; 
+    color: #fff; 
+    width: 30px; 
+    height: 30px;
+    text-align: center; 
+    line-height: 30px; 
+    margin: 5px; 
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    font-size: 20px;
+  }
+  
+  .social-icon:hover {
+    background-color: #555;
+    transform: scale(1.1);
+  }
+
+
+
+  /*volver arriba*/
+.centrado {
+    text-align: center;
+}
+
+.arriba {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.arriba:hover {
+    color: transparent;
+}
+
+.arriba i {
+    color: #000; 
+    border: 2px solid #000; 
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+#icono {
+    color: black;
+    border: 2px solid #000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 26px;
+}
+
+#icono:hover {
+    background-color: #33CAFF;
+    box-shadow: -3px 0 9px 0 #33CAFF, 3px 0 9px 0 #33CAFF;
+}
+
+.arriba::before,
+.arriba::after {
+    content: "";
+    flex: 1;
+    height: 0.04px;
+    background-color: #000;
+    margin: 0 10px;
+    box-shadow: -10px 0 5px 0 black, 10px 0 5px 0 black;
 }
