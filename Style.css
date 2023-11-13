@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+
+/* Ajuste general de pantalla */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'cabin', sans-serif;
+}
+
 /* Estilos para el header */
 header {
     border: 1px solid #999;
@@ -37,6 +47,48 @@ header h1 {
 
 header p {
     font-size: 18px;
+}
+
+/* Sección Quiénes somos */
+#quienes-somos .container-quienes-somos {
+    padding: 25px;
+}
+
+#quienes-somos .container-quienes-somos .welcome-title h1{
+    font-size: 55px;
+}
+
+#quienes-somos .container-quienes-somos span{
+    color: #33CAFF;
+}
+
+#quienes-somos .container-quienes-somos .welcome-title h3 {
+    font-size: 25px;
+}
+
+#quienes-somos .container-quienes-somos .text-box-quienes-somos {
+    display: grid;
+}
+
+#quienes-somos .container-quienes-somos .text-box-quienes-somos h2 {
+    padding-top: 25px;
+    font-size: 30px;
+
+}
+
+#quienes-somos .container-quienes-somos .text-box-quienes-somos p {
+    font-size: 20px;
+    display: inline-block;
+}
+
+#quienes-somos .container-quienes-somos img {
+    border-radius: 10px;
+}
+
+/* Sección Quiénes somos */
+
+#servicios  {
+    padding: 25px;
 }
 
 /* Estilos para el menú de navegación */
