@@ -49,7 +49,7 @@ header p {
     font-size: 18px;
 }
 
-/* Sección Quiénes somos */
+/* Sección Q U I E N E S  S O M O S */
 #quienes-somos .container-quienes-somos {
     padding: 25px;
 }
@@ -67,7 +67,7 @@ header p {
 }
 
 #quienes-somos .container-quienes-somos .text-box-quienes-somos {
-    display: grid;
+
 }
 
 #quienes-somos .container-quienes-somos .text-box-quienes-somos h2 {
@@ -85,12 +85,103 @@ header p {
     border-radius: 10px;
 }
 
-/* Sección Quiénes somos */
+/* Sección S E R V I C I O S */
 
 #servicios  {
     padding: 25px;
 }
 
+#servicios .text-box-servicios h2 {
+    font-size: 30px;
+}
+
+/* Sección C O N T A C T A N O S */
+
+#contactanos{
+    background-image: url(images/contact_bg.png);
+    padding: 25px;
+}
+
+#contactanos .contenido-seccion{
+        margin: auto;
+}
+
+#contactanos h2{
+        font-size: 30px;
+        padding: 25px;
+}
+
+#contactanos .fila{
+        display: flex;
+    }
+
+#contactanos .col{
+        width: 50%;
+        padding: 35px;
+        position: relative;
+}
+
+#contactanos .col input, #contactanos .col textarea{
+        display: block;
+        width: 100%;
+        padding: 18px;
+        border: solid 1px black;
+        margin-bottom: 20px;
+        font-size: 18px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#contactanos button{
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid black;
+        width: fit-content;
+        display: block;
+        margin: 20px auto;
+        padding: 10px 22px;
+        font-size: 16px;
+        position: relative;
+        z-index: 10;
+}
+
+    #contactanos button .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #33CAFF;
+        z-index: -1;
+        transition: 0.8s;
+    }
+    #contactanos button:hover .overlay{
+        width: 100%;
+    }
+    #contactanos .col img{
+        padding-top: 50px;
+        width: 100%;
+    }
+    #contactanos .col .info{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        background-color: #252a2e;
+        color: #fff;
+        padding: 20px;
+        max-width: 350px;
+        transform: translate(-50%, -50%);
+    }
+    #contactanos .col .info ul{
+        list-style: none;
+    }
+    #contactanos .col .info ul li{
+        margin-bottom: 20px;
+    }
+    #contactanos .col .info ul li i{
+        color: #33CAFF;
+        display: inline-block;
+        margin-right: 20px;
+    }
 /* Estilos para el menú de navegación */
 ul {
     list-style-type: none;
