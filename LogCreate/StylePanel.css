@@ -1,0 +1,506 @@
+:root {
+    --color-fondo: #98D3F7;
+    --color-secundario: #FFF;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-fondo);
+}
+
+.form{
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: var(--color-fondo);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.form-two{
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: var(--color-secundario);
+}
+header{
+        font-size: 28px;
+        font-weight: 600;
+        color: #232836;
+        text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.field i{
+    font-size: 22px;
+}
+
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.field input{
+    height: 100%;
+    width: 310px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid #cacaca;
+}
+.field input:focus{
+    border-bottom-width: 2px ;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.field button{
+    color: #fff;
+    background-color: #045FB4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #0174DF;
+}
+
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+}
+form a{
+    text-decoration: none;
+}
+form a:hover{
+    text-decoration: underline;
+}
+
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: #AAA;
+    margin: 36px 0;
+}
+
+.fields button{
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.media-options-creat button{
+    color: #fff;
+    background-color: #31B404;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.media-options-creat button:hover{
+    background-color: #3ADF00;
+}
+
+
+
+/* Estilos del menu 1 */
+
+.form-content-prim{
+    text-align: center;
+    width: 500px;
+    margin-right: 100px;
+}
+
+.form-content-prim h1 {
+    font-family: 'Georgia', serif; /* Cambia 'Georgia' por la fuente que desees usar */
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #4a90e2;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    margin: 0;
+    padding: 10px;
+    border-bottom: 3px solid #4a90e2; /* Línea de borde inferior */
+}
+.form-content-prim img{
+    height: 365px;
+}
+
+/* Login Empleados */
+
+.form-content-prim h2 {
+    font-family: 'Georgia', serif; 
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #4a90e2;
+    text-transform: uppercase; 
+    margin: 0;
+    padding: 10px;
+    border-bottom: 3px solid #4a90e2; 
+}
+
+.Container-titulo{
+    background-color: var(--color-fondo);
+    padding: 60px 30px 60px 30px;
+    text-align: center;
+}
+
+
+
+.Container-titulo h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #3498db;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  font-size: 2.5em;
+  transition: color 0.3s ease-in-out;
+}
+
+.form2 {
+    height: 425px;
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.container2{
+    height: 72.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-fondo);
+}
+
+
+/*---------------------------------- css restablecer contraseña ----------------------------------*/
+
+.Container-respassword{
+    background-color: var(--color-fondo);
+}
+
+.Container-respassword img{
+    height: 200px;
+}
+
+.respassword{
+    text-align: center;
+    background-color: var(--color-fondo);
+}
+
+
+form h3{
+    align-items: center;
+    text-align: center;
+}
+
+.input-field{
+    margin-bottom: 30px;
+}
+
+.field3 input{
+    width: 100%;
+}
+
+.form-tree{
+    max-width: 850px;
+}
+
+
+.button-home{
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.button-home i{
+    color: #000;
+    padding: 50px 50px;
+}
+
+
+/* combo box */
+
+    /* Estilo para el contenedor del combo box */
+    .combo-box {
+        width: 100%;
+        position: relative;
+        
+      }
+  
+      /* Estilo para la lista desplegable */
+      .combo-box select {
+        width: 100%;
+        padding: 14px;
+        margin: 20px 0px 20px 0px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        cursor: pointer;
+        outline: none;
+      }
+  
+      /* Estilo para la lista desplegable con dos columnas */
+      .combo-box select option {
+        padding: 8px;
+      }
+  
+      /* Estilo para la primera columna */
+      .column1 {
+        width: 60%;
+        display: inline-block;
+      }
+  
+      /* Estilo para la segunda columna */
+      .column2 {
+        width: 40%;
+        display: inline-block;
+      }
+
+      .container-tree{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-fondo);
+    }
+    
+    .form-tree{
+        width: 100%;
+        padding: 30px;
+        border-radius: 6px;
+        background: var(--color-fondo);
+    }
+
+
+    /* cambio de contraseña */
+
+    .field3 a{
+        color: var(--color-secundario);
+    }
+    .field3 a:hover{
+       text-decoration: none; 
+    }
+
+    .container4{
+        height: 72.8vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--color-fondo);
+    }
+
+
+
+/* Estilos registro */
+
+.container-principal{
+    padding-top: 10px;
+    display: flex;
+    height: 130vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4a99e9, #A9E2F3);
+}
+
+.container5{
+    max-width: 700px;
+    width: 100%;
+    background: linear-gradient(135deg, #A9E2F3);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 25px 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    
+}
+
+
+.container5 .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.container5 .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 30px;
+    background: linear-gradient(135deg, #4a90e2, #A9E2F3);
+}
+
+.container5 form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #4a90e2;
+}
+
+
+
+/* Estilos registro */
+
+.container5 form .user-details2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -10px 0 12px 0;
+    
+}
+
+form .user-details2 .input-box2{
+    margin-bottom: 15px;
+    width: calc(100%);
+}
+
+.user-details2 .input-box2 input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.user-details2 .input-box2 .details2{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.user-details2 .input-box2 input:focus,
+.user-details2 .input-box2 input:valid{
+    border-color: #4a90e2;
+}
+
+.title-two{
+    margin: 20px 0 0 0;
+    font-size: 12px;
+}
+
+.line-two{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: #d4d4d4;
+    margin: 10px 0;
+}
+
+
+
+
+   /* Estilo para el contenedor del combo box */
+   .combo-box-two {
+    width: 100%;
+    position: relative;
+    
+  }
+
+  /* Estilo para la lista desplegable */
+  .combo-box-two select {
+    width: 100%;
+    padding: 11px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+  }
+
+
+  .pass{
+    color: #fff;
+  }
+
+  .pass:hover{
+    text-decoration: none;
+  }
+
+

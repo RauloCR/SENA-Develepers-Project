@@ -1,0 +1,596 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+.head{
+    background-color: #FFF;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    max-width: 180px;
+    height: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 60px;
+    
+  }
+  
+  nav ul li {
+    margin-right: 1px;
+    
+
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    width: 120px;
+    padding: 0 0 0px 20px;   
+    transition: all 0.3s ease;
+
+  }
+
+  
+  nav a i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    
+  }
+  nav a:hover{
+    background-color: #CEECF5;
+    color: #188ad9;
+  }
+  nav a:hover::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Altura de la línea azul debajo del texto */
+    background-color: #188ad6; /* Color de la línea azul */    
+  }
+  
+
+
+
+  /* NAV DE NAVEGACION */
+
+  .contenedor-nav{
+    margin: 30px;
+    max-width: 1310px;
+    padding: 10px;
+    border: 1px solid #AAA;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+
+  .menu {
+    background-color: #184b8f;
+    height: 65px;
+    width: 813px;
+    margin-left: 80px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .menu ul li {
+    float: left;
+  }
+  
+  .menu a {
+    display: block;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .menu .icon::after {
+    content: '\203A'; /* Unicode character for right arrow */
+    font-size: 30px;
+    margin-left: 10px;
+    right: 10px;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+  }
+  
+  .menu .icon:hover::after {
+    transform: rotate(90deg);
+  }
+  
+  .menu .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+  
+  .menu .dropdown {
+    display: inline-block;
+    border: 1px solid #000;
+  }
+  
+  .menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+  .menu .dropdown-content a{
+    color: #000;
+  }
+
+  .menu .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+
+  .line{
+    position: relative;
+    height: 3px;
+    width: 100%;
+    background-color: #AAA;
+    margin: 10px 0;
+}
+
+
+ 
+/* ------------------------LEFT ICON----------------------------- */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-icon,
+.right-icon {
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.right-icon{
+  margin-right: 65px;
+}
+
+.left-icon{
+  display: flex;
+  margin-left: 190px;
+}
+
+.left-icon-two{
+  display: flex;
+  margin-left: 230px;
+}
+.left-icon-two i{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/* combo box */
+
+    /* Estilo para el contenedor del combo box */
+    .combo-box {
+      width: 100%;
+      position: relative;
+      
+    }
+
+    /* Estilo para la lista desplegable */
+    .combo-box select {
+      width: 190px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      cursor: pointer;
+      outline: none;
+    }
+
+
+    .combo-box select {
+      color: #999; /* Puedes ajustar el color gris claro según tus preferencias */
+      font-size: 13px;
+  }
+  .combo-box select:focus {
+    color: #000; /* Color de texto negro al enfocar el cuadro de selección */
+}
+.combo-box.select-active select {
+  color: #000; /* Color de texto negro cuando el cuadro de selección está activo */
+}
+
+    /* Estilo para la lista desplegable con dos columnas */
+    .combo-box select option {
+      padding: 8px;
+    }
+
+    
+
+
+
+
+
+
+
+
+/* ------------------------STYLES TABLE INFORMATION----------------------------- */
+
+.main-content {
+	padding: 1px 0 50px 0;
+	background-color: #FFF;
+  
+}
+
+/*--table design start----*/
+
+.table-wrapper {
+	background-color: #ccc;
+	width: 1140px;
+  margin: auto;
+  border-radius: 1px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	
+}
+
+
+
+table.table tr th,
+table.table tr td {
+	padding: 8px 15px;
+	font-size: 10px;
+	font-weight: 400;
+	vertical-align: middle;
+  border: solid #bbb 2px;
+  
+
+}
+
+table.table tr .name-table{
+  font-weight: 600;
+  
+}
+
+
+table.table th i {
+	font-size: 17px;
+	margin: 6px 5px;
+	cursor: pointer;
+  
+}
+
+table.table th i {
+	font-size: 17px;
+	margin: 6px 5px;
+	cursor: pointer;
+  
+}
+
+
+table.table td:last-child {
+	opacity: 0.9;
+	font-size: 22px;
+  
+}
+
+
+
+table.table td a:hover {
+	color: #2196F3;
+  
+}
+
+
+
+
+table {
+    border-collapse: collapse;
+    padding: 0%;    
+}
+
+
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+
+.table {
+    width: 100%;
+    background-color: transparent
+}
+
+.table td,
+.table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    
+}
+  
+.table-bordered thead td,
+.table-bordered thead th {
+    border-bottom-width: 2px
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #FFF;
+    
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, .075)
+}
+
+
+
+.name-table {
+  position: relative;
+}
+
+
+.name-table i {
+  position: absolute;
+  top: 35%;
+  right: -1px; /* Ajusta el valor según tus necesidades */
+  transform: translateY(-50%);
+}
+
+
+.name-table-two i:nth-child(1){
+  position: absolute;
+  right: 110px; /* Ajusta el valor según tus necesidades */
+  transform: translateY(-30%);
+}
+.name-table-two i:nth-child(2){
+  position: absolute;
+  right: 145px; /* Ajusta el valor según tus necesidades */
+  transform: translateY(-30%);
+}
+
+.name-table-two {
+text-align: left;
+width: 130px;
+}
+
+.name-table-two img{
+  height: 18px;
+  position: absolute;
+  right: 110px; /* Ajusta el valor según tus necesidades */
+  transform: translateY(-8%);
+  cursor: pointer;
+}
+
+
+
+
+/* -----------------------------------INPUT DEL LA PAGINA MENU PRINCIPAL -----------------------------------*/
+
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos registro */
+
+.container-principal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container5{
+  max-width: 1200px;
+  width: 100%;
+  background: linear-gradient(135deg, #A9E2F3);
+  padding: 5px 30px;
+  margin-left: 55px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container5 img{
+  height: 260px;
+}
+
+.icon-options img{
+  height: 30px;
+  cursor: pointer;
+}
+
+.icon-options{
+  margin-right: 15px;
+}
+
+.container5 .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 30px;
+  background: linear-gradient(135deg, #4a90e2, #A9E2F3);
+}
+
+/* CONTENEDER INPUT */
+
+.container5 form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  width: 850px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+
+
+.container5 form .user-details-two{
+    display: flex;
+}
+
+form .user-details .input-box{
+  display: flex;
+  width: 280px;
+  align-items: center;
+}
+
+  
+
+
+.user-details .input-box input{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #BBB;
+  padding-left: 10px;
+  font-size: 12px;
+  border-bottom-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.user-details .combo-box select{
+  border: 1px solid #BBB;
+  border-bottom-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box .details{
+  display: block;
+  font-weight: 500;
+  width: 140px;
+  font-size: 10PX;
+}
+
+/* LINEA PARA EL FOCUS */
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+.user-details .combo-box select:focus,
+.user-details .combo-box select:valid{
+  border-color: #4a90e2;
+}
+
+
+
+/* Estilos registro */
+
+
+.title-two{
+  margin: 20px 0 0 0;
+  font-size: 12px;
+}
+
+.line-two{
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background-color: #AAA;
+  margin: 30px 0 0 0;
+}
+
+.title-tree{
+  font-size: 12px;
+}
+
+.line-tree{
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background-color: #AAA;
+  margin-bottom: 17px;
+}
+
+
+/* UBICACION */
+
+.icon-here{
+  background-color:#507aa6;
+ }
+ 
+ .icon-here-two{
+   background-color: #ccc;
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

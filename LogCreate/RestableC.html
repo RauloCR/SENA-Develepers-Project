@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Clientes</title>
+    <link rel="stylesheet" href="StylePanel.css">
+    <script src="https://kit.fontawesome.com/a66f4a03a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section>
+        <div class="Container-respassword">
+            <img src="/SENA-Develeper-s-Project/images/logo PNG.png" alt="work-sphere" class="image-right">
+        </div>
+    </section>
+
+    <section>
+        <div class="respassword">
+            <h1>Seleccione y escriba el tipo y el numero del documento de identidad</h1>
+        </div>
+    </section>
+
+    <section class="container-tree forms">
+        <div class="form-two loging form-tree">
+            <div class="form-content">
+                <form action="#">
+                    <h3>Tipo de documento</h3>                  
+                    <!-- Contenedor del combo box -->
+                    <div class="combo-box">
+                        <!-- Combo box con dos columnas -->
+                        <select>
+                        <!-- Opción 1 -->
+                        <option value="opcion1">Cédula de ciudadanía</option>
+                        <!-- Opción 2 -->
+                        <option value="opcion2">Cédula de extranjería</option>
+                        <!-- Opción 3 -->
+                        <option value="opcion3">Permiso especial de permanencia</option>
+                        <!-- Opción 4 -->
+                        <option value="opcion4">DNI - Documento nacional de identidad</option>
+                        </select>
+                    </div>
+                    <h3>Numero de documento</h3>
+                    <div class="field input-field field3">
+                        <input type="user" placeholder="Numero documento" class="input">
+                    </div>
+
+                    <h3>Correo electrónico</h3>
+
+                    <div class="field input-field field3">
+                        <input type="user" placeholder="Correo" class="input">
+                    </div>
+
+                    <div class="field button-field field3">
+                        <button class="links"><a href="/SENA-Develeper-s-Project/LogCreate/NuevaPassword.html">Restablecer contraseña</a></button>
+                    </div>
+
+                    <div class="form-link">
+                        <span></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="remove-options">
+                <div class="button-home">
+                    <a href="/SENA-Develeper-s-Project/Index.html"><i class="fa-solid fa-house" ></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--JavaScript-->
+    <script src="LogingJS/JavaScript.js"></script>
+</body>
+</html>

@@ -15,6 +15,7 @@
     background-color: #fff;
     color: #000;
     padding: 20px;
+    width: 1320px;
     display: flex;
     justify-content: space-between; 
     align-items: center; 
@@ -152,7 +153,7 @@ header p {
     display: flex;
     animation: scroll 10s infinite;
 }
-
+ 
 .carousel-item {
     min-width: 100%;
 }
@@ -299,11 +300,13 @@ header p {
         display: block;
         width: 100%;
         padding: 18px;
-        border: solid 1px black;
+        border: solid 1px #000;
         margin-bottom: 20px;
         font-size: 18px;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+
 
 #contactanos button{
         cursor: pointer;
