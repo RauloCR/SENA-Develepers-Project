@@ -51,7 +51,7 @@ header {
 }
 
 #quienes-somos .container-quienes-somos span{
-    color: #202a2e;
+    color: #33CAFF;
 }
 
 #quienes-somos .container-quienes-somos .welcome-title h3 {
@@ -96,7 +96,7 @@ header {
     font-size: 30px;
 }
 
-    /* Imagenes de la sección servicios */
+    /* Imagenes Banner de la sección servicios */
 
 #servicios .carousel-container {
     width: 900px;
@@ -121,7 +121,7 @@ header {
     height: auto;
 }
 
-    /* Botones de navegación de la sección servicios */
+    /* Botones Banner de la sección servicios */
 .prev-button,
 .next-button {
     position: absolute;
@@ -132,14 +132,14 @@ header {
     border: 2px solid #33CAFF;
     padding: 15px;
     cursor: pointer;
-    border-radius:  50%;
+    border-radius:  100%;
 }
 
 .prev-button:hover,
 .next-button:hover {    
     color: #fff;
-    border: 2px solid #33CAFF;
-    padding: 15px;
+    border: 2px solid #fff;
+    padding: 16px;
     transition: 0.3s; 
     box-shadow: -3px 0 5px 0 #33CAFF, 3px 0 5px 0 #33CAFF;
 }
@@ -152,7 +152,7 @@ header {
     right: 10px;
 }
 
-    /* animación de desplazamiento de la sección servicios*/
+    /* animación de desplazamiento Banner de la sección servicios*/
 
 @keyframes scroll {
     0% {
@@ -175,16 +175,17 @@ header {
     /* Estilos dropdown de la sección servicios*/
 
 #servicios .menu {
-    max-width: 800px;
+    max-width: 850px;
     margin: 20px auto;
     background: #F2F2F2;
-    padding: 30px;
+    padding: 25px;
     box-shadow: 4px 4px 10px rgba(0.5, 0.5, 0.5, 0.5);
     border-radius: 3px;
   }
   
 #servicios .section-btn {
     position: relative;
+    font-size: 22px;
     display: block;
     width: 100%;
     padding-top: 15px;
@@ -197,35 +198,41 @@ header {
     border-radius: 3px;
   }
   
-  .section-btn:hover {
+#servicios .section-btn:hover {
     color: #33CAFF;
   }
   
-  .section-btn::after {
+#servicios .section-btn::after {
     content: '\203A'; /* Unicode character for right arrow */
     position: absolute;
     right: 10px;
     transition: transform 0.3s ease-out;
   }
   
-  .section-toggle:checked + .section-btn::after {
+#servicios .section-toggle:checked + .section-btn::after {
     transform: rotate(90deg);
   }
   
-  .section-toggle {
+#servicios .section-toggle {
     display: none;
   }
   
-  .section-content {
+#servicios .section-content {
+    font-size: 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background-color: #f9f9f9;
   }
   
-  .section-toggle:checked + .section-btn + .section-content {
+#servicios .section-toggle:checked + .section-btn + .section-content {
     max-height: 1000px; 
   }
+
+#servicios .line-servicios {
+    border: 0.5px solid #A5A09E;
+    margin-top: 100px;
+}
 
 /* Sección  C O N T A C T A N O S */
 
@@ -235,95 +242,91 @@ header {
 }
 
 #contactanos .contenido-seccion{
-        margin: auto;
+    margin: auto;
 }
 
 #contactanos h2{
-        font-size: 30px;
-        padding: 25px;
+    font-size: 30px;
+    padding: 25px;
 }
 
 #contactanos .fila{
-        display: flex;
-    }
+    display: flex;
+}
 
 #contactanos .col{
-        width: 50%;
-        padding: 35px;
-        position: relative;
+    width: 50%;
+    padding: 35px;
+    position: relative;
 }
 
 #contactanos .col input, #contactanos .col textarea{
-        display: block;
-        width: 100%;
-        padding: 18px;
-        border: solid 1px #000;
-        margin-bottom: 20px;
-        font-size: 18px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: solid 1px #000;
+    margin-bottom: 20px;
+    font-size: 18px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
-
-
 
 #contactanos button{
-        cursor: pointer;
-        background-color: transparent;
-        border: 2px solid black;
-        width: fit-content;
-        display: block;
-        margin: 20px auto;
-        padding: 10px 22px;
-        font-size: 16px;
-        position: relative;
-        z-index: 10;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid black;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    position: relative;
+    z-index: 10;
 }
 
-    #contactanos button .overlay{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: #33CAFF;
-        z-index: -1;
-        transition: 0.8s;
-    }
-    #contactanos button:hover .overlay{
-        width: 100%;
-    }
-    #contactanos .col img{
-        padding-top: 50px;
-        width: 100%;
-    }
-    .col{
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    #contactanos .col .info{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        background-color: #252a2e;
-        color: #fff;
-        padding: 20px;
-        max-width: 350px;
-        transform: translate(-50%, -50%);
-        
-        
-    }
-    #contactanos .col .info ul{
-        list-style: none;
-    }
-    #contactanos .col .info ul li{
-        margin-bottom: 20px;
-    }
-    #contactanos .col .info ul li i{
-        color: #33CAFF;
-        display: inline-block;
-        margin-right: 20px;
-    }
+#contactanos button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #33CAFF;
+    z-index: -1;
+    transition: 0.8s;
+}
+#contactanos button:hover .overlay{
+    width: 100%;
+}
+#contactanos .col img{
+    padding-top: 50px;
+    width: 100%;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+#contactanos .col .info{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    background-color: #252a2e;
+    color: #fff;
+    padding: 20px;
+    max-width: 350px;
+    transform: translate(-50%, -50%);
+    
+    
+}
+#contactanos .col .info ul{
+    list-style: none;
+}
+#contactanos .col .info ul li{
+    margin-bottom: 20px;
+}
+#contactanos .col .info ul li i{
+    color: #33CAFF;
+    display: inline-block;
+    margin-right: 20px;
+}
     
 
 /* Estilos para el menú de navegación */
