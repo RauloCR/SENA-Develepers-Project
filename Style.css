@@ -39,18 +39,55 @@ header {
     display: flex;
 }
 
+.header-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.header-container li {
+    margin-right: 20px;
+}
+
+.header-container li a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    padding: 22px 20px; 
+    border: 2px solid #000; 
+    border-radius: 20px; 
+}
+
+.header-container li a:hover {
+    color: #33CAFF;
+    border-color: #33CAFF; 
+}
+
+    /*Botón inicio sesión*/
+
+.header-container #Iniciar-seccion{
+    background-color: #1ecf59;
+    color: #fff;
+}
+
+.header-container #Iniciar-seccion:hover {
+    color: #5D6D7E;
+    border-color: #5D6D7E; 
+}
+
 /* Sección Q U I E N E S  S O M O S */
+
 #quienes-somos .container-quienes-somos {
     padding: 10px;
     padding-top: 160px;
 }
 
-#quienes-somos .container-quienes-somos .welcome-title h1{
+#quienes-somos .container-quienes-somos .welcome-title h1 {
     font-size: 55px;
     padding-left: 165px;
 }
 
-#quienes-somos .container-quienes-somos span{
+#quienes-somos .container-quienes-somos span {
     color: #33CAFF;
 }
 
@@ -74,7 +111,7 @@ header {
     font-weight: bold;
 }
 
-.image-right{
+.image-right {
     width: 610px;
     float: right;
     margin-right: 15px;
@@ -181,7 +218,7 @@ header {
     padding: 25px;
     box-shadow: 4px 4px 10px rgba(0.5, 0.5, 0.5, 0.5);
     border-radius: 3px;
-  }
+ }
   
 #servicios .section-btn {
     position: relative;
@@ -196,26 +233,26 @@ header {
     text-align: left;
     cursor: pointer;
     border-radius: 3px;
-  }
+}
   
 #servicios .section-btn:hover {
     color: #33CAFF;
-  }
+}
   
 #servicios .section-btn::after {
     content: '\203A'; /* Unicode character for right arrow */
     position: absolute;
     right: 10px;
     transition: transform 0.3s ease-out;
-  }
+}
   
 #servicios .section-toggle:checked + .section-btn::after {
     transform: rotate(90deg);
-  }
+}
   
 #servicios .section-toggle {
     display: none;
-  }
+}
   
 #servicios .section-content {
     font-size: 18px;
@@ -223,11 +260,11 @@ header {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background-color: #f9f9f9;
-  }
+}
   
 #servicios .section-toggle:checked + .section-btn + .section-content {
     max-height: 1000px; 
-  }
+}
 
 #servicios .line-servicios {
     border: 0.5px solid #A5A09E;
@@ -236,31 +273,31 @@ header {
 
 /* Sección  C O N T A C T A N O S */
 
-#contactanos{
+#contactanos {
     background-image: url(images/contact_bg.png);
     padding: 25px;
 }
 
-#contactanos .contenido-seccion{
+#contactanos .contenido-seccion {
     margin: auto;
 }
 
-#contactanos h2{
+#contactanos h2 {
     font-size: 30px;
     padding: 25px;
 }
 
-#contactanos .fila{
+#contactanos .fila {
     display: flex;
 }
 
-#contactanos .col{
+#contactanos .col {
     width: 50%;
     padding: 35px;
     position: relative;
 }
 
-#contactanos .col input, #contactanos .col textarea{
+#contactanos .col input, #contactanos .col textarea {
     display: block;
     width: 100%;
     padding: 18px;
@@ -270,7 +307,7 @@ header {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#contactanos button{
+#contactanos button {
     cursor: pointer;
     background-color: transparent;
     border: 2px solid black;
@@ -283,7 +320,7 @@ header {
     z-index: 10;
 }
 
-#contactanos button .overlay{
+#contactanos button .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -293,18 +330,22 @@ header {
     z-index: -1;
     transition: 0.8s;
 }
-#contactanos button:hover .overlay{
+
+#contactanos button:hover .overlay {
     width: 100%;
 }
-#contactanos .col img{
+
+#contactanos .col img {
     padding-top: 50px;
     width: 100%;
 }
+
 .col{
     display: flex;
     flex-direction: column;
 }
-#contactanos .col .info{
+
+#contactanos .col .info {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -313,240 +354,103 @@ header {
     padding: 20px;
     max-width: 350px;
     transform: translate(-50%, -50%);
-    
-    
 }
-#contactanos .col .info ul{
+
+#contactanos .col .info ul {
     list-style: none;
 }
-#contactanos .col .info ul li{
+
+#contactanos .col .info ul li {
     margin-bottom: 20px;
 }
-#contactanos .col .info ul li i{
+
+#contactanos .col .info ul li i {
     color: #33CAFF;
     display: inline-block;
     margin-right: 20px;
 }
-    
 
-/* Estilos para el menú de navegación */
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Estilos para el  R E T O R N O */
+
+#retorno .line-retorno {
+    border: 0.5px solid #A5A09E;
+    margin-top: -25px;
 }
 
-li {
-    margin-right: 20px;
-}
-
-li a {
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    color: #000;
-    padding: 22px 20px; 
-    border: 2px solid #000; 
-    border-radius: 20px; 
-}
-
-li a:hover {
-    color: #33CAFF;
-    border-color: #33CAFF; 
-}
-
-
-/* Estilos para el footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.contact-info {
-    margin-bottom: 20px;
-}
-
-.contact-info h3 {
-    font-size: 20px;
-}
-
-.contact-info p {
-    font-size: 16px;
-}
-
-.copyright p {
-    font-size: 14px;
-}
-
-.copyright p::before {
-    content: "\00a9 "; 
-}
-
-/* empleados*/
-
-#Empleados{
-    background-color: #33CAFF;
-    color: #fff;
-}
-
-#Iniciar-seccion{
-    background-color: #1ecf59;
-    color: #fff;
-}
-/*Botones*/
-#Empleados:hover {
-    color: #5D6D7E;
-    border-color: #5D6D7E; 
-}
-#Iniciar-seccion:hover {
-    color: #5D6D7E;
-    border-color: #5D6D7E; 
-}
-
-/*Logo*/
-.imgLogo{
-    width: 350px; 
-    height: auto; 
-}
-
-/*Footer*/
-
-.footer {
-    background-color: #fff;
-    color: #000;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer h2 {
-    font-size: 20px;
-  }
-  
-  .footer p {
-    font-size: 14px;
-  }
-  
-  .footer ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer a:hover {
-    color: #33CAFF;
-  }
-  
-  .social-icon img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-  }
-  
-  .social-icon a:hover img {
-    transform: scale(1.2); 
-  }
-
-  /*ICONOS*/
-  .social-icon {
-    background-color: #222;
-    border-radius: 50%; 
-    color: #fff; 
-    width: 30px; 
-    height: 30px;
-    text-align: center; 
-    line-height: 30px; 
-    margin: 5px; 
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-    font-size: 20px;
-  }
-  
-  .social-icon:hover {
-    background-color: #555;
-    transform: scale(1.1);
-  }
-
-
-
-  /*volver arriba*/
-.centrado {
-    text-align: center;
-}
-
-.arriba {
+#retorno .arriba {
     display: flex;
     justify-content: center;
     align-items: center;
     color: transparent;
 }
-.arriba:hover {
-    color: transparent;
-}
 
-.arriba i {
+#retorno .arriba i {
+    font-size: 40px;
+    background-color: #fff;
     color: #000; 
-    border: 2px solid #000; 
+    border: 3px solid #000; 
     border-radius: 50%;
     height: 50px;
     width: 50px;
     text-align: center;
 }
 
-#icono {
-    color: black;
-    border: 2px solid #000;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    font-size: 26px;
-}
-
-#icono:hover {
+#retorno .arriba i:hover {
     background-color: #33CAFF;
-    box-shadow: -3px 0 9px 0 #33CAFF, 3px 0 9px 0 #33CAFF;
-    transition: 0.3s;
+    transform: scale(1.1);
+}
+    
+/* Estilos para el F O O T E R */
+
+footer {
+    background-color: #fff;
+    color: #000;
+    padding: 20px 0px;
+    text-align: center;
 }
 
-.arriba::before,
-.arriba::after {
-    content: "";
-    flex: 1;
-    height: 0.04px;
-    background-color: #000;
-    margin: 0 10px;
-    box-shadow: -10px 0 5px 0 black, 10px 0 5px 0 black;
+.footer-container .contact-info {
+    margin-bottom: 20px;
 }
 
-.arriba2::after {
-    content: "";
-    flex: 1;
-    height: 0.04px;
-    background-color: #000;
-    margin: 60px;
-    box-shadow: -10px 0 5px 0 black, 10px 0 5px 0 black;
+.footer-container .contact-info h3 {
+    font-size: 20px;
 }
 
-.arriba2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: transparent;
+.footer-container .contact-info p {
+    font-size: 16px;
 }
 
+.footer-container .copyright p {
+    font-size: 14px;
+}
 
+.footer-container .copyright p::before {
+    content: "\00a9"; 
+}
 
+  /*iconos redes sociales footer*/
 
+.footer-container .redes-sociales h2 {
+    font-size: 20px;
+}
 
-
+.footer-container .redes-sociales .social-icon {
+  background-color: #222;
+  border-radius: 50%; 
+  color: #fff; 
+  width: 30px; 
+  height: 30px;
+  text-align: center; 
+  line-height: 30px; 
+  margin: 5px; 
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  font-size: 20px;
+}
+  
+.footer-container .redes-sociales .social-icon:hover {
+  background-color: #33CAFF;
+  transform: scale(1.1);
+}
