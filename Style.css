@@ -393,10 +393,12 @@ header {
     height: 50px;
     width: 50px;
     text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #retorno .arriba i:hover {
-    background-color: #33CAFF;
+    color: #fff;
+    background-color: #000;
     transform: scale(1.1);
 }
     
