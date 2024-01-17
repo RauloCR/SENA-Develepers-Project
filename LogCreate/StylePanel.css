@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+
+/* Configuración general de pantallas folder LOGCREATE*/
+
 :root {
     --color-fondo: #98D3F7;
     --color-secundario: #FFF;
-  }
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'cabin', sans-serif;
 }
 
-.container{
+/* Estilos para LOGINC.HTML */
+
+.container {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -19,32 +25,59 @@
     background-color: var(--color-fondo);
 }
 
-.form{
+.form-content-prim{
+    text-align: center;
+    width: 500px;
+    margin-right: 100px;
+} 
+
+.form-content-prim h1 {
+    font-family: 'cabin', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #312f3b;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px;
+    border-top: 3px solid #2972AE;
+    border-bottom: 3px solid #2972AE;
+}
+
+.form-content-prim img{
+    height: 320px;
+}
+
+.form {
     max-width: 400px;
     width: 100%;
     padding: 30px;
     border-radius: 6px;
     background: var(--color-fondo);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-}
-.form-two{
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-    border-radius: 6px;
-    background: var(--color-secundario);
-}
-header{
-        font-size: 28px;
-        font-weight: 600;
-        color: #232836;
-        text-align: center;
-}
-form{
     display: flex;
     flex-direction: column;
     margin-top: 30px;
 }
+
+.form .form-content header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 form .field{
     position: relative;
@@ -150,78 +183,22 @@ form a:hover{
 
 
 
-/* Estilos del menu 1 */
-
-.form-content-prim{
-    text-align: center;
-    width: 500px;
-    margin-right: 100px;
-}
-
-.form-content-prim h1 {
-    font-family: 'Georgia', serif; /* Cambia 'Georgia' por la fuente que desees usar */
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #4a90e2;
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    margin: 0;
-    padding: 10px;
-    border-bottom: 3px solid #4a90e2; /* Línea de borde inferior */
-}
-.form-content-prim img{
-    height: 365px;
-}
-
-/* Login Empleados */
-
-.form-content-prim h2 {
-    font-family: 'Georgia', serif; 
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #4a90e2;
-    text-transform: uppercase; 
-    margin: 0;
-    padding: 10px;
-    border-bottom: 3px solid #4a90e2; 
-}
-
-.Container-titulo{
-    background-color: var(--color-fondo);
-    padding: 60px 30px 60px 30px;
-    text-align: center;
-}
 
 
 
-.Container-titulo h1 {
-  font-family: 'Montserrat', sans-serif;
-  color: #3498db;
-  text-align: center;
-  margin: 20px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: 2px;
-  font-size: 2.5em;
-  transition: color 0.3s ease-in-out;
-}
 
-.form2 {
-    height: 425px;
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-    border-radius: 6px;
-    background: #fff;
-}
 
-.container2{
-    height: 72.5vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--color-fondo);
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*---------------------------------- css restablecer contraseña ----------------------------------*/
