@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
 
-/* Configuración general de pantallas folder LOGCREATE*/
+/* Recursos compartidos de pantallas carpeta LOGCREATE*/
 
 :root {
     --color-fondo: #98D3F7;
@@ -14,6 +14,49 @@
     font-family: 'cabin', sans-serif;
 }
 
+form .field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.field button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.field button {
+    color: #fff;
+    background-color: #045FB4;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.field button:hover {
+    background-color: #0174DF;
+}
+
+.field input {
+    height: 100%;
+    width: 310px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid #cacaca;
+}
+
+.field input:focus {
+    border-bottom-width: 2px;
+}
+
 /* Estilos para LOGINC.HTML */
 
 .container {
@@ -25,7 +68,7 @@
     background-color: var(--color-fondo);
 }
 
-.form-content-prim{
+.form-content-prim {
     text-align: center;
     width: 500px;
     margin-right: 100px;
@@ -35,7 +78,7 @@
     font-family: 'cabin', serif;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #312f3b;
     text-transform: uppercase;
     margin: 0;
@@ -44,7 +87,7 @@
     border-bottom: 3px solid #2972AE;
 }
 
-.form-content-prim img{
+.form-content-prim img {
     height: 320px;
 }
 
@@ -67,57 +110,51 @@
     text-align: center;
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-form .field{
+.form .form-content form .field {
     position: relative;
     height: 50px;
     width: 100%;
     margin-top: 20px;
 }
 
-.field i{
+.form .form-content form .field i {
     font-size: 22px;
 }
 
-.field button{
+.form .form-content .field button {
     height: 100%;
     width: 100%;
     border: none;
     font-size: 16px;
     font-weight: 400;
     border-radius: 6px;
+    color: #fff;
+    background-color: #045FB4;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.field input{
+.form .form-content .field button:hover{
+    background-color: #0174DF;
+}
+
+.form .form-content .field input {
     height: 100%;
     width: 310px;
     border: none;
     font-size: 16px;
     font-weight: 400;
     border-radius: 6px;
-}
-
-.field input{
     outline: none;
     padding: 0 15px;
     border: 1px solid #cacaca;
 }
-.field input:focus{
-    border-bottom-width: 2px ;
+
+.form .form-content .field input:focus {
+    border-bottom-width: 2px;
 }
 
-.eye-icon{
+.form .form-content .eye-icon {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -128,32 +165,19 @@ form .field{
     padding: 5px;
 }
 
-.field button{
-    color: #fff;
-    background-color: #045FB4;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.field button:hover{
-    background-color: #0174DF;
-}
-
-.form-link{
+.form .form-content form .form-link a {
     text-align: center;
+    padding-left: 110px;
     margin-top: 10px;
-}
-.form-link a{
     font-size: 14px;
-    font-weight: 400;
-}
-form a{
     text-decoration: none;
 }
-form a:hover{
+
+.form .form-content form .form-link a:hover {
     text-decoration: underline;
 }
 
-.line{
+.form .line {
     position: relative;
     height: 1px;
     width: 100%;
@@ -161,7 +185,7 @@ form a:hover{
     margin: 36px 0;
 }
 
-.fields button{
+.container .form .fields button {
     height: 50px;
     width: 100%;
     border: none;
@@ -170,36 +194,16 @@ form a:hover{
     border-radius: 6px;
 }
 
-.media-options-creat button{
+.container .form .media-options-creat button {
     color: #fff;
     background-color: #31B404;
     transition: all 0.3s ease;
     cursor: pointer;
-}
+} 
 
-.media-options-creat button:hover{
+.container .form .media-options-creat button:hover {
     background-color: #3ADF00;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*---------------------------------- css restablecer contraseña ----------------------------------*/
 
