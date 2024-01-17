@@ -3,8 +3,8 @@
 /* Recursos compartidos de pantallas carpeta LOGCREATE*/
 
 :root {
-    --color-fondo: #98D3F7;
-    --color-secundario: #FFF;
+    --color-fondo: #fff;
+    --color-secundario: #fff;
 }
 
 * {
@@ -28,9 +28,6 @@ form .field {
     font-size: 16px;
     font-weight: 400;
     border-radius: 6px;
-}
-
-.field button {
     color: #fff;
     background-color: #045FB4;
     transition: all 0.3s ease;
@@ -205,125 +202,82 @@ form .field {
     background-color: #3ADF00;
 }
 
-/*---------------------------------- css restablecer contraseña ----------------------------------*/
+/*----- Estilos para RESTABLECEC.HTML & NUEVAPASSWORD.HTML-----*/
 
-.Container-respassword{
-    background-color: var(--color-fondo);
-}
-
-.Container-respassword img{
-    height: 200px;
-}
-
-.respassword{
-    text-align: center;
-    background-color: var(--color-fondo);
-}
-
-
-form h3{
+.container-tree { /* Estilo solo para RESTABLECEC.HTML */
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.container4 { /* Estilo solo para NUEVAPASSWORD.HTML */
+    height: 72.8vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Container-respassword img {
+    height: 90px;
+}
+
+.respassword {
     text-align: center;
 }
 
-.input-field{
+.input-field {
     margin-bottom: 30px;
 }
 
-.field3 input{
+form h3 {
+    align-items: center;
+    text-align: center;
+}
+
+.field3 input {
     width: 100%;
 }
 
-.form-tree{
+.form-tree {
+    width: 100%;
     max-width: 850px;
+    padding: 30px;
+    border-radius: 6px;
 }
 
+.field3 a {
+    color: var(--color-secundario);
+    text-decoration: none;
+}
 
-.button-home{
+.button-home {
     align-items: center;
     text-align: center;
     font-size: 30px;
-
 }
 
-.button-home i{
+.button-home i {
     color: #000;
     padding: 50px 50px;
 }
 
+/* Estilo para combo-box de RESTABLECEC.HTML */
 
-/* combo box */
+.combo-box select {
+  width: 100%;
+  padding: 14px;
+  margin: 20px 0px 20px 0px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+}
 
-    /* Estilo para el contenedor del combo box */
-    .combo-box {
-        width: 100%;
-        position: relative;
-        
-      }
-  
-      /* Estilo para la lista desplegable */
-      .combo-box select {
-        width: 100%;
-        padding: 14px;
-        margin: 20px 0px 20px 0px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        box-sizing: border-box;
-        cursor: pointer;
-        outline: none;
-      }
-  
-      /* Estilo para la lista desplegable con dos columnas */
-      .combo-box select option {
-        padding: 8px;
-      }
-  
-      /* Estilo para la primera columna */
-      .column1 {
-        width: 60%;
-        display: inline-block;
-      }
-  
-      /* Estilo para la segunda columna */
-      .column2 {
-        width: 40%;
-        display: inline-block;
-      }
 
-      .container-tree{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--color-fondo);
-    }
     
-    .form-tree{
-        width: 100%;
-        padding: 30px;
-        border-radius: 6px;
-        background: var(--color-fondo);
-    }
-
-
-    /* cambio de contraseña */
-
-    .field3 a{
-        color: var(--color-secundario);
-    }
-    .field3 a:hover{
-       text-decoration: none; 
-    }
-
-    .container4{
-        height: 72.8vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        background-color: var(--color-fondo);
-    }
-
 
 
 /* Estilos registro */
