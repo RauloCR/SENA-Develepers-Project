@@ -54,7 +54,7 @@ form .field {
     border-bottom-width: 2px;
 }
 
-/* Estilos para LOGINC.HTML */
+/*----- Estilos para LOGINC.HTML -----*/
 
 .container {
     height: 100vh;
@@ -62,7 +62,6 @@ form .field {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-fondo);
 }
 
 .form-content-prim {
@@ -257,11 +256,6 @@ form h3 {
     font-size: 30px;
 }
 
-.button-home i {
-    color: #000;
-    padding: 50px 50px;
-}
-
 /* Estilo para combo-box de RESTABLECEC.HTML */
 
 .combo-box select {
@@ -276,127 +270,30 @@ form h3 {
   outline: none;
 }
 
+/*----- Estilos para REGISTRO.HTML -----*/
 
-    
-
-
-/* Estilos registro */
-
-.container-principal{
+.container-principal {
     padding-top: 10px;
     display: flex;
-    height: 130vh;
+    height: 140vh;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #4a99e9, #A9E2F3);
 }
 
-.container5{
+.container5 {
+    height: 800px;
     max-width: 700px;
     width: 100%;
-    background: linear-gradient(135deg, #A9E2F3);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     padding: 25px 30px;
     border-radius: 6px;
     overflow: hidden;
-    
 }
 
-
-.container5 .title{
+.container5 .title {
     font-size: 25px;
     font-weight: 500;
     position: relative;
-}
-.container5 .title::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 5px;
-    width: 30px;
-    background: linear-gradient(135deg, #4a90e2, #A9E2F3);
-}
-
-.container5 form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-}
-
-form .user-details .input-box{
-    margin-bottom: 15px;
-    
-    width: calc(100% / 2 - 20px);
-}
-
-.user-details .input-box input{
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 1.5px;
-    transition: all 0.3s ease;
-}
-
-.user-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 6px;
-}
-
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
-    border-color: #4a90e2;
-}
-
-
-
-/* Estilos registro */
-
-.container5 form .user-details2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: -10px 0 12px 0;
-    
-}
-
-form .user-details2 .input-box2{
-    margin-bottom: 15px;
-    width: calc(100%);
-}
-
-.user-details2 .input-box2 input{
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 1.5px;
-    transition: all 0.3s ease;
-}
-
-.user-details2 .input-box2 .details2{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 6px;
-}
-
-.user-details2 .input-box2 input:focus,
-.user-details2 .input-box2 input:valid{
-    border-color: #4a90e2;
-}
-
-.title-two{
-    margin: 20px 0 0 0;
-    font-size: 12px;
 }
 
 .line-two{
@@ -407,35 +304,43 @@ form .user-details2 .input-box2{
     margin: 10px 0;
 }
 
+.container5 form .user-details2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: -10px 0 12px 0;
+    padding-top: 20px;
+}
 
+form .user-details2 .input-box2 {
+    margin-bottom: 15px;
+    width: calc(100%);
+}
 
-
-   /* Estilo para el contenedor del combo box */
-   .combo-box-two {
+.user-details2 .input-box2 input {
+    height: 45px;
     width: 100%;
-    position: relative;
-    
-  }
-
-  /* Estilo para la lista desplegable */
-  .combo-box-two select {
-    width: 100%;
-    padding: 11px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    cursor: pointer;
     outline: none;
-  }
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 1.5px;
+    transition: all 0.3s ease;
+}
 
+.user-details2 .input-box2 .details2 {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
 
-  .pass{
-    color: #fff;
-  }
+.user-details2 .input-box2 input:focus,
+.user-details2 .input-box2 input:valid {
+    border-color: #4a90e2;
+}
 
-  .pass:hover{
-    text-decoration: none;
-  }
-
-
+.button-home i {
+    color: #000;
+    padding: 20px;
+}
