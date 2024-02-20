@@ -1,4 +1,6 @@
-const forms= document.querySelector(".forms"),
+//Función para mostrar/ocultar contraseña
+
+const forms = document.querySelector(".forms"),
     pwShowHide = document.querySelectorAll(".eye-icon"),
     Links = document.querySelectorAll(".links");
 
