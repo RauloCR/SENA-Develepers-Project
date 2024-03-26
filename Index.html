@@ -12,20 +12,25 @@
 </head>
 
 <body>
-
-    <header id="inicio">
-        <div class="header-container">
-            <img class="imgLogo" src="images/LogoHorizontal.png" alt="Texto alternativo">
-            <nav>
-                <ul>
-                    <li><a href="#quienes-somos">¿Quienes somos?</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contactanos">Contactanos</a></li>
-                    <li><a id="Iniciar-seccion" href="./LogCreate/LoginC.html">Iniciar sesión</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- MENU ENCABEZADO -->
+    <div class="header-container">
+        <header id="inicio">
+                <div>
+                    <img class="imgLogo" src="images/LogoHorizontal.png" alt="Texto alternativo">
+                </div>    
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#quienes-somos" onclick="seleccionar()">¿Quienes somos?</a></li>
+                        <li><a href="#servicios" onclick="seleccionar()">Servicios</a></li>
+                        <li><a href="#contactanos" onclick="seleccionar()">Contactanos</a></li>
+                        <li><a id="Iniciar-seccion" href="./LogCreate/LoginC.html" onclick="seleccionar()">Iniciar sesión</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+        </header>
+    </div>
 
     <!-- SECCION QUIENES SOMOS -->
 
@@ -203,5 +208,6 @@
             </div>
         </div>
     </footer>
+    <script src="/ScriptPP.js"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
-//Función para mostrar/ocultar contraseña
-
 const forms = document.querySelector(".forms"),
     pwShowHide = document.querySelectorAll(".eye-icon"),
     Links = document.querySelectorAll(".links");
 
+//Función para mostrar/ocultar contraseña
+
 pwShowHide.forEach(eyeIcon => {
     eyeIcon.addEventListener("click",() =>{
-        let pwShowHide = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+        let pwShowHide = eyeIcon.parentElement.querySelectorAll(".password");
         pwShowHide.forEach(password => {
             if(password.type === "password"){
                 password.type = "text";
