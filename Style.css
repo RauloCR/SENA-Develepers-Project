@@ -14,7 +14,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Estilos para el H E A D E R */
+/* Estilos para  M E N U   E N C A B E Z A D O */
 
 .header-container {
     background-color: #fff;
@@ -121,7 +121,7 @@ html {
 
     /*Botón inicio sesión*/
 
-.header-container #Iniciar-seccion{
+.header-container #Iniciar-seccion {
     background-color: #1ecf59;
     color: #fff;
 }
@@ -133,53 +133,59 @@ html {
 
 /* Sección Q U I E N E S  S O M O S */
 
-#quienes-somos .container-quienes-somos {
-    padding: 10px;
-    padding-top: 160px;
+.quienes-somos {
+    height: 125vh;
+    display: flex;
+    align-items: center;
 }
 
-#quienes-somos .container-quienes-somos .welcome-title h1 {
+.quienes-somos .container-quienes-somos {
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+.quienes-somos .container-quienes-somos .welcome-title h1 {
     font-size: 55px;
-    padding-left: 165px;
 }
 
-#quienes-somos .container-quienes-somos span {
+.quienes-somos .container-quienes-somos span {
     color: #33CAFF;
 }
 
-#quienes-somos .container-quienes-somos .welcome-title h3 {
+.quienes-somos .container-quienes-somos .welcome-title h3 {
     font-size: 25px;
-    padding: 15px 0px 0px 165px;
+    padding: 15px 0px 0px;
 }
 
-#quienes-somos .container-quienes-somos .text-box-quienes-somos h2 {  
+.quienes-somos .container-quienes-somos .text-box-quienes-somos h2 {  
     padding: 45px 0px 15px;
     font-size: 30px;
 }
 
-#quienes-somos .container-quienes-somos .text-box-quienes-somos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 165px;
+.quienes-somos .container-quienes-somos .text-box-quienes-somos {
     font-size: 19.2px;
     line-height: 1.5em;
     font-weight: bold;
 }
 
-#quienes-somos .image-right {
-    width: 610px;
+.quienes-somos .image-right {
+    width: 50%;
     float: right;
     margin-right: 15px;
-    border-radius: 10px;
 }
 
-#quienes-somos .line-quienes-somos {
+.quienes-somos .line-quienes-somos {
     border: 0.5px solid #A5A09E;
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 /* Sección S E R V I C I O S */
+
+.servicios {
+    background-color: #f9f9f9;
+    
+}
 
 #servicios .text-box-servicios{
     padding: 45px 0px 0px 165px;
