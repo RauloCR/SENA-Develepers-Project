@@ -75,6 +75,19 @@ html {
     display: none;
 }
 
+/*-----Botón inicio sesión-----*/
+
+.header-container #Iniciar-seccion {
+    background-color: #1ecf59;
+    color: #fff;
+}
+
+.header-container #Iniciar-seccion:hover {
+    color: #5D6D7E;
+    border-color: #5D6D7E; 
+}
+
+
 /* SECCIÓN MENU ENCABEZADO R E S P O N S I V E */
 @media screen and (max-width:1080px) {
     nav{
@@ -117,18 +130,6 @@ html {
         background-color: transparent;
         color: #000;
     }
-}
-
-    /*Botón inicio sesión*/
-
-.header-container #Iniciar-seccion {
-    background-color: #1ecf59;
-    color: #fff;
-}
-
-.header-container #Iniciar-seccion:hover {
-    color: #5D6D7E;
-    border-color: #5D6D7E; 
 }
 
 /* Sección Q U I E N E S  S O M O S */
