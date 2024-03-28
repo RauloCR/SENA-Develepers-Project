@@ -37,11 +37,6 @@ html {
     align-items: center;
 }
 
-.header-container header .imgLogo{
-    width: 300px;
-    height: 100px;
-}
-
 .header-container header ul {
     display: flex;
     list-style: none;
@@ -55,13 +50,13 @@ html {
     font-size: 22px;
     color: #000;
     border: 2px solid #000;
-    border-radius: 20px; 
-    padding: 22px 20px;
+    border-radius: 20px;
+    padding: 15px 20px;
 }
 
 .header-container li a:hover {
     color: #33CAFF;
-    border-color: #33CAFF; 
+    border-color: #33CAFF;
 }
 
 .nav-responsive {
@@ -84,12 +79,12 @@ html {
 
 .header-container #Iniciar-seccion:hover {
     color: #5D6D7E;
-    border-color: #5D6D7E; 
+    border-color: #5D6D7E;
 }
 
 
 /* SECCIÓN MENU ENCABEZADO R E S P O N S I V E */
-@media screen and (max-width:1080px) {
+@media screen and (max-width:1030px) {
     nav{
         display: none;
     }
@@ -101,7 +96,7 @@ html {
     nav.responsive {
         display: block;
         position: absolute;
-        right: 0;
+        right: 0px;
         top: 75px;
         background-color: #33CAFF;
         width: 300px;
@@ -135,14 +130,14 @@ html {
 /* Sección Q U I E N E S  S O M O S */
 
 .quienes-somos {
-    height: 125vh;
+    height: 120vh;
     display: flex;
     align-items: center;
 }
 
 .quienes-somos .container-quienes-somos {
     max-width: 1000px;
-    margin: auto;
+    margin: 0px 174px 0px 174px;
     text-align: left;
 }
 
@@ -159,7 +154,7 @@ html {
     padding: 15px 0px 0px;
 }
 
-.quienes-somos .container-quienes-somos .text-box-quienes-somos h3 {  
+.quienes-somos .container-quienes-somos .text-box-quienes-somos h3 {
     padding: 45px 0px 15px;
     font-size: 30px;
 }
@@ -185,21 +180,23 @@ html {
 
 .servicios {
     background-color: #f9f9f9;
-    
+    display: flex;
+    flex-direction: column;
 }
 
-#servicios .text-box-servicios{
-    padding: 45px 0px 0px 165px;
+.servicios .text-box-servicios{
+    max-width: 1000px;
+    margin: 50px 174px 0px 174px;
 }
 
-#servicios .text-box-servicios h2 {
+.servicios .text-box-servicios h3 {
     font-size: 30px;
 }
 
-    /* Imagenes Banner de la sección servicios */
+/*----- Imagenes Banner de la sección servicios-----*/
 
-#servicios .carousel-container {
-    width: 900px;
+.servicios .carousel-container {
+    max-width: 900px;
     height: 300px;
     margin: 50px auto;
     overflow: hidden;
@@ -207,19 +204,35 @@ html {
     border-radius: 20px;
 }
 
-#servicios .carousel {
+.servicios .carousel {
     display: flex;
     animation: scroll 10s infinite;
 }
- 
-#servicios .carousel-item {
+
+.servicios .carousel-item {
     min-width: 100%;
 }
 
-.carousel img {
+.carousel .carousel-item img {
     width: 100%;
     height: auto;
 }
+
+.carousel .carousel-item .text-over-img-innovation {
+    position: absolute;
+    bottom: 310px;
+    left: 60px;
+    font-size: 30px;
+  }
+
+  .carousel .carousel-item .text-over-img-teamwork {
+    position: absolute;
+    top: 8px;
+    left: 950px;
+    width: 100%;
+    font-size: 30px;
+    color: #fff;
+  }
 
     /* Botones Banner de la sección servicios */
 .prev-button,
@@ -236,11 +249,11 @@ html {
 }
 
 .prev-button:hover,
-.next-button:hover {    
+.next-button:hover {
     color: #fff;
     border: 2px solid #fff;
     padding: 16px;
-    transition: 0.3s; 
+    transition: 0.3s;
     box-shadow: -3px 0 5px 0 #33CAFF, 3px 0 5px 0 #33CAFF;
 }
 
@@ -250,6 +263,15 @@ html {
 
 .next-button {
     right: 10px;
+}
+
+.carousel-container .bannerIndicators {
+    background: 0 0;
+    right: 20px;
+    opacity: .9;
+    padding: 4px 8px 4px 0;
+    position: absolute;
+    bottom: 25px;
 }
 
     /* animación de desplazamiento Banner de la sección servicios*/
@@ -282,7 +304,7 @@ html {
     box-shadow: 4px 4px 10px rgba(0.5, 0.5, 0.5, 0.5);
     border-radius: 3px;
  }
-  
+
 #servicios .section-btn {
     position: relative;
     font-size: 22px;
@@ -297,26 +319,26 @@ html {
     cursor: pointer;
     border-radius: 3px;
 }
-  
+
 #servicios .section-btn:hover {
     color: #33CAFF;
 }
-  
+
 #servicios .section-btn::after {
     content: '\203A'; /* Unicode character for right arrow */
     position: absolute;
     right: 10px;
     transition: transform 0.3s ease-out;
 }
-  
+
 #servicios .section-toggle:checked + .section-btn::after {
     transform: rotate(90deg);
 }
-  
+
 #servicios .section-toggle {
     display: none;
 }
-  
+
 #servicios .section-content {
     font-size: 18px;
     max-height: 0;
@@ -324,9 +346,9 @@ html {
     transition: max-height 0.3s ease-out;
     background-color: #f9f9f9;
 }
-  
+
 #servicios .section-toggle:checked + .section-btn + .section-content {
-    max-height: 1000px; 
+    max-height: 1000px;
 }
 
 #servicios .line-servicios {
@@ -450,8 +472,8 @@ html {
 #retorno .arriba i {
     font-size: 40px;
     background-color: #fff;
-    color: #000; 
-    border: 3px solid #000; 
+    color: #000;
+    border: 3px solid #000;
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -464,7 +486,7 @@ html {
     background-color: #000;
     transform: scale(1.1);
 }
-    
+
 /* Estilos para el F O O T E R */
 
 footer {
@@ -491,7 +513,7 @@ footer {
 }
 
 .footer-container .copyright p::before {
-    content: "\00a9"; 
+    content: "\00a9";
 }
 
   /*iconos redes sociales footer*/
@@ -502,19 +524,19 @@ footer {
 
 .footer-container .redes-sociales .social-icon {
   background-color: #222;
-  border-radius: 50%; 
-  color: #fff; 
-  width: 30px; 
+  border-radius: 50%;
+  color: #fff;
+  width: 30px;
   height: 30px;
-  text-align: center; 
-  line-height: 30px; 
-  margin: 5px; 
+  text-align: center;
+  line-height: 30px;
+  margin: 5px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
   display: inline-block;
   font-size: 20px;
 }
-  
+
 .footer-container .redes-sociales .social-icon:hover {
   background-color: #33CAFF;
   transform: scale(1.1);

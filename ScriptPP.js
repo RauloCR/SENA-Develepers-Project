@@ -14,3 +14,5 @@ function seleccionar(){
     document.getElementById("nav").classList = "";
     menuVisible = false;
 }
+
+//Función siguiente/previa imágen carousel

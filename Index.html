@@ -16,7 +16,7 @@
     <div class="header-container">
         <header id="inicio">
                 <div>
-                    <img class="imgLogo" src="images/LogoHorizontal.png" alt="brand logo">
+                    <img class="imgLogo" src="images/LogoHorizontal.png" alt="brand logo" style="width: 250px; height: 80px;">
                 </div>    
                 <nav id="nav">
                     <ul>
@@ -68,21 +68,24 @@
 
     <section id="servicios" class="servicios">
         <div class="text-box-servicios">
-            <h2>Servicios</h2>
+            <h3>Servicios</h3>
         </div>
 
         <div class="carousel-container">
             <div class="carousel">
                 <div class="carousel-item">
                     <img src="images/servicios-banner1.PNG" alt="innovation">
+                    <div class="text-over-img-innovation">Innovación en tus manos</div>
                 </div>
                 <div class="carousel-item">
                     <img src="images/servicios-banner2.PNG" alt="team-work">
+                    <div class="text-over-img-teamwork">Conectando personas,<br>creando soluciones.</div>
                 </div>
                 <!-- Añadir más imágenes según sea necesario -->
             </div>
-            <button class="prev-button"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="next-button"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="prev-button" onclick="prevImage"><i class="fa-solid fa-chevron-left"></i></button>
+
+            <button class="next-button" onclick="nextImage"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
                 <!-- menu dropdown-->
