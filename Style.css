@@ -150,16 +150,16 @@ html {
     font-size: 55px;
 }
 
-.quienes-somos .container-quienes-somos span {
+.quienes-somos .container-quienes-somos strong {
     color: #33CAFF;
 }
 
-.quienes-somos .container-quienes-somos .welcome-title h3 {
+.quienes-somos .container-quienes-somos .welcome-title h2 {
     font-size: 25px;
     padding: 15px 0px 0px;
 }
 
-.quienes-somos .container-quienes-somos .text-box-quienes-somos h2 {  
+.quienes-somos .container-quienes-somos .text-box-quienes-somos h3 {  
     padding: 45px 0px 15px;
     font-size: 30px;
 }
