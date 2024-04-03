@@ -275,7 +275,7 @@ form h3 {
 .container-principal {
     padding-top: 10px;
     display: flex;
-    height: 140vh;
+    height: 130vh;
     justify-content: center;
     align-items: center;
 }
@@ -283,11 +283,9 @@ form h3 {
 .container5 {
     height: 800px;
     max-width: 700px;
-    width: 100%;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
     padding: 25px 30px;
     border-radius: 6px;
-    overflow: hidden;
 }
 
 .container5 .title {
