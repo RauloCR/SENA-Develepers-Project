@@ -150,7 +150,7 @@
 
                             <div class="input-box">
                                 <span class="details">ID USER</span>
-                                <input type="text" placeholder="Digite..." required>
+                                <input id="usuarioFiltrado" type="text" placeholder="Digite..." required>
                             </div>
                             
                             
@@ -174,18 +174,18 @@
                             <i class="fa-solid fa-floppy-disk grd-boton"></i>
                         </div>
                         <div class="icon-options">
-                            <img src="../../ICON/file-magnifying-glass.svg" alt="">
+                            <img id="filtro" src="../../ICON/file-magnifying-glass.svg" alt="">
                         </div>
                         <div class="icon-options">
-                            <i class="fa-solid fa-trash"></i>
+                            <i id="idDeleteUser" class="fa-solid fa-trash"></i>
                         </div>
                     </div>
                     <div class="right-icon">
-                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <i id="copiarExcel" class="fa-solid fa-right-from-bracket"></i>
                     </div>
                 </div>
             </div>
-
+   
  
             <!------MEIN-CONTENT-TABLE----------->
 
@@ -197,23 +197,24 @@
                                 <thead>
                                     <tr class="title-name">
                                         <th class="name-table">ID USER</th>
-                                        <th class="name-table">ROL</th>
-                                        <th class="name-table">NOMBRE</th>
-                                        <th class="name-table">E-MAIL</th>
-                                        <th class="name-table">FECHA REGISTRO<i class="fas fa-filter"></i></th>
+                                        <th id="filtro_Rol" class="name-table">ROL</th>
+                                        <th id="filtro_nombre" class="name-table">NOMBRE</th>
+                                        <th id="filtro_Email" class="name-table">E-MAIL</th>
+                                        <th id="filtro_Fecha" class="name-table">FECHA REGISTRO<i class="fas fa-filter"></i></th>
                                         <th class="name-table">ESTADO</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <!-- <tr>
-                                        <th>001</th>
+                                    
+                                        <!-- <th>001</th>
                                         <th>ADMINISTRADOR</th>
                                         <th>JOSE JOSE PEREZ PEREZ</th>
                                         <th>ejemploemail@gmail.com</th>
                                         <th>12/02/2023</th>
                                         <th class="name-table-two">ACTIVO<img src="../../ICON/pen-line.svg" alt="Icono SVG"><i class="fa-solid fa-ban"></i></th>
-                                    </tr>
+                                    </tr> -->
+                                    <!-- <tr>
                                     <tr>
                                         <th>002</th>
                                         <th>AUXILIAR - TECNICO</th>

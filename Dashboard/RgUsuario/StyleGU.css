@@ -240,11 +240,19 @@ form .user-details .input-box{
   align-items: center;
 }
 
+/* INPUT-BOX-THREE */
 
 
-.user-details .input-box input{
+form .user-details .input-box-three{
+  margin-bottom: 15px;
+  display: flex;
+  width: 450px;
+  align-items: center;
+}
+
+.user-details .input-box-three input{
   height: 35px;
-  width: 100%;
+  width: 450px;
   outline: none;
   border-radius: 6px;
   border: 1px solid #BBB;
@@ -254,12 +262,19 @@ form .user-details .input-box{
   transition: all 0.3s ease;
 }
 
-.user-details .input-box .details{
+.user-details .input-box-three .details{
   display: block;
   font-weight: 500;
-  width: 110px;
+  width: 65px;
   font-size: 10PX;
 }
+
+
+-----------------------------------------
+
+
+
+
 
 
 
@@ -815,3 +830,25 @@ width: 130px;
  .icon-here-two{
    background-color: #ccc;
  }
+
+
+   /* Estilos para la notificación ------------------------------------------*/
+   .notificacion {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #188ad9;
+    color: #FFF;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    z-index: 9999;
+}
+
+
+#filtro_Rol, #filtro_nombre, #filtro_Email, #filtro_Fecha{
+  cursor: pointer;
+}
+
+

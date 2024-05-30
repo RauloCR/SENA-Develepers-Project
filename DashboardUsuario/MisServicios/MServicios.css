@@ -795,6 +795,18 @@ input[type="date"]:focus {
   }
   
   
-  
+  /* Estilos para la notificación ------------------------------------------*/
+  .notificacion {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #188ad9;
+    color: #FFF;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    z-index: 9999;
+}
 
-
+ 

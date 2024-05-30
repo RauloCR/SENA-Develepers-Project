@@ -72,7 +72,7 @@
                                     <span class="details">EQUIPO</span>
                                     <div class="combo-box">
                                         <!-- Combo box con dos columnas -->
-                                        <select required>
+                                        <select id="equipoFiltrado" required>
                                         <option value="" disabled selected >Seleccione...</option>
                                         <!-- Opción 1 -->
                                         <option value="opcion1">LAVADORA</option>
@@ -118,12 +118,12 @@
                     <div class="left-icon-two">
 
                         <div class="icon-options">
-                            <img src="../../ICON/file-magnifying-glass.svg" alt="">
+                            <img id="filtro" src="../../ICON/file-magnifying-glass.svg" alt="">
                         </div>
 
                     </div>
                     <div class="right-icon">
-                        <i class="fa-solid fa-circle-down"></i>
+                        <i id="copiarExcel" class="fa-solid fa-circle-down"></i>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
+                                    <!-- <tr>
                                         <th>JOSE JOSE PEREZ PERREZ</th>
                                         <th>ejemplo@gmail.com</th>
                                         <th>LAVADORA</th>
@@ -165,7 +165,7 @@
                                         <th>23/12/2023</th>
                                         <th class="name-table-two" >ASIGNADO<i class="fa-regular fa-circle"></i></th>
                                     </tr>
-                                    <tr>
+                                    <tr> 
                                         <th>JOSE JOSE PEREZ PERREZ</th>
                                         <th>ejemplo@gmail.com</th>
                                         <th>HORNO MICROHONDA</th>
@@ -189,7 +189,7 @@
                                         <th>23/12/2023</th>
                                         <th class="name-table-two" >TERMINADO<i class="fa-regular fa-circle"></i></th>
                                         
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -208,7 +208,7 @@
                       <span class="star" onclick="rateStar(5)">★</span>
                     </div>
                     
-                    <textarea id="comment" placeholder="Escribe tu comentario..."></textarea>
+                    <textarea id="comment" placeholder="Escribe tu comentario..."></textarea>   
                   
                     <button id="submit-btn" onclick="submitComment()">Enviar<i class="fa-solid fa-paper-plane"></i></button>
                   </div>

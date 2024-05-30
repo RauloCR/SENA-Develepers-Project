@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Clientes</title>
+    <title>Login Empleados</title>
     <link rel="stylesheet" href="StylePanel.css">
     <script src="https://kit.fontawesome.com/a66f4a03a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <section class="container forms">
+    <section>
+        <div class="Container-titulo">
+            <h1>INGRESO A LA PLATAFORMA DE COLABORADORES</h1>
+        </div>
+    </section>
+    <section class="container2 forms">
         <Div class="form-content-prim">
-            <a href="../Index.html">
-                <img src="/SENA-Develeper-s-Project/images/logo PNG.png" alt="work-sphere" class="image-right">
-            </a>
-            <h1>PARA EL CONTROL Y SEGUIMIENTO DE MANTENIMIENTO A EQUIPOS ELETRODOMESTICOS</h1>
+            <img src="/SENA-Develeper-s-Project/images/logo PNG.png" alt="work-sphere" class="image-right">
+            <h2>PARA EL CONTROL Y SEGUIMIENTO DE MANTENIMIENTO A EQUIPOS ELETRODOMESTICOS</h2>
         </Div>
-  
-        <div class="form loging">
+
+        <div class="form2 loging">
 
             <div class="form-content">
                 <header>Login</header>
                 <form action="#">
                     <div class="field input-field">
                         <i class="fa-solid fa-user"></i>
-                        <input type="user" placeholder="Numero Usuario" class="input" id="usuario" autocomplete="off">
+                        <input type="user" placeholder="Numero Usuario" class="input">
                     </div>
                     <div class="field input-field">
                         <i class="fa-solid fa-key" ></i>
-                        <input type="password" placeholder="Contraseña" class="password" id="contrasena">
+                        <input type="password" placeholder="Contraseña" class="password">
                         <i class="fa-solid fa-eye-slash eye-icon"></i>
                     </div>
 
@@ -37,8 +39,7 @@
                     </div>
 
                     <div class="field button-field">
-                        <a href="/SENA-Develeper-s-Project/Dashboard/MeinMenu.html"></a>
-                        <button class="links" onclick="autenticar()">Ingresar</button>
+                        <button class="links"><a href="../Dashboard/MeinMenu.html" class="pass">Ingresar</a></button>
                     </div>
 
                     <div class="form-link">
@@ -46,14 +47,7 @@
                     </div>
                 </form>
             </div>
-            <div class="line"></div>
 
-            <div class="media-options-creat">
-                <div class="fields button-creat">
-                    <a href="/SENA-Develeper-s-Project/LogCreate/Registro.html"><button>Crear Cuenta</button></a>
-                    
-                </div>
-            </div>
         </div>
     </section>
     <!--JavaScript-->

@@ -1,0 +1,199 @@
+-------------------------------BORRAR REGISTRO EN EL LOCAL STORAJE-----------------------------------
+
+
+var tablaRegistro = JSON.parse(localStorage.getItem("tablaRegistro")) || [];
+
+// Verificar si hay un registro en la posición 6
+
+if (tablaRegistro.length > 6) {
+
+  // Eliminar el registro en la posición 6
+  alert(tablaRegistro)
+  tablaRegistro.splice(6, 1);
+
+  // Actualizar los datos en el localStorage
+  localStorage.setItem("tablaRegistro", JSON.stringify(tablaRegistro));
+
+  // Mostrar un mensaje de éxito
+  console.log("Registro en la posición 6 eliminado exitosamente.");
+} else {
+  console.log("No hay un registro en la posición 6.");
+}
+
+
+
+---------------------------------------------------BORRAR TODA LA TABLA---------------------------------------------------
+
+localStorage.removeItem('tablaRegistro');
+
+
+//---------------------------------------------------------- AGREGAR DATOS ----------------------------------------------------------
+
+var nuevoRegistro = [{
+        idUser: "40S1",
+        tipo: "NATURAL",
+        rol: "ADMINISTRADOR",
+        nombre: "ANDRES",
+        apellido: "RAMIREZ RAMIREZ",
+        celular: "3201234567",
+        correo: "EJEMPLOADMI@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "8901234567",
+        contraseña: "123",
+        fechaRegistro: "3/1/2024"
+    },
+
+    {
+        idUser: "131D",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "MARIA",
+        apellido: "ANTONIETA RAMIREZ",
+        celular: "3222222222",
+        correo: "EXAMPLECLIENT@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "3190123456",
+        contraseña: "123",
+        fechaRegistro: "15/12/2023"
+    },
+
+    {
+        idUser: "05F2",
+        tipo: "JURIDICO",
+        rol: "ADMINISTRADOR",
+        nombre: "CAMILO",
+        apellido: "FLOREZ FLOREZ",
+        celular: "3189012345",
+        correo: "EJEMPLOADMI2@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "3456789012",
+        contraseña: "456",
+        fechaRegistro: "18/1/2024"
+    },
+
+    {
+        idUser: "JK01",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "JEFERSON",
+        apellido: "GUZMAN GUZMAN",
+        celular: "3178901234",
+        correo: "EXAMPLECLIENT2@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "1098765432",
+        contraseña: "456",
+        fechaRegistro: "19/11/2023"
+    },
+
+    {
+        idUser: "3R01",
+        tipo: "JUDIRICO",
+        rol: "ADMINISTRADOR",
+        nombre: "FABIAN",
+        apellido: "AGUSTO AGUSTO",
+        celular: "3167890123",
+        correo: "EJEMPLOADMI3@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "8765432109",
+        contraseña: "789",
+        fechaRegistro: "11/1/2024"
+    },
+
+    {
+        idUser: "3I03",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "JHON",
+        apellido: "GAVIRIA GAVIRIA",
+        celular: "3156789012",
+        correo: "EXAMPLECLIENT3@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "1002222333",
+        contraseña: "789",
+        fechaRegistro: "5/1/2024"
+    },
+
+    {
+        idUser: "6771",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "CRISTIAN",
+        apellido: "NARVAEZ NARVAEZ",
+        celular: "3145678901",
+        correo: "EXAMPLECLIENT4@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "4321098765",
+        contraseña: "101",
+        fechaRegistro: "1/10/2023"
+    },
+
+    {
+        idUser: "AF64",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "CRISTIAN",
+        apellido: "NARVAEZ NARVAEZ",
+        celular: "3134567890",
+        correo: "EXAMPLECLIENT44@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "5678901234",
+        contraseña: "123",
+        fechaRegistro: "13/9/2023"
+    },
+
+    {
+        idUser: "P023",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "ANTONIO",
+        apellido: "AGUILAR AGUILAR",
+        celular: "3123456789",
+        correo: "EXAMPLECLIENT55@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "9876543210",
+        contraseña: "123",
+        fechaRegistro: "31/12/2023"
+    },
+
+    {
+        idUser: "Q0Y1",
+        tipo: "NATURAL",
+        rol: "CLIENTE",
+        nombre: "DANIELA",
+        apellido: "GOMEZ NARVAEZ",
+        celular: "3112345678",
+        correo: "EXAMPLECLIENT66@GMAIL.COM",
+        direccion: "CARRERA 5 - 8 - 43",
+        cedula: "1234567890",
+        contraseña: "123",
+        fechaRegistro: "20/2/2024"
+    }
+];
+
+
+
+// Obtener el arreglo existente del localStorage
+var tablaRegistro = localStorage.getItem("tablaRegistro");
+
+// Verificar si el arreglo existe en el localStorage
+if (!tablaRegistro) {
+  // Si no existe, inicializarlo como un arreglo vacío
+  tablaRegistro = [];
+} else {
+  // Si existe, convertirlo de nuevo a un objeto JavaScript
+  tablaRegistro = JSON.parse(tablaRegistro);
+}
+
+// Agregar los nuevos datos al arreglo existente
+tablaRegistro = tablaRegistro.concat(nuevoRegistro);
+
+// Almacenar el arreglo actualizado en localStorage
+localStorage.setItem("tablaRegistro", JSON.stringify(tablaRegistro));
+
+
+
+
+
+
+
+
