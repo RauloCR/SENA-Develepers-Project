@@ -12,7 +12,7 @@
     <section class="container forms">
         <Div class="form-content-prim">
             <a href="../Index.html">
-                <img src="/SENA-Develeper-s-Project/images/logo PNG.png" alt="work-sphere" class="image-right">
+                <img src="../images/logo PNG.png" alt="work-sphere" class="image-right">
             </a>
             <h1>PARA EL CONTROL Y SEGUIMIENTO DE MANTENIMIENTO A EQUIPOS ELETRODOMESTICOS</h1>
         </Div>
@@ -21,24 +21,24 @@
 
             <div class="form-content">
                 <header>Login</header>
-                <form action="#">
+                <form action="IngresoUsuario.php" method="post">
                     <div class="field input-field">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="user" placeholder="Numero Usuario" class="input" id="usuario" autocomplete="off">
+                        <i for="usuario" class="fa-solid fa-user"></i>
+                        <input name="usuario" type="user" placeholder="Numero Usuario" class="input" id="usuario" autocomplete="off">
                     </div>
                     <div class="field input-field">
-                        <i class="fa-solid fa-key" ></i>
-                        <input type="password" placeholder="Contraseña" class="password" id="contrasena">
+                        <i for="contrasena" class="fa-solid fa-key" ></i>
+                        <input name="contrasena" type="password" placeholder="Contraseña" class="password" id="contrasena">
                         <i class="fa-solid fa-eye-slash eye-icon"></i>
                     </div>
-
+ 
                     <div class="form-link">
-                        <a href="/SENA-Develeper-s-Project/LogCreate/RestableC.html" class="forgot-pass">¿Olvido su contraseña?</a>
+                        <a href="./RestableC.html" class="forgot-pass">¿Olvido su contraseña?</a>
                     </div>
 
                     <div class="field button-field">
                         <a href="/SENA-Develeper-s-Project/Dashboard/MeinMenu.html"></a>
-                        <button class="links" onclick="autenticar()">Ingresar</button>
+                        <button class="links" value="ingresar" onclick="autenticar()">Ingresar</button>
                     </div>
 
                     <div class="form-link">
@@ -50,7 +50,7 @@
 
             <div class="media-options-creat">
                 <div class="fields button-creat">
-                    <a href="/SENA-Develeper-s-Project/LogCreate/Registro.html"><button>Crear Cuenta</button></a>
+                    <a href="./Registro.html"><button>Crear Cuenta</button></a>
                     
                 </div>
             </div>

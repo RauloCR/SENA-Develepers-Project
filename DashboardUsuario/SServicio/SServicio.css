@@ -333,7 +333,7 @@ table.table tr td {
 	font-weight: 400;
 	vertical-align: middle;
   border: solid #bbb 2px;
-  
+  text-align: center;
 
 }
 
@@ -360,8 +360,7 @@ table.table th i {
 
 table.table td:last-child {
 	opacity: 0.9;
-	font-size: 22px;
-  
+	font-size: 14px;  
 }
 
 

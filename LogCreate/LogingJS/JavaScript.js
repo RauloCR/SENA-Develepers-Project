@@ -37,7 +37,7 @@ pwShowHide.forEach(eyeIcon => {
 
 //-------------------------------------VALIDAR CREDENCIALES-------------------------------------
 
-var nombreClienteLogueado = "";
+// var nombreClienteLogueado = "";
 
 // function validarCredenciales(usuario, contrasena) {
 //     // Definir las credenciales permitidas
@@ -80,77 +80,77 @@ var nombreClienteLogueado = "";
 // }
 
 
-function borrarLocalStorage() {
-    localStorage.removeItem('nombreClienteLogueado')
-}
+// function borrarLocalStorage() {
+//     localStorage.removeItem('nombreClienteLogueado')
+// }
 
 
 
-function validarCredenciales(usuario, contrasena) {
-    // Obtener los datos existentes en localStorage
-    var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
+// function validarCredenciales(usuario, contrasena) {
+//     // Obtener los datos existentes en localStorage
+//     var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
 
-    // Buscar el usuario por correo en los datos almacenados
-    var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
-        return usuarioData.correo === usuario;
-    });
+//     // Buscar el usuario por correo en los datos almacenados
+//     var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
+//         return usuarioData.correo === usuario;
+//     });
 
-    // Verificar si se encontró el usuario y la contraseña es correcta
-    if (usuarioEncontrado) {
-        if (usuarioEncontrado.contraseña === contrasena) {
-            // La contraseña es correcta
-            return true;
-        } else {
-            // La contraseña es incorrecta
-            alert("¡La contraseña es incorrecta!");
-            return false;
-        }
-    } else {
-        // El correo no existe en la base de datos
-        alert("¡El correo no existe en la base de datos!");
-        return false;
-    }
+//     // Verificar si se encontró el usuario y la contraseña es correcta
+//     if (usuarioEncontrado) {
+//         if (usuarioEncontrado.contraseña === contrasena) {
+//             // La contraseña es correcta
+//             return true;
+//         } else {
+//             // La contraseña es incorrecta
+//             alert("¡La contraseña es incorrecta!");
+//             return false;
+//         }
+//     } else {
+//         // El correo no existe en la base de datos
+//         alert("¡El correo no existe en la base de datos!");
+//         return false;
+//     }
 
-    // Verificar si se encontró el usuario y la contraseña es correcta
-    //return usuarioEncontrado && usuarioEncontrado.contraseña === contrasena;
-}
+//     // Verificar si se encontró el usuario y la contraseña es correcta
+//     //return usuarioEncontrado && usuarioEncontrado.contraseña === contrasena;
+// }
 
 
 
-function autenticar() {
-    borrarLocalStorage();
-    var usuario = document.getElementById("usuario").value;
-    var contrasena = document.getElementById("contrasena").value;
+// function autenticar() {
+//     borrarLocalStorage();
+//     var usuario = document.getElementById("usuario").value;
+//     var contrasena = document.getElementById("contrasena").value;
 
-    // Validar las credenciales utilizando la función actualizada
-    var validacionC = validarCredenciales(usuario, contrasena);
+//     // Validar las credenciales utilizando la función actualizada
+//     var validacionC = validarCredenciales(usuario, contrasena);
 
-    if (validacionC) {
-        // Obtener los datos existentes en localStorage
-        var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
+//     if (validacionC) {
+//         // Obtener los datos existentes en localStorage
+//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
 
-        // Buscar el usuario por correo en los datos almacenados
-        var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
-            return usuarioData.correo === usuario;
-        });
+//         // Buscar el usuario por correo en los datos almacenados
+//         var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
+//             return usuarioData.correo === usuario;
+//         });
 
-        if (usuarioEncontrado.rol === "ADMINISTRADOR") {
-            // ¡Inicio de sesión como Administrador!
-            window.open("../Dashboard/MeinMenu.html");
+//         if (usuarioEncontrado.rol === "ADMINISTRADOR") {
+//             // ¡Inicio de sesión como Administrador!
+//             window.open("../Dashboard/MeinMenu.html");
 
-        } else if (usuarioEncontrado.rol === "CLIENTE") {
-            if (usuarioEncontrado) {
-                // Almacena el nombre del cliente en localStorage
-                localStorage.setItem('nombreClienteLogueado', usuarioEncontrado.nombre + ' ' + usuarioEncontrado.apellido);
-            }
-            // ¡Inicio de sesión como cliente!
-            // Ajusta la ruta de redirección para clientes
-            window.open('../DashboardUsuario/MisServicios/MServicios.html');
-        } else {
-            alert("¡Tipo de usuario no reconocido!");
-        }
-    }
-}
+//         } else if (usuarioEncontrado.rol === "CLIENTE") {
+//             if (usuarioEncontrado) {
+//                 // Almacena el nombre del cliente en localStorage
+//                 localStorage.setItem('nombreClienteLogueado', usuarioEncontrado.nombre + ' ' + usuarioEncontrado.apellido);
+//             }
+//             // ¡Inicio de sesión como cliente!
+//             // Ajusta la ruta de redirección para clientes
+//             window.open('../DashboardUsuario/MisServicios/MServicios.html');
+//         } else {
+//             alert("¡Tipo de usuario no reconocido!");
+//         }
+//     }
+// }
 
 
 
@@ -177,78 +177,83 @@ function mostrarMensaje() {
 
 //------------------------------------ SCRIP - GUARDAR DATOS EN LOCAL STORAGE--------------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-    // SCRIP - ALMACENA DATOS REGISTRO ----------------------------------------
+//     // SCRIP - ALMACENA DATOS REGISTRO ----------------------------------------
 
-    // Obtener los datos existentes en localStorage
-    var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
+//     // Obtener los datos existentes en localStorage
+//     var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
 
-    var botonCrearCuenta = document.querySelector('.create-button');
+//     var botonCrearCuenta = document.querySelector('.create-button');
 
-    botonCrearCuenta.addEventListener("click", function () {
+//     botonCrearCuenta.addEventListener("click", function () {
 
-        var tipo = document.getElementById("tipoSelect");
-        var rol = document.getElementById("rolSelect");
-        var nombre = document.getElementById("nombreInput");
-        var apellido = document.getElementById("apellidoInput");
-        var telefono = document.getElementById("telefonoInput");
-        var correo = document.getElementById("correoInput");
-        var direccion = document.getElementById("direccionInput");
-        var contraseña = document.getElementById("contraseñaInput");
+//         var tipo = document.getElementById("tipoSelect");
+//         var rol = document.getElementById("rolSelect");
+//         var nombre = document.getElementById("nombreInput");
+//         var apellido = document.getElementById("apellidoInput");
+//         var telefono = document.getElementById("telefonoInput");
+//         var correo = document.getElementById("correoInput");
+//         var direccion = document.getElementById("direccionInput");
+//         var contraseña = document.getElementById("contraseñaInput");
 
-        if (esCampoVacio(tipo) || esCampoVacio(rol) || esCampoVacio(nombre) || esCampoVacio(apellido) || esCampoVacio(telefono) || esCampoVacio(correo) || esCampoVacio(direccion) || esCampoVacio(contraseña)) {
+//         if (esCampoVacio(tipo) || esCampoVacio(rol) || esCampoVacio(nombre) || esCampoVacio(apellido) || esCampoVacio(telefono) || esCampoVacio(correo) || esCampoVacio(direccion) || esCampoVacio(contraseña)) {
 
-            alert("Todos los campos deben ser llenados.");
-            return;
-        }
-
-
-        var nuevoDato = {
-            tipo: getSelectedText(tipo).toUpperCase(),
-            rol: getSelectedText(rol).toUpperCase(),
-            nombre: nombre.value.toUpperCase(),
-            apellido: apellido.value.toUpperCase(),
-            telefono: telefono.value.toUpperCase(),
-            correo: correo.value,
-            direccion: direccion.value.toUpperCase(),
-            contraseña: contraseña.value.toUpperCase(),
-            fechaRegistro: new Date().toLocaleDateString()
-        };
-        // Agregar los nuevos datos al array
-        tablaRegistro.push(nuevoDato);
-
-        // Guardar el array actualizado en localStorage
-        // Convertir el objeto a cadena JSON y almacenarlo en localStorage
-        localStorage.setItem('tablaRegistro', JSON.stringify(tablaRegistro));
-
-        tipo.value = "";
-        rol.value = "";
-        nombre.value = "";
-        apellido.value = "";
-        telefono.value = "";
-        correo.value = "";
-        direccion.value = "";
-        contraseña.value = "";
-
-        // MENSAJE CONFIRMACION
-
-        alert("¡Cuenta creada correctamente!")
-        window.open('../Index.html');
-        window.close();
-    });
+//             alert("Todos los campos deben ser llenados.");
+//             return;
+//         }
 
 
+//         var nuevoDato = {
+//             tipo: getSelectedText(tipo).toUpperCase(),
+//             rol: getSelectedText(rol).toUpperCase(),
+//             nombre: nombre.value.toUpperCase(),
+//             apellido: apellido.value.toUpperCase(),
+//             telefono: telefono.value.toUpperCase(),
+//             correo: correo.value,
+//             direccion: direccion.value.toUpperCase(),
+//             contraseña: contraseña.value.toUpperCase(),
+//             fechaRegistro: new Date().toLocaleDateString()
+//         };
+//         // Agregar los nuevos datos al array
+//         tablaRegistro.push(nuevoDato);
 
-    function getSelectedText(selectElement) {
-        var selectedIndex = selectElement.selectedIndex;
-        return selectElement.options[selectedIndex].text;
-    }
+//         // Guardar el array actualizado en localStorage
+//         // Convertir el objeto a cadena JSON y almacenarlo en localStorage
+//         localStorage.setItem('tablaRegistro', JSON.stringify(tablaRegistro));
 
-    // Funcion valida si es vacio el campo
-    function esCampoVacio(elemento) {
-        return elemento.value.trim() === "";
-    }
+//         tipo.value = "";
+//         rol.value = "";
+//         nombre.value = "";
+//         apellido.value = "";
+//         telefono.value = "";
+//         correo.value = "";
+//         direccion.value = "";
+//         contraseña.value = "";
 
-});
+//         // MENSAJE CONFIRMACION
+
+//         alert("¡Cuenta creada correctamente!")
+//         window.open('../Index.html');
+//         window.close();
+//     });
+
+
+
+//     function getSelectedText(selectElement) {
+//         var selectedIndex = selectElement.selectedIndex;
+//         return selectElement.options[selectedIndex].text;
+//     }
+
+//     // Funcion valida si es vacio el campo
+//     function esCampoVacio(elemento) {
+//         return elemento.value.trim() === "";
+//     }
+
+// });
+
+
+ 
+
+//----------------------------------- SCRIP - VENTANA FLOTANTE GUARDAR DATOS EN BD -----------------------------------
 

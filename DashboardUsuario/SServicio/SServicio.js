@@ -74,244 +74,250 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
 
-function generateUUID() {
-    var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
+// function generateUUID() {
+//     var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
 
-    while (true) {
-        var newUUID = 'xxxx'.replace(/[xy]/g, function(c) {
-            var r = (Math.random() * 16) | 0,
-                v = c === 'x' ? r : (r & 0x3) | 0x8;
-            return v.toString(16);
-        });
+//     while (true) {
+//         var newUUID = 'xxxx'.replace(/[xy]/g, function(c) {
+//             var r = (Math.random() * 16) | 0,
+//                 v = c === 'x' ? r : (r & 0x3) | 0x8;
+//             return v.toString(16);
+//         });
 
-        // Verificar si el nuevo ID ya existe en la lista de servicios
-        var idExists = solicitarServicios.some(function(servicio) {
-            return servicio.idServicio === newUUID;
-        });
+//         // Verificar si el nuevo ID ya existe en la lista de servicios
+//         var idExists = solicitarServicios.some(function(servicio) {
+//             return servicio.idServicio === newUUID;
+//         });
 
-        // Si no existe, devolver el nuevo ID; de lo contrario, repetir el proceso
-        if (!idExists) {
-            return newUUID;
-        }
-    }
-}
+//         // Si no existe, devolver el nuevo ID; de lo contrario, repetir el proceso
+//         if (!idExists) {
+//             return newUUID;
+//         }
+//     }
+// }
 
-var iduserN = ""
+// var iduserN = ""
 
 
 
-    // --------------------------------------------POBLAR TABLA----------------------------------------------
+//     // --------------------------------------------POBLAR TABLA----------------------------------------------
         
-    //     var nombreTitular = "Jose Jose Perez Perez";
+//     //     var nombreTitular = "Jose Jose Perez Perez";
 
-    //     document.addEventListener("DOMContentLoaded", function() {
-    //         // Obtener referencias a los elementos de entrada
-    //         var equipoSelect = document.getElementById("equipo");
-    //         var direccionInput = document.getElementById("direccion");
-    //         var mantenimientoSelect = document.getElementById("mantenimiento");
-    //         var celularInput = document.getElementById("celular");
-    //         var lugarSelect = document.getElementById("lugar");
-    //         var emailInput = document.getElementById("email");
+//     //     document.addEventListener("DOMContentLoaded", function() {
+//     //         // Obtener referencias a los elementos de entrada
+//     //         var equipoSelect = document.getElementById("equipo");
+//     //         var direccionInput = document.getElementById("direccion");
+//     //         var mantenimientoSelect = document.getElementById("mantenimiento");
+//     //         var celularInput = document.getElementById("celular");
+//     //         var lugarSelect = document.getElementById("lugar");
+//     //         var emailInput = document.getElementById("email");
     
-    //         // Obtener referencia al botón de guardar
-    //         var guardarIcon = document.querySelector(".button-agg");
+//     //         // Obtener referencia al botón de guardar
+//     //         var guardarIcon = document.querySelector(".button-agg");
     
-    //         // Obtener referencia a la tabla
-    //         var tabla = document.querySelector("table tbody");
+//     //         // Obtener referencia a la tabla
+//     //         var tabla = document.querySelector("table tbody");
     
-    //         // Agregar un manejador de eventos al botón de guardar
-    //         guardarIcon.addEventListener("click", function() {
+//     //         // Agregar un manejador de eventos al botón de guardar
+//     //         guardarIcon.addEventListener("click", function() {
 
-    //             // Verificar si algún campo está vacío
-    //             if (esCampoVacio(equipoSelect) || esCampoVacio(direccionInput) || esCampoVacio(mantenimientoSelect) || esCampoVacio(celularInput) || esCampoVacio(lugarSelect) || esCampoVacio(emailInput)) {
-    //                 alert("Todos los campos deben ser llenados.");
-    //                 return; // No continuar si hay campos vacíos
-    //             }
+//     //             // Verificar si algún campo está vacío
+//     //             if (esCampoVacio(equipoSelect) || esCampoVacio(direccionInput) || esCampoVacio(mantenimientoSelect) || esCampoVacio(celularInput) || esCampoVacio(lugarSelect) || esCampoVacio(emailInput)) {
+//     //                 alert("Todos los campos deben ser llenados.");
+//     //                 return; // No continuar si hay campos vacíos
+//     //             }
 
-    //             // Recopilar valores de los campos de entrada
-    //             var equipo = getSelectedText(equipoSelect).toUpperCase();
-    //             var direccion = direccionInput.value.toUpperCase();
-    //             var mantenimiento = getSelectedText(mantenimientoSelect).toUpperCase();
-    //             var celular = celularInput.value.toUpperCase();
-    //             var lugar = getSelectedText(lugarSelect).toUpperCase();
-    //             var email = emailInput.value.toUpperCase();
+//     //             // Recopilar valores de los campos de entrada
+//     //             var equipo = getSelectedText(equipoSelect).toUpperCase();
+//     //             var direccion = direccionInput.value.toUpperCase();
+//     //             var mantenimiento = getSelectedText(mantenimientoSelect).toUpperCase();
+//     //             var celular = celularInput.value.toUpperCase();
+//     //             var lugar = getSelectedText(lugarSelect).toUpperCase();
+//     //             var email = emailInput.value.toUpperCase();
     
-    //             // Crear una nueva fila y agregar celdas con los valores recopilados
-    //             var nuevaFila = document.createElement("tr");
-    //             nuevaFila.innerHTML = `
-    //                 <th>${nombreTitular.toUpperCase()}</th>
-    //                 <th>${equipo}</th>
-    //                 <th>${lugar}</th>
-    //                 <th>${direccion}</th>
-    //                 <th>${celular}</th>
-    //                 <th>${new Date().toLocaleDateString()}</th>
-    //             `;
+//     //             // Crear una nueva fila y agregar celdas con los valores recopilados
+//     //             var nuevaFila = document.createElement("tr");
+//     //             nuevaFila.innerHTML = `
+//     //                 <th>${nombreTitular.toUpperCase()}</th>
+//     //                 <th>${equipo}</th>
+//     //                 <th>${lugar}</th>
+//     //                 <th>${direccion}</th>
+//     //                 <th>${celular}</th>
+//     //                 <th>${new Date().toLocaleDateString()}</th>
+//     //             `;
      
-    //             // Agregar la nueva fila a la tabla
-    //             tabla.appendChild(nuevaFila);
+//     //             // Agregar la nueva fila a la tabla
+//     //             tabla.appendChild(nuevaFila);
 
-    //             // Limpiar los campos después de guardar
-    //             equipoSelect.value = "";
-    //             direccionInput.value = "";
-    //             mantenimientoSelect.value = "";
-    //             celularInput.value = "";
-    //             lugarSelect.value = "";
-    //             emailInput.value = "";
-    //         });
+//     //             // Limpiar los campos después de guardar
+//     //             equipoSelect.value = "";
+//     //             direccionInput.value = "";
+//     //             mantenimientoSelect.value = "";
+//     //             celularInput.value = "";
+//     //             lugarSelect.value = "";
+//     //             emailInput.value = "";
+//     //         });
 
-    //         // Función para obtener el texto seleccionado en un combobox
-    //         function getSelectedText(selectElement) {
-    //         var selectedIndex = selectElement.selectedIndex;
-    //         return selectElement.options[selectedIndex].text;
-    //         }
+//     //         // Función para obtener el texto seleccionado en un combobox
+//     //         function getSelectedText(selectElement) {
+//     //         var selectedIndex = selectElement.selectedIndex;
+//     //         return selectElement.options[selectedIndex].text;
+//     //         }
 
-    //         // Función para verificar si un campo está vacío
-    //         function esCampoVacio(elemento) {
-    //             return elemento.value.trim() === "";
-    //         }
-    //     });
+//     //         // Función para verificar si un campo está vacío
+//     //         function esCampoVacio(elemento) {
+//     //             return elemento.value.trim() === "";
+//     //         }
+//     //     });
 
     
 
-// ------------------------------------LOCAL STORAGE-------------------------------------
+// // ------------------------------------LOCAL STORAGE-------------------------------------
 
 
-        document.addEventListener("DOMContentLoaded", function() {
+//         document.addEventListener("DOMContentLoaded", function() {
             
-            var nombreTitular = localStorage.getItem('nombreClienteLogueado');
-            var tabla = document.querySelector("table tbody");
-            cargarDatosGuardados();
+//             var nombreTitular = localStorage.getItem('nombreClienteLogueado');
+//             var tabla = document.querySelector("table tbody");
+//             cargarDatosGuardados();
 
             
 
-            document.querySelector(".button-agg").addEventListener("click", function() {
-                iduserN = generateUUID();
+//             document.querySelector(".button-agg").addEventListener("click", function() {
+//                 iduserN = generateUUID();
 
-                var equipoSelect = document.getElementById("equipo");
-                var direccionInput = document.getElementById("direccion");
-                var mantenimientoSelect = document.getElementById("mantenimiento");
-                var celularInput = document.getElementById("celular");
-                var lugarSelect = document.getElementById("lugar");
-                var emailInput = document.getElementById("email");
+//                 var equipoSelect = document.getElementById("equipo");
+//                 var direccionInput = document.getElementById("direccion");
+//                 var mantenimientoSelect = document.getElementById("mantenimiento");
+//                 var celularInput = document.getElementById("celular");
+//                 var lugarSelect = document.getElementById("lugar");
+//                 var emailInput = document.getElementById("email");
 
-                if (esCampoVacio(equipoSelect) || esCampoVacio(direccionInput) || esCampoVacio(mantenimientoSelect) || esCampoVacio(celularInput) || esCampoVacio(lugarSelect) || esCampoVacio(emailInput)) {
-                    alert("Todos los campos deben ser llenados.");
-                    return;
-                }
+//                 if (esCampoVacio(equipoSelect) || esCampoVacio(direccionInput) || esCampoVacio(mantenimientoSelect) || esCampoVacio(celularInput) || esCampoVacio(lugarSelect) || esCampoVacio(emailInput)) {
+//                     alert("Todos los campos deben ser llenados.");
+//                     return;
+//                 }
 
-                var equipo = getSelectedText(equipoSelect).toUpperCase();
-                var direccion = direccionInput.value.toUpperCase();
-                var mantenimiento = getSelectedText(mantenimientoSelect).toUpperCase();
-                var celular = celularInput.value.toUpperCase();
-                var lugar = getSelectedText(lugarSelect).toUpperCase();
-                var email = emailInput.value.toUpperCase();
+//                 var equipo = getSelectedText(equipoSelect).toUpperCase();
+//                 var direccion = direccionInput.value.toUpperCase();
+//                 var mantenimiento = getSelectedText(mantenimientoSelect).toUpperCase();
+//                 var celular = celularInput.value.toUpperCase();
+//                 var lugar = getSelectedText(lugarSelect).toUpperCase();
+//                 var email = emailInput.value.toUpperCase();
 
-                var nuevaFila = document.createElement("tr");
-                nuevaFila.innerHTML = `
-                    <th>${nombreTitular.toUpperCase()}</th>
-                    <th>${equipo}</th>
-                    <th>${lugar}</th>
-                    <th>${direccion}</th>
-                    <th>${celular}</th>
-                    <th>${new Date().toLocaleDateString()}</th>
-                `;
+//                 var nuevaFila = document.createElement("tr");
+//                 nuevaFila.innerHTML = `
+//                     <th>${nombreTitular.toUpperCase()}</th>
+//                     <th>${equipo}</th>
+//                     <th>${lugar}</th>
+//                     <th>${direccion}</th>
+//                     <th>${celular}</th>
+//                     <th>${new Date().toLocaleDateString()}</th>
+//                 `;
 
                 
-                tabla.appendChild(nuevaFila);
+//                 tabla.appendChild(nuevaFila);
 
-                // Guardar datos en localStorage
-                // guardarDatosEnLocalStorage();
+//                 // Guardar datos en localStorage
+//                 // guardarDatosEnLocalStorage();
 
-                // equipoSelect.value = "";
-                // direccionInput.value = "";
-                // mantenimientoSelect.value = "";
-                // celularInput.value = "";
-                // lugarSelect.value = "";
-                // emailInput.value = "";
-            });
-
-
-            
-
-            function getSelectedText(selectElement) {
-                var selectedIndex = selectElement.selectedIndex;
-                return selectElement.options[selectedIndex].text;
-            }
-
-            function esCampoVacio(elemento) {
-                return elemento.value.trim() === "";
-            }
+//                 // equipoSelect.value = "";
+//                 // direccionInput.value = "";
+//                 // mantenimientoSelect.value = "";
+//                 // celularInput.value = "";
+//                 // lugarSelect.value = "";
+//                 // emailInput.value = "";
+//             });
 
 
             
 
-            function guardarDatosEnLocalStorage() {
+//             function getSelectedText(selectElement) {
+//                 var selectedIndex = selectElement.selectedIndex;
+//                 return selectElement.options[selectedIndex].text;
+//             }
 
-                //validar campos
-                if (esCampoVacio(equipo) || esCampoVacio(direccion) || esCampoVacio(mantenimiento) || esCampoVacio(celular) || esCampoVacio(lugar) || esCampoVacio(email)) {
-                    alert("Todos los campos deben ser llenados.");
-                    return;
-                }
-                // Obtener los datos existentes en localStorage
-                var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
-
-                // Recopilar los nuevos datos
-                var equipoSelect = document.getElementById("equipo");
-                var direccionInput = document.getElementById("direccion");
-                var mantenimientoSelect = document.getElementById("mantenimiento");
-                var celularInput = document.getElementById("celular");
-                var lugarSelect = document.getElementById("lugar");
-                var emailInput = document.getElementById("email");
-
-                var nuevoDato = {
-                    idServicio: iduserN.toUpperCase(),
-                    titular: nombreTitular,
-                    equipo: getSelectedText(equipoSelect).toUpperCase(),
-                    lugar: getSelectedText(lugarSelect).toUpperCase(),
-                    direccion: direccionInput.value.toUpperCase(),
-                    celular: celularInput.value.toUpperCase(),
-                    email: emailInput.value,
-                    fecha: new Date().toLocaleDateString()
-                };
-
-                // Agregar los nuevos datos al array
-                solicitarServicios.push(nuevoDato);
-
-                // Guardar el array actualizado en localStorage
-                localStorage.setItem('solicitarServicios', JSON.stringify(solicitarServicios));
-
-                equipoSelect.value = "";
-                direccionInput.value = "";
-                mantenimientoSelect.value = "";
-                celularInput.value = "";
-                lugarSelect.value = "";
-                emailInput.value = "";
-                emailInput.value = "";
-            }
-
-            document.getElementById("guardar-dt").addEventListener("click", function() {
-                guardarDatosEnLocalStorage();
-            });
-
-            function cargarDatosGuardados() {
-                // Obtener los datos almacenados en localStorage
-                var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
-
-                // Agregar las filas a la tabla
-                solicitarServicios.forEach(function (dato) {
-                    var nuevaFila = document.createElement("tr");
-                    nuevaFila.innerHTML = `
-                        <th>${dato.titular}</th>
-                        <th>${dato.equipo}</th>
-                        <th>${dato.lugar}</th>
-                        <th>${dato.direccion}</th>
-                        <th>${dato.celular}</th>
-                        <th>${dato.fecha}</th>
-                    `;
-                    tabla.appendChild(nuevaFila);
-                });
-            }
-        });
+//             function esCampoVacio(elemento) {
+//                 return elemento.value.trim() === "";
+//             }
 
 
-       
+            
+
+//             function guardarDatosEnLocalStorage() {
+
+//                 //validar campos
+//                 if (esCampoVacio(equipo) || esCampoVacio(direccion) || esCampoVacio(mantenimiento) || esCampoVacio(celular) || esCampoVacio(lugar) || esCampoVacio(email)) {
+//                     alert("Todos los campos deben ser llenados.");
+//                     return;
+//                 }
+//                 // Obtener los datos existentes en localStorage
+//                 var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
+
+//                 // Recopilar los nuevos datos
+//                 var equipoSelect = document.getElementById("equipo");
+//                 var direccionInput = document.getElementById("direccion");
+//                 var mantenimientoSelect = document.getElementById("mantenimiento");
+//                 var celularInput = document.getElementById("celular");
+//                 var lugarSelect = document.getElementById("lugar");
+//                 var emailInput = document.getElementById("email");
+
+//                 var nuevoDato = {
+//                     idServicio: iduserN.toUpperCase(),
+//                     titular: nombreTitular,
+//                     equipo: getSelectedText(equipoSelect).toUpperCase(),
+//                     lugar: getSelectedText(lugarSelect).toUpperCase(),
+//                     direccion: direccionInput.value.toUpperCase(),
+//                     celular: celularInput.value.toUpperCase(),
+//                     email: emailInput.value,
+//                     fecha: new Date().toLocaleDateString()
+//                 };
+
+//                 // Agregar los nuevos datos al array
+//                 solicitarServicios.push(nuevoDato);
+
+//                 // Guardar el array actualizado en localStorage
+//                 localStorage.setItem('solicitarServicios', JSON.stringify(solicitarServicios));
+
+//                 equipoSelect.value = "";
+//                 direccionInput.value = "";
+//                 mantenimientoSelect.value = "";
+//                 celularInput.value = "";
+//                 lugarSelect.value = "";
+//                 emailInput.value = "";
+//                 emailInput.value = "";
+//             }
+
+//             document.getElementById("guardar-dt").addEventListener("click", function() {
+//                 guardarDatosEnLocalStorage();
+//             });
+
+//             function cargarDatosGuardados() {
+//                 // Obtener los datos almacenados en localStorage
+//                 var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
+
+//                 // Agregar las filas a la tabla
+//                 solicitarServicios.forEach(function (dato) {
+//                     var nuevaFila = document.createElement("tr");
+//                     nuevaFila.innerHTML = `
+//                         <th>${dato.titular}</th>
+//                         <th>${dato.equipo}</th>
+//                         <th>${dato.lugar}</th>
+//                         <th>${dato.direccion}</th>
+//                         <th>${dato.celular}</th>
+//                         <th>${dato.fecha}</th>
+//                     `;
+//                     tabla.appendChild(nuevaFila);
+//                 });
+//             }
+//         });
+
+// ------------------------------SCRIP ENVIAR DATOS A PHP --------------------------------------
+
+// Se envian los datos del formulario a php para ser almacenados en base de datos
+
+document.getElementById('enviarFormulario').addEventListener('click', function() {
+    document.getElementById('miFormulario').submit();
+});
+        

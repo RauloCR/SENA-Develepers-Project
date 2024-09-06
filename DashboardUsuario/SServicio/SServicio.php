@@ -61,7 +61,7 @@
             
             <div class="container-principal">
                 <div class="container5">
-                    <form action="./SServicio.php" method="post" id="miFormulario">
+                    <form action="./conexionSServicio.php" method="post" id="miFormulario">
                         <div class="user-details">
                             
                             <!-- SEGUNDA FILA INPUT -->
@@ -140,7 +140,7 @@
 
                                 <div class="input-box">
                                     <span for="celular" class="details">CELULAR</span>
-                                    <input type="number" placeholder="Dígite..." required id="celular" name="celular">
+                                    <input type="text" placeholder="Dígite..." required id="celular" name="celular">
                                 </div>
     
                             </div>
@@ -221,6 +221,43 @@
 
                                 <tbody>
 
+                                <?php
+                                    // Conexión a la base de datos
+                                    $servername = "localhost";
+                                    $username = "root";
+                                    $password = "";
+                                    $dbname = "DevelopersProject";
+
+                                    $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                    // Verificar la conexión
+                                    if ($conn->connect_error) {
+                                    die("Conexión fallida: " . $conn->connect_error);
+                                    }
+
+                                    // Consulta SQL para obtener los datos de la tabla usuarios
+                                    $sql = "SELECT type_machine, address_place, type_service, phone_service, destination_place, email_service, createTime_service from servicio";
+                                    $result = $conn->query($sql);
+
+                                    // Comprobar si hay resultados
+                                    if ($result->num_rows > 0) {
+                                        // Iterar sobre los resultados y mostrar cada fila de datos
+                                        while($row = $result->fetch_assoc()) {
+                                            echo "<tr>";
+                                            echo "<td>" . "NAME" . "</td>";
+                                            echo "<td>" . strtoupper($row["type_machine"]) . "</td>";
+                                            echo "<td>" . strtoupper($row["destination_place"]) . "</td>";
+                                            echo "<td>" . strtoupper($row["address_place"]) . "</td>";
+                                            echo "<td>" . strtoupper($row["phone_service"]) . "</td>";
+                                            echo "<td>" . strtoupper($row["createTime_service"]) . "</td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='6'>No se encontraron resultados</td></tr>";
+                                    }
+                                    $conn->close();
+                                    ?>
+                                    
                                     <!-- <tr>
                                         <th>JOSE JOSE PEREZ PEREZ</th>
                                         <th>LAVADORA</th>

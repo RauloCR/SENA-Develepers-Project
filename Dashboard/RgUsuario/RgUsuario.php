@@ -80,7 +80,7 @@
 
             <div class="container-principal">
                 <div class="container5">
-                    <form action="./conexionRgUsuario.php" method="post">
+                    <form action="./conexionRgUsuario.php" method="post" id="miFormulario">
                         <div class="user-details">
  
                             <div class="input-one">
@@ -150,25 +150,26 @@
                             <div class="children-input-box">
                                 <div class="input-box-tree">
                                     <span class="details">FECHA INICIAL</span>
-                                    <input type="date" placeholder="dd/mm/aaaa" required>
+                                    <input type="date" placeholder="dd/mm/aaaa">
                                 </div>
     
                                 <div class="input-box-tree">
                                     <span class="details details-two">FECHA FINAL</span>
-                                    <input type="date" placeholder="Digite..." required>
+                                    <input type="date" placeholder="Digite...">
                                 </div>
                             </div>
 
                             <div class="input-box">
                                 <span class="details">ID USER</span>
-                                <input id="usuarioFiltrado" type="text" placeholder="Digite..." required>
+                                <input id="usuarioFiltrado" type="text" placeholder="Digite...">
                             </div>
                             
                             
                             </div>
 
                         </div>
-                    </form>
+                        </form>
+                    
                     <div class="item">
                         <img src="../../images/logo PNG.png" alt="team-work">
                     </div>
@@ -179,7 +180,7 @@
                 <div class="container">
                     <div class="left-icon">
                         <div class="icon-options">
-                            <i type="button" value="guardar" class="fa-solid fa-user-plus agg-boton"></i>
+                            <i id="enviarFormulario" class="fa-solid fa-user-plus agg-boton"></i>
                         </div>
                         <div class="icon-options" >
                             <i  class="fa-solid fa-floppy-disk grd-boton"></i>
@@ -194,10 +195,11 @@
                     <div class="right-icon">
                         <i id="copiarExcel" class="fa-solid fa-right-from-bracket"></i>
                     </div>
+                    
                 </div>
             </div>
    
- 
+            
             <!------MEIN-CONTENT-TABLE----------->
 
             <div class="main-content">

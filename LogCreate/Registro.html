@@ -19,78 +19,83 @@
             </div>
             <div class="line-two"></div>
  
-            
-            <form action="#">
+            <?php include './Registro.php'; ?>
+            <form action="./conexionRegistro.php" method="post">
+                
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">Tipo</span>
+                        <span for="tipoSelect" class="details">Tipo</span>
                         <div class="combo-box-two">
                             <!-- Combo box con dos columnas -->
-                            <select id="tipoSelect">
+                            <select id="tipoSelect" name="tipoSelect">
                                 <option value="" disabled selected >Seleccione...</option>
                             <!-- Opción 1 -->
-                            <option value="opcion1">Natural</option>
+                            <option value="Natural">Natural</option>
                             <!-- Opción 2 -->
-                            <option value="opcion2">Juridico</option>
+                            <option value="Juridico">Juridico</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="input-box">
+                    <!-- <div class="input-box">
                         <span class="details">Rol</span>
                         <div class="combo-box-two">
-                            <!-- Combo box con dos columnas -->
+                            Combo box con dos columnas
                             <select id="rolSelect">
                                 <option value="" disabled selected >Seleccione...</option>
-                            <!-- Opción 1 -->
+                            Opción 1
                             <option value="opcion1">Cliente</option>
-                            <!-- Opción 2 -->
+                            Opción 2
                             <option value="opcion2">Administrador</option>
                             </select>
                         </div>
+                    </div> -->
+
+                    <div class="input-box">
+                        <span for="cedulaUsuario" class="details">Cedula</span>
+                        <input id="cedulaUsuario" name="cedulaUsuario" type="number" placeholder="Identificación" required>
                     </div>
 
                     <div class="input-box">
-                        <span class="details">Nombres</span>
-                        <input id="nombreInput" type="text" placeholder="Nombre completo" required>
+                        <span for="nombreUsuario" class="details">Nombres</span>
+                        <input id="nombreUsuario" name="nombreUsuario" type="text" placeholder="Nombre completo" required>
                     </div>
 
                     <div class="input-box">
-                        <span class="details">Apellido</span>
-                        <input id="apellidoInput" type="text" placeholder="Nombre completo" required>
+                        <span for="apellidoUsuario" class="details">Apellido</span>
+                        <input id="apellidoUsuario" name="apellidoUsuario" type="text" placeholder="Nombre completo" required>
                     </div>
 
                 </div>
                 <div class="user-details2">
                     <div class="input-box2">
-                        <span class="details2">Telefono</span>
-                        <input id="telefonoInput" type="text" placeholder="Numero Celular" required>
+                        <span for="telefonoUsuario" class="details2">Telefono</span>
+                        <input id="telefonoUsuario" name="telefonoUsuario" type="number" placeholder="Numero Celular" required>
                     </div>
                     <div class="input-box2">
-                        <span class="details2">Correo</span>
-                        <input id="correoInput" type="text" placeholder="Correo Electronico" required>
+                        <span for="correoUsuario" class="details2">Correo</span>
+                        <input id="correoUsuario" name="correoUsuario" type="text" placeholder="Correo Electronico" required>
                     </div>
                     <div class="input-box2">
-                        <span class="details2">Direccion</span>
-                        <input id="direccionInput" type="text" placeholder="Dirección Domicilio" required>
+                        <span for="direccionUsuario" class="details2">Direccion</span>
+                        <input id="direccionUsuario" name="direccionUsuario" type="text" placeholder="Dirección Domicilio" required>
                     </div>
                     <div class="input-box2">
-                        <span class="details2">Contraseña</span>
-                        <input id="contraseñaInput" type="text" placeholder="Contraseña" required>
+                        <span for="contrasenaUsuario" class="details2">Contraseña</span>
+                        <input id="contrasenaUsuario" name="contrasenaUsuario" type="text" placeholder="Contraseña" required>
                     </div>
                 </div>
                 <div class="field button-field field3">
-                    <button class="links create-button">Crear cuenta</button>
+                    <button type="submit" class="links create-button"  value="crear">Crear cuenta</button>
                 </div>
 
             </form>
 
             <div class="remove-options">
                 <div class="button-home">
-                    <a href="/SENA-Develeper-s-Project/Index.html"><i class="fa-solid fa-house" ></i></a>
+                    <a href="../Index.html"><i class="fa-solid fa-house" ></i></a>
                 </div>
             </div>
-            
         </div>
         
         

@@ -403,7 +403,6 @@ form .user-details .input-box-two{
   align-items: center;
 }
 
-
 .user-details .input-box-two input{
   height: 35px;
   width: 350px;
@@ -415,6 +414,28 @@ form .user-details .input-box-two{
   border-bottom-width: 1.5px;
   transition: all 0.3s ease;
 }
+
+
+/* ------------------------------------------------------------------ */
+form .user-details .input-box-four{
+  margin-bottom: 15px;
+  display: flex;
+  width: 450px;
+  align-items: center;
+}
+
+.user-details .input-box-four input{
+  height: 35px;
+  width: 377px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #BBB;
+  padding-left: 10px;
+  font-size: 12px;
+  border-bottom-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
 
 /* Cambiar color placeholder*/
 
@@ -429,7 +450,12 @@ form .user-details .input-box-two{
   font-size: 10PX;
 }
 
-
+.user-details .input-box-four .details{
+  display: block;
+  font-weight: 500;
+  width: 58px;
+  font-size: 10PX;
+}
 
 
 
@@ -448,15 +474,6 @@ form .user-details .input-box-two{
   background-color: #AAA;
   margin: 30px 0 0 0;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -680,7 +697,7 @@ table.table tr td {
 	font-weight: 400;
 	vertical-align: middle;
   border: solid #bbb 2px;
-  
+  text-align: center;
 
 }
 
@@ -707,7 +724,7 @@ table.table th i {
 
 table.table td:last-child {
 	opacity: 0.9;
-	font-size: 22px;
+	font-size: 14px;
   
 }
 
