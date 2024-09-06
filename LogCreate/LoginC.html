@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/a66f4a03a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+   
     <section class="container forms">
         <Div class="form-content-prim">
             <a href="../Index.html">
@@ -21,7 +21,7 @@
 
             <div class="form-content">
                 <header>Login</header>
-                <form action="IngresoUsuario.php" method="post">
+                <form id="ingresoClientes">
                     <div class="field input-field">
                         <i for="usuario" class="fa-solid fa-user"></i>
                         <input name="usuario" type="user" placeholder="Numero Usuario" class="input" id="usuario" autocomplete="off">
@@ -38,13 +38,23 @@
 
                     <div class="field button-field">
                         <a href="/SENA-Develeper-s-Project/Dashboard/MeinMenu.html"></a>
-                        <button class="links" value="ingresar" onclick="autenticar()">Ingresar</button>
+                        <button id="inicioUsuario" type="submit" class="links" >Ingresar</button>
                     </div>
+
 
                     <div class="form-link">
                         <span></span>
                     </div>
                 </form>
+
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <h2>Developer's</h2>
+                        <p id="resultadoTwo"></p>
+                        <button onclick="cerrarVentana()">Cerrar</button>
+                    </div>
+                </div>
+
             </div>
             <div class="line"></div>
 

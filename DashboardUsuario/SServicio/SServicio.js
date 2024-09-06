@@ -317,7 +317,132 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Se envian los datos del formulario a php para ser almacenados en base de datos
 
-document.getElementById('enviarFormulario').addEventListener('click', function() {
-    document.getElementById('miFormulario').submit();
-});
+// document.getElementById('enviarFormulario').addEventListener('click', function() {
+//     document.getElementById('miFormulario').submit();
+// });
         
+
+
+
+// ####################################################################################################
+// ################################### CARGAR INFORMACION #############################################
+// ####################################################################################################
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+    function updateTable(data) {
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        tableBody.innerHTML = "";
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = `
+                    <td>NAME</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.direccion_servicio.toUpperCase()}</td>
+                    <td>${row.telefono_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+    }   
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "enviarSServicio.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+    // Llamar a la función fetchData al cargar la página
+    fetchData();
+
+    // Actualizar los datos cada 5 segundos (5000 ms)
+    setInterval(fetchData, 5000);
+});
+
+
+// ####################################################################################################
+// ################################### ENVIAR DATOS A PHP #############################################
+// ####################################################################################################
+
+
+var formEnviado = false; // Bandera para controlar si el formulario ya se ha enviado
+var resultadoElement = document.getElementById('enviarFormulario');
+
+if (resultadoElement) {
+    resultadoElement.addEventListener("click", function(event){
+
+        event.preventDefault()
+        
+        if (!formEnviado) {
+            var equipo = document.getElementById('equipo').value;
+            var direccion = document.getElementById('direccion').value;
+            var mantenimiento = document.getElementById('mantenimiento').value;
+            var celular = document.getElementById('celular').value;
+            var lugar = document.getElementById('lugar').value;
+            var email = document.getElementById('email').value;
+        
+            if (equipo !== '' && direccion !== '' && mantenimiento !== '' && celular !== '' && lugar !== '' && email !== '') {
+                formEnviado = true; // Marcar el formulario como enviado
+
+                var f = document.getElementById('miFormulario')
+                        
+                        
+                        var formData = new FormData(f);
+                        
+                            // Crear objeto XMLHttpRequest
+                            var xhr = new XMLHttpRequest();
+                        
+                            // Configurar la solicitud
+                            xhr.open('POST', 'conexionSServicio.php', true);
+                    
+                            // Configurar la función de devolución de llamada
+                            xhr.onload = function() {
+                                if (xhr.status >= 200 && xhr.status < 400) {
+                                    // Éxito
+                                    document.getElementById('resultado').innerHTML = xhr.responseText;
+                                } else {
+                                    // Error
+                                    console.error('Error al procesar la solicitud.');
+                                }
+                            };  
+                            // Enviar la solicitud
+                            xhr.send(formData);
+                            abrirVentana()
+            } else{
+                alert("Favor completar todos los campos")
+            } 
+
+            
+        }
+    })
+}
+
+
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
+
+function abrirVentana() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function cerrarVentana() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "./SServicio.html";
+}
+

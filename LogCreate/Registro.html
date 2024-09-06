@@ -12,30 +12,33 @@
         <div class="container5">
             <div class="title">
                 <h1>Registrarse</h1>
-                
+                   
             </div>
             <div class="title-two">
                 <h2>Facil y rapido</h2>
             </div>
             <div class="line-two"></div>
  
-            <?php include './Registro.php'; ?>
-            <form action="./conexionRegistro.php" method="post">
+            <form id="registroUsuario">
                 
                 <div class="user-details">
                     <div class="input-box">
-                        <span for="tipoSelect" class="details">Tipo</span>
+                        <span for="tipoSelect" class="details">Tipo de documento</span>
                         <div class="combo-box-two">
                             <!-- Combo box con dos columnas -->
-                            <select id="tipoSelect" name="tipoSelect">
+                            <select id="tipoSelect" name="tipoSelect" required>
                                 <option value="" disabled selected >Seleccione...</option>
                             <!-- Opción 1 -->
-                            <option value="Natural">Natural</option>
+                            <option value="Cedula de ciudadania">Cédula de ciudadanía</option>
                             <!-- Opción 2 -->
-                            <option value="Juridico">Juridico</option>
+                            <option value="Cedula de extranjeria">Cédula de extranjería</option>
+                            <!-- Opción 3 -->
+                            <option value="Permiso especial de permanencia">Permiso especial de permanencia</option>
+                            <!-- Opción 4 -->
+                            <option value="DNI - Documento nacional de identidad">DNI - Documento nacional de identidad</option>
                             </select>
                         </div>
-                    </div>
+                    </div> 
 
                     <!-- <div class="input-box">
                         <span class="details">Rol</span>
@@ -85,11 +88,20 @@
                         <input id="contrasenaUsuario" name="contrasenaUsuario" type="text" placeholder="Contraseña" required>
                     </div>
                 </div>
+  
                 <div class="field button-field field3">
-                    <button type="submit" class="links create-button"  value="crear">Crear cuenta</button>
+                    <button id="RegistroUser" type="submit" class="links create-button">Crear cuenta</button>
                 </div>
 
             </form>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <h2>Developer's</h2>
+                    <p id="resultado"></p>
+                    <button onclick="cerrarVentanaI()">Cerrar</button>
+                </div>
+            </div>
 
             <div class="remove-options">
                 <div class="button-home">

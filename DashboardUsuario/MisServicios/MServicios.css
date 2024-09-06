@@ -321,8 +321,7 @@ table.table tr td {
 	font-weight: 400;
 	vertical-align: middle;
   border: solid #bbb 2px;
-  
-
+  text-align: center;
 }
 
 table.table tr .name-table{
@@ -348,7 +347,7 @@ table.table th i {
 
 table.table td:last-child {
 	opacity: 0.9;
-	font-size: 22px;
+	font-size: 14px;
   
 }
 
@@ -810,3 +809,48 @@ input[type="date"]:focus {
 }
 
  
+
+
+/* ----------------------------------- ESTILOS VENTANA FLOTANTE-------------------------------- */
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup p {
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+
+.popup button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+}
+
+
+

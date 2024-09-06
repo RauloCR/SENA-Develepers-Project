@@ -14,30 +14,30 @@
 
 // //----------------------------------------- Evento para el combo-box ---------------------------------------
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     var comboBox = document.querySelector('.combo-box select');
+document.addEventListener('DOMContentLoaded', function () {
+    var comboBox = document.querySelector('.combo-box select');
 
-//     comboBox.addEventListener('change', function () {
-//         comboBox.parentNode.classList.add('select-active');
-//     });
-// });
+    comboBox.addEventListener('change', function () {
+        comboBox.parentNode.classList.add('select-active');
+    });
+});
 
 // //---------------------------------------- Placeholder de fechas ------------------------------------------- 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     var dateInputs = document.querySelectorAll('input[type="date"]');
+document.addEventListener('DOMContentLoaded', function () {
+    var dateInputs = document.querySelectorAll('input[type="date"]');
 
-//     dateInputs.forEach(function (input) {
-//         input.addEventListener('input', function () {
-//             // Cambiar el color del texto cuando se selecciona una fecha
-//             if (input.value) {
-//                 input.style.color = 'black';
-//             } else {
-//                 input.style.color = 'gray';
-//             }
-//         });
-//     });
-// });
+    dateInputs.forEach(function (input) {
+        input.addEventListener('input', function () {
+            // Cambiar el color del texto cuando se selecciona una fecha
+            if (input.value) {
+                input.style.color = 'black';
+            } else {
+                input.style.color = 'gray';
+            }
+        });
+    });
+});
 
 
 // //------------------------------------- FUNCION PARA GENERAR UUID -------------------------------------
@@ -51,162 +51,6 @@
 //     });
 // }
 
-
-// //------------------------------------- SCRIP REGISTRAR USUARIO -----------------------------------------
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     var tabla = document.querySelector("table tbody");
-
-//     document.querySelector(".agg-boton").addEventListener("click", function () {
-//         var nombre = document.getElementById("nombreInput");
-//         var celular = document.getElementById("celularInput");
-//         var direccion = document.getElementById("direccionInput");
-//         var email = document.getElementById("emailInput");
-//         var cedula = document.getElementById("cedulaInput");
-//         var rol = document.getElementById("rolSelect");
-
-//         if (esCampoVacio(nombre) || esCampoVacio(celular) || esCampoVacio(direccion) || esCampoVacio(email) || esCampoVacio(cedula) || esCampoVacio(rol)) {
-//             alert("Todos los campos deben ser llenados.");
-//             return;
-//         }
-
-
-//         var nombreText = nombre.value.toUpperCase();
-//         var celularText = celular.value.toUpperCase();
-//         var direccionText = direccion.value.toUpperCase();
-//         var emailText = email.value.toUpperCase();
-//         var cedulaText = cedula.value.toUpperCase();
-//         var rolSelect = getSelectedText(rol).toUpperCase();
-
-//         var nuevaFila = document.createElement("tr");
-
-//         nuevaFila.innerHTML = `
-//             <th>${iduserx}</th>
-//             <th>${rolSelect}</th>
-//             <th>${nombreText.toUpperCase()}</th>
-//             <th>${emailText}</th>
-//             <th>${new Date().toLocaleDateString()}</th>
-//             <th>${'ACTIVO'}</th>
-//         `;
-
-//         tabla.appendChild(nuevaFila);
-
-//     });
-
-//     function getSelectedText(selectElement) {
-//         var selectedIndex = selectElement.selectedIndex;
-//         return selectElement.options[selectedIndex].text;
-//     }
-
-//     function esCampoVacio(elemento) {
-//         return elemento.value.trim() === "";
-//     }
-
-//     function guardarDatosEnLocalStorage() {
-
-//         // Obtener los datos existentes en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Recopilar los nuevos datos
-//         var nombreText = document.getElementById("nombreInput");
-//         var celularText = document.getElementById("celularInput");
-//         var direccionText = document.getElementById("direccionInput");
-//         var emailText = document.getElementById("emailInput");
-//         var cedulaText = document.getElementById("cedulaInput");
-//         var rolSelect = document.getElementById("rolSelect");
-
-//         //validar campos
-//         if (esCampoVacio(nombreText) || esCampoVacio(celularText) || esCampoVacio(direccionText) || esCampoVacio(emailText) || esCampoVacio(cedulaText) || esCampoVacio(rolSelect)) {
-//             alert("Todos los campos deben ser llenados.");
-//             return;
-//         }
-
-//         // Crear el nuevo dato con un ID único
-//         var nuevoDato = {
-//             idUser: iduserx,
-//             nombre: nombreText.value.toUpperCase(),
-//             celular: celularText.value.toUpperCase(),
-//             direccion: direccionText.value.toUpperCase(),
-//             correo: emailText.value,
-//             cedula: cedulaText.value.toUpperCase(),
-//             rol: getSelectedText(rolSelect).toUpperCase(),
-//             fechaRegistro: new Date().toLocaleDateString()
-//         };
-
-
-//         // Agregar los nuevos datos al array
-//         tablaRegistro.push(nuevoDato);
-
-//         // Guardar el array actualizado en localStorage
-//         localStorage.setItem('tablaRegistro', JSON.stringify(tablaRegistro));
-
-//         nombreInput.value = "";
-//         celularInput.value = "";
-//         direccionInput.value = "";
-//         emailInput.value = "";
-//         cedulaInput.value = "";
-//         rolSelect.value = "";
-//     }
-
-//     document.querySelector(".grd-boton").addEventListener("click", function () {
-//         guardarDatosEnLocalStorage();
-//     });
-// });
-
-
-
-// // --------------------------POBLAR TABLA CON DATOS DEL LOCAL STORAGE-----------------------------
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     // var nombreTitular = localStorage.getItem('nombreClienteLogueado');
-//     var tabla = document.querySelector("table tbody");
-//     cargarDatosGuardados();
-
-//     function cargarDatosGuardados() {
-//         // Obtener los datos almacenados en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Agregar las filas a la tabla
-//         tablaRegistro.forEach(function (dato) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//                 <th>${dato.idUser}</th>
-//                 <th>${dato.rol}</th>
-//                 <th>${dato.nombre + ' ' + dato.apellido}</th>
-//                 <th>${dato.correo}</th>
-//                 <th>${dato.fechaRegistro}</th>
-//                 <th>${'ACTIVO'}</th>
-//             `;
-//             tabla.appendChild(nuevaFila);
-//         });
-
-
-//         // Scrip para copiar al portapapeles
-//         document.getElementById("copiarExcel").addEventListener("click", function () {
-//             copiarTablaAlPortapapeles();
-//         });
-
-//         function copiarTablaAlPortapapeles() {
-//             var tablaHtml = tabla.outerHTML;
-//             var tablaTexto = tabla.innerText;
-
-//             // Crear un elemento de textarea para copiar el texto
-//             var textarea = document.createElement("textarea");
-//             textarea.value = tablaTexto;
-//             document.body.appendChild(textarea);
-//             textarea.select();
-
-//             // Copiar al portapapeles
-//             document.execCommand('copy');
-
-//             // Eliminar el elemento de textarea
-//             document.body.removeChild(textarea);
-//             mostrarNotificacion("Los datos se han copiado al portapapeles. Ahora puedes pegarlos en Excel.", 3000);
-//         }
-
-//     }
 
 
 //     // -----------------------------------------FILTRAR USUARIOS POR ID-------------------------------------------
@@ -413,53 +257,313 @@
 
 
 
-//     // -------------------------------BORRAR REGISTRO -----------------------------------
+
+// ####################################################################################################
+// ################################### CARGAR INFORMACION #############################################
+// ####################################################################################################
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+    function updateTable(data) {
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        tableBody.innerHTML = "";
+  
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            data.forEach(function(row) {
+  
+                var tr = document.createElement("tr");
+  
+                tr.innerHTML = `
+                    <td>${row.id_usuario.toUpperCase()}</td>
+                    <td>${row.tipo_rol.toUpperCase()}</td>
+                    <td>${row.nombre_usuario.toUpperCase()}</td>
+                    <td>${row.correo_usuario.toUpperCase()}</td>
+                    <td>${row.createTime_usuario.toUpperCase()}</td>
+                    <td>${row.estado_usuario.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+    }
+  
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", 'conexionRgUsuario.php?accion=poblar', true);
+      
+      xhr.onreadystatechange = function() {
+      
+          // console.log("Estado del servidor:", xhr.status);
+   
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              // console.log(xhr.responseText)
+              var data = JSON.parse(xhr.responseText);
+              updateTable(data);
+          }
+      };
+      xhr.send();
+  }
+    // Llamar a la función fetchData al cargar la página
+    fetchData();
+  
+    // Actualizar los datos cada 5 segundos (5000 ms)
+    // setInterval(fetchData, 5000);
+  });
+  
+
+// ****************************************************************************************************
+// ******************************** SCRIP ENVIAR DATOS A PHP ******************************************
+// ****************************************************************************************************
 
 
-//     document.getElementById('idDeleteUser').addEventListener("click", function () {
+  var formEnviado = false; // Bandera para controlar si el formulario ya se ha enviado
+  var resultadoElementOne = document.getElementById('enviarFormulario');
+  
+  if (resultadoElementOne) {
+    
+      resultadoElementOne.addEventListener("click", function(event){
+          event.preventDefault()
+          
+          if (!formEnviado) {
+              var nombre = document.getElementById('nombreUsuario').value;
+              var telefono = document.getElementById('telefonoUsuario').value;
+              var direccion = document.getElementById('direccionUsuario').value;
+              var correo = document.getElementById('correoUsuario').value;
+              var cedula = document.getElementById('cedulaUsuario').value;
+              var contrasena = document.getElementById('contrasenaUsuario').value;
+              var apellido = document.getElementById('apellidoUsuario').value;
+              var rol = document.getElementById('rolSelect').value;
+          
+              if (nombre !== '' && telefono !== '' && direccion !== '' && correo !== '' && cedula !== '' && contrasena !== '' && apellido !== '' && rol !== '') {
+                  formEnviado = true; // Marcar el formulario como enviado
+  
+                  var f = document.getElementById('miFormulario')
+                            
+                          
+                          var formData = new FormData(f);
+                          
+                              // Crear objeto XMLHttpRequest
+                              var xhr = new XMLHttpRequest();
+                          
+                              // Configurar la solicitud
+                              xhr.open('POST', 'conexionRgUsuario.php?accion=enviar', true);
+                      
+                              // Configurar la función de devolución de llamada
+                              xhr.onload = function() {
+                                  if (xhr.status >= 200 && xhr.status < 400) {
 
-//         var idUserToDelete = document.getElementById("usuarioFiltrado").value;
+                                    console.log(xhr.responseText)
+                                    
+                                    // if (xhr.responseText.trim() === 'Datos almacenados correctamente.') {
+                                    //     alert("hola")
+                                    //     // Éxito
+                                    //   
+                                    // }
+                                     
+                                    if (xhr.responseText.indexOf('Datos almacenados correctamente.') !== -1) {
+                                        // La respuesta contiene el texto esperado
+                                        document.getElementById('resultado').innerHTML = 'Datos almacenados correctamente.';
+                                    } else {
+                                        // La respuesta no contiene el texto esperado
+                                        alert("Error: " + xhr.responseText);
+                                    }
 
-//         // Verificar si el campo idUser está vacío
-//         if (idUserToDelete.trim() === "") {
-//             alert("Por favor, ingrese un ID de usuario para filtrar antes de intentar borrar.");
-//             return;
-//         }
-
-//         var tablaRegistro = JSON.parse(localStorage.getItem("tablaRegistro")) || [];
-
-//         // Buscar el índice del registro con el idUser proporcionado
-//         var indexToDelete = -1;
-//         for (var i = 0; i < tablaRegistro.length; i++) {
-//             if (tablaRegistro[i].idUser.toString() === idUserToDelete.toString()) {
-//                 indexToDelete = i;
-//                 break;
-//             }
-//         }
-
-//         // Verificar si se encontró el registro
-//         if (indexToDelete !== -1) {
-//             // Eliminar el registro en la posición encontrada
-//             tablaRegistro.splice(indexToDelete, 1);
-
-//             // Actualizar los datos en el localStorage
-//             localStorage.setItem("tablaRegistro", JSON.stringify(tablaRegistro));
-
-//             // Mostrar un mensaje de éxito
-//             alert("Registro con ID " + idUserToDelete + " eliminado exitosamente.");
-//         } else {
-//             alert("No se encontró un registro con ID " + idUserToDelete + ".");
-//         }
-//     });
-// });
+                                  } else {
+                                      // Error
+                                      alert('Error al procesar la solicitud.');
+                                  }
+                              };  
+                              // Enviar la solicitud
+                              xhr.send(formData);
+                              abrirVentana()
+              } else{
+                  alert("Favor completar todos los campos")
+              } 
+  
+          }
+      })
+  } 
 
 
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
 
-// ------------------------------SCRIP ENVIAR DATOS A PHP --------------------------------------
+function abrirVentana() {
+    document.getElementById("popup").style.display = "block";
+}
 
-// Se envian los datos del formulario a php para ser almacenados en base de datos
+function cerrarVentana() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "./RgUsuario.html";
+}
 
-document.getElementById('enviarFormulario').addEventListener('click', function() {
-    document.getElementById('miFormulario').submit();
+// ####################################################################################################
+// ################################### BUSCAR INFORMACION #############################################
+// ####################################################################################################
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+
+    function updateTable(data) {
+        
+
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        
+        tableBody.innerHTML = "";  
+        
+        if (data.error) {
+            
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            
+            
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+                tr.innerHTML = `
+                  <td>${row.id_usuario.toUpperCase()}</td>
+                  <td>${row.tipo_rol.toUpperCase()}</td>
+                  <td>${row.nombre_usuario.toUpperCase()}</td>
+                  <td>${row.correo_usuario.toUpperCase()}</td>
+                  <td>${row.createTime_usuario.toUpperCase()}</td>
+                  <td>${row.estado_usuario.toUpperCase()}</td>
+              `;
+                tableBody.appendChild(tr);
+            });
+        } 
+        
+    }
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+        
+
+        var xhr = new XMLHttpRequest();
+        var form = document.getElementById("miFormulario"); // Cambia "miFormulario" al ID de tu formulario
+        var formData = new FormData(form);
+        var queryString = new URLSearchParams(formData).toString();
+        queryString += "&accion=buscar";
+
+        // xhr.open("GET", "buscarRgUsuario.php?" + queryString, true);
+
+        xhr.open("GET", "conexionRgUsuario.php?" + queryString, true);
+        
+        xhr.onreadystatechange = function() {
+            
+            if (xhr.readyState == 4 && xhr.status == 200) {
+            
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de buscar
+    document.getElementById("buscarDatos").addEventListener("click", function(event) {
+        var inp = document.getElementById('idUsuario').value;
+        if (inp !== '') {
+            event.preventDefault();    
+            // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+            fetchData(); 
+        }else{
+            alert('¡Favor ingresaer un ID!')
+        }
+        
+    });
 });
+
+  
+
+
+// ****************************************************************************************************
+// ************************************ BORRAR INFORMACION*********************************************
+// ****************************************************************************************************
+  
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+
+    function updateTable(data) {
+        
+
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        
+        tableBody.innerHTML = "";  
+        
+        if (data.error) {
+            
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            
+            
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+                tr.innerHTML = `
+                  <td>${row.id_usuario.toUpperCase()}</td>
+                  <td>${row.tipo_rol.toUpperCase()}</td>
+                  <td>${row.nombre_usuario.toUpperCase()}</td>
+                  <td>${row.correo_usuario.toUpperCase()}</td>
+                  <td>${row.createTime_usuario.toUpperCase()}</td>
+                  <td>${row.estado_usuario.toUpperCase()}</td>
+              `;
+                tableBody.appendChild(tr);
+            });
+        } 
+        
+    }
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+        
+
+        var xhr = new XMLHttpRequest();
+        var form = document.getElementById("miFormulario"); // Cambia "miFormulario" al ID de tu formulario
+        var formData = new FormData(form);
+        // var queryString = new URLSearchParams(formData).toString();
+        // queryString += "&accion=borrar";
+
+        xhr.open("POST", "conexionRgUsuario.php?accion=borrar", true);
+        
+        xhr.onreadystatechange = function() {
+            
+            if (xhr.readyState == 4 && xhr.status == 200) {
+            
+                // var data = JSON.parse(xhr.responseText);
+
+                document.getElementById('resultado').innerHTML = xhr.responseText;
+                // updateTable(data);
+            }
+        };
+        xhr.send(formData);
+        abrirVentana()
+    }
+
+    // Manejar el evento click del botón de buscar
+    document.getElementById("borrarDatos").addEventListener("click", function(event) {
+        var inp = document.getElementById('idUsuariob').value;
+        if (inp !== '') {
+            event.preventDefault();    
+            // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+            fetchData(); 
+        }else{
+            alert('¡Favor ingresaer un ID!')
+        }
+        
+    });
+});
+
+  
+  
 

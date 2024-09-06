@@ -1,4 +1,7 @@
-// Evento para el combo-box---------------------------------
+
+
+
+// ---------------------------------Evento para el combo-box---------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
     var comboBoxes = document.querySelectorAll('.combo-box-two select');
@@ -11,6 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var comboBoxes = document.querySelectorAll('.combo-box select');
+
+
+    comboBoxes.forEach(function (comboBox) {
+        comboBox.addEventListener('change', function () {
+            comboBox.parentNode.classList.add('select-active');
+        });
+    });
+
+});
+
 
 
 const forms = document.querySelector(".forms"),
@@ -33,227 +49,273 @@ pwShowHide.forEach(eyeIcon => {
 })
 
 
+// ############################################################################################################
+// ############################################################################################################
+// ############################################################################################################
 
 
-//-------------------------------------VALIDAR CREDENCIALES-------------------------------------
-
-// var nombreClienteLogueado = "";
-
-// function validarCredenciales(usuario, contrasena) {
-//     // Definir las credenciales permitidas
-//     var credenciales = {
-//         // Admi
-//         "wilmer": "001",
-//         "andres": "002",
-//         // Client
-//         "felipe": "011",
-//         "camilo": "022",
-//         "orlando": "033"
-//     };
-
-//     // Verificar si las credenciales son correctas
-//     return credenciales.hasOwnProperty(usuario) && credenciales[usuario] === contrasena;
-// }
+//----------------------------------- SCRIP - GUARDAR DATOS EN BD -----------------------------------
 
 
-// function autenticar() {
-//     var usuario = document.getElementById("usuario").value;
-//     var contrasena = document.getElementById("contrasena").value;
+var formEnviado = false; // Bandera para controlar si el formulario ya se ha enviado
+var resultadoElement = document.getElementById('RegistroUser');
 
-//     // Validar las credenciales
-//     var validacionC = validarCredenciales(usuario, contrasena);
+if (resultadoElement) {
+    resultadoElement.addEventListener("click", function(){
 
-//     if (validacionC) {
-//         // Redirigir según el usuario
-//         if (usuario === "wilmer" || usuario === "andres") {
-//             window.open("../Dashboard/MeinMenu.html");
-//             window.close();
-
-//         } else if (usuario === "orlando" || usuario === "camilo" || usuario === "felipe") {
-//             window.open('../DashboardUsuario/MisServicios/MServicios.html');
-//             window.close();
-
-//         }
-//     } else {
-//         alert("¡FAVOR VALIDAR CAMPOS!");
-//     }
-// }
-
-
-// function borrarLocalStorage() {
-//     localStorage.removeItem('nombreClienteLogueado')
-// }
-
-
-
-// function validarCredenciales(usuario, contrasena) {
-//     // Obtener los datos existentes en localStorage
-//     var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//     // Buscar el usuario por correo en los datos almacenados
-//     var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
-//         return usuarioData.correo === usuario;
-//     });
-
-//     // Verificar si se encontró el usuario y la contraseña es correcta
-//     if (usuarioEncontrado) {
-//         if (usuarioEncontrado.contraseña === contrasena) {
-//             // La contraseña es correcta
-//             return true;
-//         } else {
-//             // La contraseña es incorrecta
-//             alert("¡La contraseña es incorrecta!");
-//             return false;
-//         }
-//     } else {
-//         // El correo no existe en la base de datos
-//         alert("¡El correo no existe en la base de datos!");
-//         return false;
-//     }
-
-//     // Verificar si se encontró el usuario y la contraseña es correcta
-//     //return usuarioEncontrado && usuarioEncontrado.contraseña === contrasena;
-// }
-
-
-
-// function autenticar() {
-//     borrarLocalStorage();
-//     var usuario = document.getElementById("usuario").value;
-//     var contrasena = document.getElementById("contrasena").value;
-
-//     // Validar las credenciales utilizando la función actualizada
-//     var validacionC = validarCredenciales(usuario, contrasena);
-
-//     if (validacionC) {
-//         // Obtener los datos existentes en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Buscar el usuario por correo en los datos almacenados
-//         var usuarioEncontrado = tablaRegistro.find(function (usuarioData) {
-//             return usuarioData.correo === usuario;
-//         });
-
-//         if (usuarioEncontrado.rol === "ADMINISTRADOR") {
-//             // ¡Inicio de sesión como Administrador!
-//             window.open("../Dashboard/MeinMenu.html");
-
-//         } else if (usuarioEncontrado.rol === "CLIENTE") {
-//             if (usuarioEncontrado) {
-//                 // Almacena el nombre del cliente en localStorage
-//                 localStorage.setItem('nombreClienteLogueado', usuarioEncontrado.nombre + ' ' + usuarioEncontrado.apellido);
-//             }
-//             // ¡Inicio de sesión como cliente!
-//             // Ajusta la ruta de redirección para clientes
-//             window.open('../DashboardUsuario/MisServicios/MServicios.html');
-//         } else {
-//             alert("¡Tipo de usuario no reconocido!");
-//         }
-//     }
-// }
-
-
-
-
-
-//------------------------------------- SCRIP - RESTABLECER CONTRASEÑA -------------------------------------------
-
-// Obtén el botón por su ID
-let botonRestablecer = document.querySelector(".restablecerBtn");
-
-
-if (botonRestablecer) {
-    // Agrega un escuchador de eventos para el clic en el botón
-    botonRestablecer.addEventListener("click", mostrarMensaje);
+        if (!formEnviado) {
+            var tipoCedula = document.getElementById('tipoSelect').value;
+            var cedulaUsuario = document.getElementById('cedulaUsuario').value;
+            var nombreUsuario = document.getElementById('nombreUsuario').value;
+            var apellidoUsuario = document.getElementById('apellidoUsuario').value;
+            var telefonoUsuario = document.getElementById('telefonoUsuario').value;
+            var correoUsuario = document.getElementById('correoUsuario').value;
+            var direccionUsuario = document.getElementById('direccionUsuario').value;
+            var contrasenaUsuario = document.getElementById('contrasenaUsuario').value;
+        
+            if (tipoCedula !== '' && cedulaUsuario !== '' && nombreUsuario !== '' && apellidoUsuario !== '' && telefonoUsuario !== '' && correoUsuario !== '' && direccionUsuario !== '' && contrasenaUsuario !== '') {
+                formEnviado = true; // Marcar el formulario como enviado
+    
+                document.getElementById('registroUsuario').addEventListener("submit", function(event){
+                    event.preventDefault(); // Evitar el comportamiento predeterminado del formulario     
+                    
+                    var formData = new FormData(this);
+                    
+                        // Crear objeto XMLHttpRequest
+                        var xhr = new XMLHttpRequest();
+                    
+                        // Configurar la solicitud
+                        xhr.open('POST', 'conexionRegistro.php', true);
+                
+                        // Configurar la función de devolución de llamada
+                        xhr.onload = function() {
+                            if (xhr.status >= 200 && xhr.status < 400) {
+                                // Éxito
+                                document.getElementById('resultado').innerHTML = xhr.responseText;
+                            } else {
+                                // Error
+                                console.error('Error al procesar la solicitud.');
+                            }
+                        };  
+                        // Enviar la solicitud
+                        xhr.send(formData);
+                })
+                abrirVentanaI()
+            }   
+        }
+    })
 }
 
-// Función para mostrar el mensaje emergente
-function mostrarMensaje() {
-    alert("¡La contraseña se ha restablecido correctamente!");
+
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
+
+function abrirVentanaI() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function cerrarVentanaI() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "../Index.html";
 }
 
 
 
+// *************************************************************************************************
+// *************************************** INICIO DE sesion ****************************************
+// *************************************************************************************************
 
-//------------------------------------ SCRIP - GUARDAR DATOS EN LOCAL STORAGE--------------------------------------
+var resultadoElement = document.getElementById('inicioUsuario');
 
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     // SCRIP - ALMACENA DATOS REGISTRO ----------------------------------------
-
-//     // Obtener los datos existentes en localStorage
-//     var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//     var botonCrearCuenta = document.querySelector('.create-button');
-
-//     botonCrearCuenta.addEventListener("click", function () {
-
-//         var tipo = document.getElementById("tipoSelect");
-//         var rol = document.getElementById("rolSelect");
-//         var nombre = document.getElementById("nombreInput");
-//         var apellido = document.getElementById("apellidoInput");
-//         var telefono = document.getElementById("telefonoInput");
-//         var correo = document.getElementById("correoInput");
-//         var direccion = document.getElementById("direccionInput");
-//         var contraseña = document.getElementById("contraseñaInput");
-
-//         if (esCampoVacio(tipo) || esCampoVacio(rol) || esCampoVacio(nombre) || esCampoVacio(apellido) || esCampoVacio(telefono) || esCampoVacio(correo) || esCampoVacio(direccion) || esCampoVacio(contraseña)) {
-
-//             alert("Todos los campos deben ser llenados.");
-//             return;
-//         }
-
-
-//         var nuevoDato = {
-//             tipo: getSelectedText(tipo).toUpperCase(),
-//             rol: getSelectedText(rol).toUpperCase(),
-//             nombre: nombre.value.toUpperCase(),
-//             apellido: apellido.value.toUpperCase(),
-//             telefono: telefono.value.toUpperCase(),
-//             correo: correo.value,
-//             direccion: direccion.value.toUpperCase(),
-//             contraseña: contraseña.value.toUpperCase(),
-//             fechaRegistro: new Date().toLocaleDateString()
-//         };
-//         // Agregar los nuevos datos al array
-//         tablaRegistro.push(nuevoDato);
-
-//         // Guardar el array actualizado en localStorage
-//         // Convertir el objeto a cadena JSON y almacenarlo en localStorage
-//         localStorage.setItem('tablaRegistro', JSON.stringify(tablaRegistro));
-
-//         tipo.value = "";
-//         rol.value = "";
-//         nombre.value = "";
-//         apellido.value = "";
-//         telefono.value = "";
-//         correo.value = "";
-//         direccion.value = "";
-//         contraseña.value = "";
-
-//         // MENSAJE CONFIRMACION
-
-//         alert("¡Cuenta creada correctamente!")
-//         window.open('../Index.html');
-//         window.close();
-//     });
+if (resultadoElement) {
+    resultadoElement.addEventListener("click", function(){
+        
+        document.getElementById('ingresoClientes').addEventListener('submit', function(event) {
+    
+            event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        
+            var formData = new FormData(this);
+        
+            // Crear objeto XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+        
+            // Configurar la solicitud
+            xhr.open('POST', 'IngresoUsuario.php', true);
+        
+            
+            // Configurar la función de devolución de llamada
+            xhr.onload = function() {
+        
+                // alert("Código de estado del servidor: " + xhr.status);
+        
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    // Éxito
+                    document.getElementById('resultadoTwo').innerHTML = xhr.responseText;
+                    
+                    if (xhr.responseText.trim() === '¡Datos validados cliente!') {
+                        // Redirigir al usuario al archivo HTML para cliente
+                        window.location.href = '../DashboardUsuario/MisServicios/Mservicios.html'; // Cambia al archivo HTML deseado
+        
+                    }else if(xhr.responseText.trim() === '¡Datos validados Admin!') {
+                        // Redirigir al usuario al archivo HTML para admin
+                        window.location.href = '../Dashboard/MeinMenu.html';
+                    }else{
+                        abrirVentana()
+                    }
+                }
+        
+            };
+        
+            // Enviar la solicitud
+            xhr.send(formData);
+        });
+    })        
+}
 
 
 
-//     function getSelectedText(selectElement) {
-//         var selectedIndex = selectElement.selectedIndex;
-//         return selectElement.options[selectedIndex].text;
-//     }
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
 
-//     // Funcion valida si es vacio el campo
-//     function esCampoVacio(elemento) {
-//         return elemento.value.trim() === "";
-//     }
+function abrirVentana() {
+    document.getElementById("popup").style.display = "block";
+}
 
-// });
+function cerrarVentana() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "LoginC.html";
+}
+
+  
+
+// *************************************************************************************************
+// ************************************ RESTABLECER CONTRASEÑA *************************************
+// *************************************************************************************************
 
 
+var resultadoThreeElement = document.getElementById('restablecerContrasena');
+
+if (resultadoThreeElement) {
+    
+    resultadoThreeElement.addEventListener("click", function(){
+        
+        document.getElementById('restablecerC').addEventListener('submit', function(event) {
+            // Evitar el comportamiento predeterminado del formulario
+            event.preventDefault(); 
+        
+            var formData = new FormData(this);
+        
+            // Crear objeto XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+        
+            // Configurar la solicitud
+            xhr.open('POST', 'conexionRestableC.php', true);
+        
+            
+            // Configurar la función de devolución de llamada
+            xhr.onload = function() {
+        
+                // alert("Código de estado del servidor: " + xhr.status);
+        
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    
+                    // Éxito
+                    document.getElementById('resultado').innerHTML = xhr.responseText;
+                    
+                    if (xhr.responseText.trim() === "¡Datos validados cliente!") {
+                        // Cambia al archivo HTML RestablecerC
+                        window.location.href = './NuevaPassword.html'; 
+    
+                    }else{ 
+                        if (xhr.responseText.trim() === "¡Datos validados Administrador!"){
+                            // Cambia al archivo HTML RestablecerC
+                            window.location.href = './NuevaPassword.html'; 
+                        }else{
+                            abrirVentanaII()
+                        }
+                        
+                    }
+                }
+            };
+            // Enviar la solicitud
+            xhr.send(formData);
+        });
+    })
  
+}
 
-//----------------------------------- SCRIP - VENTANA FLOTANTE GUARDAR DATOS EN BD -----------------------------------
+
+
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
+
+function abrirVentanaII() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function cerrarVentanaII() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "RestableC.html";
+}
+
+
+
+// *************************************************************************************************
+// ************************************** NUEVA CONTRASEÑA *****************************************
+// *************************************************************************************************
+
+var resultadoFourElement = document.getElementById('nuevaContrasenaC');
+
+if (resultadoFourElement) {
+ 
+    resultadoFourElement.addEventListener("click", function(){
+        
+        document.getElementById('nuevaContrasenaCC').addEventListener('submit', function(event) {
+
+            event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        
+            var formData = new FormData(this);
+        
+            // Crear objeto XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+        
+            // Configurar la solicitud
+            xhr.open('POST', 'conexionNuevaPasswordd.php', true);
+        
+            // Configurar la función de devolución de llamada
+            xhr.onload = function() {
+        
+                // alert("Código de estado del servidor: " + xhr.status);
+        
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    
+                    // Éxito
+                    document.getElementById('resultado').innerHTML = xhr.responseText;
+    
+                    
+                    if (xhr.responseText.trim() === "Contraseña cambiada exitosamente.") {
+                        alert("Contraseña cambiada exitosamente.")
+                        window.location.href = "../Index.html";
+                    }else{ 
+                        abrirVentanaIII()
+                    }
+                }
+            };
+            // Enviar la solicitud
+            xhr.send(formData);
+        });
+    })
+    
+}
+
+
+// -------------------------------------VENTANA FLOTANTE-----------------------------------------
+
+function abrirVentanaIII() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function cerrarVentanaIII() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "./NuevaPassword.html";
+}
+
+
 

@@ -10,7 +10,7 @@
 <body>
     <section>
         <div class="Container-respassword">
-            <img src="/SENA-Develeper-s-Project/images/logo PNG.png" alt="work-sphere" class="image-right">
+            <img src="../images/logo PNG.png" alt="work-sphere" class="image-right">
         </div>
     </section>
 
@@ -23,51 +23,61 @@
     <section class="container-tree forms">
         <div class="form-two loging form-tree">
             <div class="form-content">
-                <form action="#">
+                <form id="restablecerC">
                     <h3>Tipo de documento</h3>                  
                     <!-- Contenedor del combo box -->
-                    <div class="combo-box">
+                    <div class="combo-box">  
                         <!-- Combo box con dos columnas -->
-                        <select>
-                        <!-- Opción 1 -->
-                        <option value="opcion1">Cédula de ciudadanía</option>
-                        <!-- Opción 2 -->
-                        <option value="opcion2">Cédula de extranjería</option>
-                        <!-- Opción 3 -->
-                        <option value="opcion3">Permiso especial de permanencia</option>
-                        <!-- Opción 4 -->
-                        <option value="opcion4">DNI - Documento nacional de identidad</option>
+                        <select id="tipoDocumento" name="tipoDocumento">
+                            <option value="" disabled selected >Seleccione...</option>
+                            <!-- Opción 1 -->
+                            <option value="Cedula de ciudadania">Cédula de ciudadanía</option>
+                            <!-- Opción 2 -->
+                            <option value="Cedula de extranjeria">Cédula de extranjería</option>
+                            <!-- Opción 3 -->
+                            <option value="Permiso especial de permanencia">Permiso especial de permanencia</option>
+                            <!-- Opción 4 -->
+                            <option value="DNI - Documento nacional de identidad">DNI - Documento nacional de identidad</option>
                         </select>
                     </div>
                     <h3>Numero de documento</h3>
                     <div class="field input-field field3">
-                        <input type="user" placeholder="Numero documento" class="input">
+                        <input id="identificacion" name="identificacion" type="user" placeholder="Numero documento" class="input">
                     </div>
 
                     <h3>Correo electrónico</h3>
 
                     <div class="field input-field field3">
-                        <input type="user" placeholder="Correo" class="input">
+                        <input id="email" name="email" type="user" placeholder="Correo" class="input">
                     </div>
 
                     <div class="field button-field field3">
-                        <button class="links"><a href="/SENA-Develeper-s-Project/LogCreate/NuevaPassword.html">Restablecer contraseña</a></button>
+                        <button type="submit" id="restablecerContrasena" class="links"><a >Restablecer contraseña</a></button>
                     </div>
 
                     <div class="form-link">
                         <span></span>
                     </div>
                 </form>
+                
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <h2>Developer's</h2>
+                        <p id="resultado"></p>
+                        <button onclick="cerrarVentanaII()">Cerrar</button>
+                    </div>
+                </div>
+
             </div>
 
             <div class="remove-options">
                 <div class="button-home">
-                    <a href="/SENA-Develeper-s-Project/Index.html"><i class="fa-solid fa-house" ></i></a>
+                    <a href="../Index.html"><i class="fa-solid fa-house" ></i></a>
                 </div>
             </div>
         </div>
     </section>
     <!--JavaScript-->
-    <script src="LogingJS/JavaScript.js"></script>
+    <script src="./LogingJS/JavaScript.js"></script>
 </body>
 </html>

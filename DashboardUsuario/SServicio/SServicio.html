@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                 </div>
-                
+                 
                 <nav>
                     <ul>
                         <li><a href="#"><i class="fa-solid fa-bars"></i>Menu</a></li>
@@ -61,7 +61,7 @@
             
             <div class="container-principal">
                 <div class="container5">
-                    <form action="./SServicio.php" method="post" id="miFormulario">
+                    <form id="miFormulario">
                         <div class="user-details">
                             
                             <!-- SEGUNDA FILA INPUT -->
@@ -72,7 +72,7 @@
                                     <span for="equipo" class="details">EQUIPO</span>
                                     <div class="combo-box">
                                         <!-- Combo box con dos columnas -->
-                                        <select id="equipo" name="equipo">
+                                        <select id="equipo" name="equipo" required>
                                         <option value="" disabled selected >Seleccione...</option>
                                         <!-- Opción 1 -->
                                         <option value="LAVADORA">LAVADORA</option>
@@ -91,7 +91,7 @@
                                         <!-- Opción 5 -->
                                         <option value="CAFETERA">CAFETERA</option>
                                         <!-- Opción 5 -->
-                                        <option value="LAVADORA">LICUADORA</option>
+                                        <option value="LICUADORA    ">LICUADORA</option>
                                         <!-- Opción 5 -->
                                         <option value="ASPIRADORA">ASPIRADORA</option>
                                         <!-- Opción 5 -->
@@ -107,11 +107,11 @@
 
                                         </select>
                                     </div>
-                                </div>
+                                </div>  
 
                                 <div class="input-box">
                                     <span for="direccion" class="details">DIRECCION</span>
-                                    <input type="text" placeholder="Dígite..." required id="direccion" name="direccion">
+                                    <input type="text" placeholder="Dígite..." id="direccion" name="direccion" required>
                                 </div>
     
                             </div>
@@ -125,7 +125,7 @@
                                     <span for="mantenimiento" class="details">MANTENIMIENTO</span>
                                     <div class="combo-box-two">
                                         <!-- Combo box con dos columnas -->
-                                        <select required id="mantenimiento" name="mantenimiento">
+                                        <select required id="mantenimiento" name="mantenimiento" required>
                                         <option value="" disabled selected >Seleccione...</option>
                                         <!-- Opción 1 -->
                                         <option value="PREVENTIVO">PREVENTIVO</option>
@@ -140,7 +140,7 @@
 
                                 <div class="input-box">
                                     <span for="celular" class="details">CELULAR</span>
-                                    <input type="number" placeholder="Dígite..." required id="celular" name="celular">
+                                    <input type="text" placeholder="Dígite..." id="celular" name="celular" required>
                                 </div>
     
                             </div>
@@ -152,7 +152,7 @@
                                     <span for="lugar" class="details">LUGAR</span>
                                     <div class="combo-box">
                                         <!-- Combo box con dos columnas -->
-                                        <select id="lugar" name="lugar">
+                                        <select id="lugar" name="lugar" required>
                                         <option value="" disabled selected >Seleccione...</option>
                                         <<option value="DOMICILIO">DOMICILIO</option>
                                         <!-- Opción 2 -->
@@ -169,13 +169,23 @@
 
                                 <div class="input-box">
                                     <span for="email" class="details">E-MAIL</span>
-                                    <input type="text" placeholder="ejemplo@gmail.com" required id="email" name="email">
+                                    <input type="text" placeholder="ejemplo@gmail.com" id="email" name="email" required>
                                 </div>
 
                             </div>
 
                         </div>
+
+                        <input type="hidden" id="rating-value" name="rating" value="0">
                     </form>
+
+                    <div class="popup" id="popup">
+                        <div class="popup-content">
+                            <h2>Developer's</h2>
+                            <p id="resultado"></p>
+                            <button onclick="cerrarVentana()">Cerrar</button>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -190,9 +200,9 @@
                             <i class="fa-solid fa-circle-plus button-agg" id="enviarFormulario"></i>
                         </div>
 
-                        <div class="icon-options" id="guardar-dt">
+                        <!-- <div class="icon-options" id="guardar-dt">
                             <i class="fa-solid fa-floppy-disk"></i>
-                        </div>
+                        </div> -->
                     </div>
                     
                 </div>
@@ -205,7 +215,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-wrapper">
-                            <table class="table table-striped table-hover">
+                            <table id="tablaDatos" class="table table-striped table-hover">
                                 <thead>
                                     <tr class="title-name">
                                         <th class="name-table">NOMBRE</th>
@@ -221,38 +231,9 @@
 
                                 <tbody>
 
+                                
+                                    
                                     <!-- <tr>
-                                        <th>JOSE JOSE PEREZ PEREZ</th>
-                                        <th>LAVADORA</th>
-                                        <th>DOMICILIO</th>
-                                        <th>CALL 30 CRA 12-45</th>
-                                        <th>322 222 2222</th>
-                                        <th>23/12/2023</th>
-                                    </tr>
-                                    <tr>
-                                        <th>JOSE JOSE PEREZ PEREZ</th>
-                                        <th>NEVERA</th>
-                                        <th>DOMICILIO</th>
-                                        <th>TV 87 DGG7-34</th>
-                                        <th>322 222 2222</th>
-                                        <th>23/12/2023</th>
-                                    </tr>
-                                    <tr>
-                                        <th>JOSE JOSE PEREZ PEREZ</th>
-                                        <th>HORNO MICROHONDA</th>
-                                        <th>LOCAL</th>
-                                        <th>CALL 4 CRA 1-65</th>
-                                        <th>322 222 2222</th>
-                                        <th>23/12/2023</th>
-                                    </tr>
-                                    <tr>
-                                        <th>JOSE JOSE PEREZ PEREZ</th>
-                                        <th>PC</th>
-                                        <th>DOMICILIO</th>
-                                        <th>AV 40 B87</th>
-                                        <th>322 222 2222</th>
-                                        <th>23/12/2023</th>
-                                    </tr>
                                     <tr>
                                         <th>JOSE JOSE PEREZ PEREZ</th>
                                         <th>EQUIPO</th>
@@ -260,7 +241,6 @@
                                         <th>CALL 30 CRA 12-45</th>
                                         <th>322 222 2222</th>
                                         <th>23/12/2023</th>
-                                        
                                     </tr> -->
 
                                 </tbody>
