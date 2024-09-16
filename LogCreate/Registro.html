@@ -40,19 +40,6 @@
                         </div>
                     </div> 
 
-                    <!-- <div class="input-box">
-                        <span class="details">Rol</span>
-                        <div class="combo-box-two">
-                            Combo box con dos columnas
-                            <select id="rolSelect">
-                                <option value="" disabled selected >Seleccione...</option>
-                            Opción 1
-                            <option value="opcion1">Cliente</option>
-                            Opción 2
-                            <option value="opcion2">Administrador</option>
-                            </select>
-                        </div>
-                    </div> -->
 
                     <div class="input-box">
                         <span for="cedulaUsuario" class="details">Cedula</span>
@@ -73,7 +60,7 @@
                 <div class="user-details2">
                     <div class="input-box2">
                         <span for="telefonoUsuario" class="details2">Telefono</span>
-                        <input id="telefonoUsuario" name="telefonoUsuario" type="number" placeholder="Numero Celular" required>
+                        <input id="telefonoUsuario" name="telefonoUsuario" type="number" oninput="limitInput(this)" placeholder="Numero Celular" required>
                     </div>
                     <div class="input-box2">
                         <span for="correoUsuario" class="details2">Correo</span>

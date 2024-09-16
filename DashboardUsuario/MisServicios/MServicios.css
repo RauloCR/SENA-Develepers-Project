@@ -191,6 +191,8 @@ body {
 
 .right-icon{
   margin-right: 65px;
+  text-align: center;
+  position: relative;
 }
 
 .left-icon{
@@ -475,6 +477,12 @@ form{
   padding-left: 55PX;
 }
 
+.container-principal2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 525PX; */
+}
 .container5{
   max-width: 1200px;
   width: 100%;
@@ -519,6 +527,17 @@ form{
   padding-bottom: 10PX;
   justify-content: space-between;
 }
+
+.container5 form .a{
+  display: flex;
+  flex-wrap: wrap;
+  width: 850px;
+  padding-left: 265px;
+  padding-bottom: 10PX;
+  
+}
+
+
 .container5 form .user-details-two{
     display: flex;
     flex-wrap: wrap;
@@ -574,6 +593,18 @@ input[type="date"]:focus {
   transition: all 0.3s ease;
 }
 
+.a .a input{
+  color: #999;
+  height: 35px;
+  width: 100px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #BBB;
+  padding-left: 10px;
+  font-size: 12px;
+  border-bottom-width: 1.5px;
+  transition: all 0.3s ease;
+}
 
 
 .user-details-tree .input-box input{
@@ -592,6 +623,14 @@ input[type="date"]:focus {
   display: block;
   font-weight: 500;
   width: 130px;
+  font-size: 10PX;
+}
+
+.a .a .details{
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  width: 80px;
   font-size: 10PX;
 }
 
@@ -687,9 +726,10 @@ input[type="date"]:focus {
 .line-tree{
   position: relative;
   height: 3px;
-  width: 100%;
+  width: 49%;
   background-color: #AAA;
   margin-bottom: 17px;
+  margin-right: 400px;
 }
 
 /* UBICACION */
@@ -729,6 +769,7 @@ input[type="date"]:focus {
     align-items: center;
     text-align: center;
     width: 400px;
+    padding-left: 150px;
     padding-bottom: 30px;
     background-color: #fff;
     border-radius: 8px;
@@ -854,3 +895,97 @@ input[type="date"]:focus {
 
 
 
+/* --------------------------------- ICON FILTRAR -----------------------*/
+
+table.table th i {
+	font-size: 13px;
+	margin: 6px 5px;
+	cursor: pointer;
+  color: #999; 
+}
+
+/* -----------------------------------ESTILOS FILTRO TABLA------------------------------------ */
+
+table.table th i {
+  font-size: 13px;
+  margin: 6px 5px;
+  cursor: pointer;
+  color: #999;
+}
+
+
+/* -----------------------------------ESTILOS FILTRO TABLA------------------------------------ */
+
+#filterButton, #filterButtonone, #filterButtontwo, #filterButtonthree, 
+#filterButtonfour, #filterButtonfive, #columnsix{cursor: pointer;}
+
+/* -----------------------------------ESTILOS REFRESC TABLA------------------------------------ */
+
+#updateMessage {
+  position: absolute;
+  font-size: 18px;
+  color: green; /* O el color que prefieras */
+  margin-bottom: 0px; /* Espacio entre el mensaje y el botón */
+  font-weight: bold;
+  text-align: center;
+  top: -30px; /* Ajusta este valor según lo necesites */
+  right: -45px;   /* Ajusta este valor según lo necesites */
+  padding: 5px; /* Opcional: Espaciado interno */
+
+}
+
+
+/* CSS */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear;
+}
+
+
+/* ***************************************************************************************** */
+/* ************************** ESTILOS VENTANA FLOTANTE BOTONES ***************************** */
+/* ***************************************************************************************** */
+
+.icon-options-two {
+  position: relative; 
+  display: inline-block; 
+}
+
+.icon-options {
+  position: relative; 
+  display: inline-block; 
+}
+
+.tooltip {
+  visibility: hidden; 
+  width: 120px; 
+  background-color: #105d8d; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 6px; 
+  padding: 8px; 
+  position: absolute; 
+  bottom: 125%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  z-index: 10; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.icon-options-two:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.icon-options:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}

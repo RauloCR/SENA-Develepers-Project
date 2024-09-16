@@ -2,6 +2,9 @@
 
 <?php
 
+// Iniciar sesión
+session_start();
+
 // <!-- -------------------CONEXION A LA BASE DE DATOS------------------- -->
 
 // Configuración de la conexión a la base de datos
@@ -12,6 +15,12 @@ $dbname = "DevelopersProject"; // Nombre de la base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+// Obtener los datos del usuario validado
+$usuarioi = $_SESSION['usuarioValidadoI'];
+
+// traemos el campo 'id_usuario' de la tabla 'cliente'
+$userIdentificacioni = $usuarioi['id_cliente']; 
  
 // Verificar la conexión
 if ($conn->connect_error) {
@@ -25,17 +34,10 @@ if ($conn->connect_error) {
 
         
     $equipoFiltrado = $_GET['equipoFiltrado'];
-    
-    // Consulta SQL para verificar las credenciales
-    $sql = "SELECT * FROM servicio WHERE tipo_equipo = '$equipoFiltrado'";
-    
-    $result = $conn->query($sql);
-
-    if ($result && $result->num_rows === 1) {
-      
+          
         // Consulta SQL para obtener los datos de la tabla usuarios
-        $sql = "SELECT correo_servicio, tipo_equipo, destino_servicio, createTime_servicio, estado_servicio FROM servicio WHERE tipo_equipo = '$equipoFiltrado'";
-        $result = $conn->query($sql);
+        $sql = "SELECT id_servicio, correo_servicio, tipo_equipo, destino_servicio, createTime_servicio, estado_servicio FROM servicio WHERE tipo_equipo = '$equipoFiltrado' AND id_cliente = $userIdentificacioni";
+        $result = $conn->query($sql);  
 
         // Comprobar si hay resultados
         if ($result->num_rows > 0) {
@@ -45,22 +47,12 @@ if ($conn->connect_error) {
                 $data[] = $row;
             }
             // Devolver los datos en formato JSON
-            // header('Content-Type: application/json');
-            // JSON_UNESCAPED_UNICODE para manejar caracteres con tilde correctamente
-            // echo json_encode($data, JSON_UNESCAPED_UNICODE); 
-            // Devolver los datos en formato JSON
             echo json_encode($data);
 
         } else {
             echo json_encode(array('error' => 'No se encontraron resultados'));
         }
     
-    } else {
-      // La consulta no devolvió ninguna fila o más de una fila, lo que indica que los datos son incorrectos
-    //   echo "¡No se encontro ningun servicio!";      
-      echo json_encode(array('error' => 'No se encontraron resultados'));
-    }
-  
 
 }
 

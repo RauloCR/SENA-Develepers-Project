@@ -23,10 +23,20 @@ if ($conn->connect_error) {
 
 function poblarTabla(){
   global $conn;
+
   // Consulta SQL para obtener los datos de la tabla usuarios
-  $sql = "SELECT id_usuario, tipo_equipo, destino_servicio, direccion_servicio, telefono_servicio, createTime_servicio FROM servicio";
-  $result = $conn->query($sql);
+  $sql = "SELECT s.id_cliente, 
+       CONCAT(c.nombre_cliente, ' ', c.apellido_cliente) AS nombre_completo,
+       s.tipo_equipo, 
+       s.destino_servicio, 
+       s.direccion_servicio, 
+       s.telefono_servicio, 
+       s.createTime_servicio
+        FROM servicio s
+        JOIN cliente c ON s.id_cliente = c.id_cliente";
   
+  $result = $conn->query($sql);
+
   // Comprobar si hay resultados
   if ($result->num_rows > 0) {
       // Preparar un array para almacenar los resultados
@@ -39,12 +49,43 @@ function poblarTabla(){
       header('Content-Type: application/json');
       echo json_encode($data, JSON_UNESCAPED_UNICODE); // JSON_UNESCAPED_UNICODE para manejar caracteres con tilde correctamente
 
-      
   } else {
       echo json_encode(array('error' => 'No se encontraron resultados'));
   }
   
 }
+
+
+function poblarTablaN(){
+  global $conn;
+
+
+ // Obtener la cédula desde la solicitud GET
+$cedula = $conexion->real_escape_string($_GET['cedula']);
+
+// Consultar la base de datos
+$sql = "SELECT nombre_cliente, apellido_cliente FROM cliente WHERE cedula_cliente = '$cedula'";
+$result = $conexion->query($sql);
+
+$response = array();
+
+if ($result->num_rows > 0) {
+    // Preparar un array para almacenar los resultados
+    while ($row = $result->fetch_assoc()) {
+        $response[] = $row;
+    }
+} else {
+    $response['error'] = 'No se encontraron resultados';
+}
+
+// Cerrar conexión
+$conexion->close();
+
+// Devolver los datos en formato JSON
+echo json_encode($response, JSON_UNESCAPED_UNICODE);
+
+}
+
 
 
 function insertar_Datos(){
@@ -53,29 +94,48 @@ function insertar_Datos(){
     // Obtener los datos del formulario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-      $nombre = strtoupper($_POST['nombre']);
-      $apellido = strtoupper($_POST['apellido']);
-      $direccion = strtoupper($_POST['direccion']);
+      // $nombre = strtoupper($_POST['nombre']);
+      // $apellido = strtoupper($_POST['apellido']);
+      
       $cedula = $_POST['cedula'];
-      $lugar = strtoupper($_POST['lugar']);
-      $equipo = strtoupper($_POST['equipo']);
+      
+      $sqlc = "SELECT id_cliente FROM cliente WHERE cedula_cliente = $cedula ";
+
+      // Ejecutar la consulta
+    $result = mysqli_query($conn, $sqlc);
+
+
+    // Verificar si se obtuvo un resultado
+    if ($result && mysqli_num_rows($result) > 0) {
+      // Obtener el id_cliente
+      $row = mysqli_fetch_assoc($result);
+      $id_cliente = $row['id_cliente'];
+      // Definir los otros valores para la inserción
+      $direccion = $_POST['direccion'];
+      $lugar =strtoupper ($_POST['lugar']);
+      $equipo = strtoupper($_POST['equipo']) ;
       $celular = $_POST['celular'];
-      $mantenimiento = strtoupper($_POST['mantenimiento']);
-      $correo = strtoupper($_POST['correo']);
+      $mantenimiento = strtoupper($_POST['mantenimiento']) ;
+      $correo = $_POST['correo'];
+      $estado = strtoupper('PENDIENTE');
 
-      $estado = strtoupper('ACTIVO');
+      // Preparar la consulta para insertar el nuevo servicio
+      $sql_insert_servicio = "INSERT INTO servicio (id_cliente, direccion_servicio, destino_servicio, tipo_equipo, telefono_servicio, tipo_servicio, correo_servicio, estado_servicio) VALUES ('$id_cliente', '$direccion', '$lugar', '$equipo', '$celular', '$mantenimiento', '$correo', '$estado')";
 
-    // Preparar y ejecutar la consulta SQL para insertar los datos en la tabla
+      // Ejecutar la consulta
+      if (mysqli_query($conn, $sql_insert_servicio)) {
+          echo "Nuevo servicio insertado correctamente";
+      } else {
+          echo "Error: " . mysqli_error($conn);
+      }
 
-    $sql = "INSERT INTO servicio (direccion_servicio, destino_servicio, tipo_equipo, telefono_servicio, tipo_servicio, correo_servicio, estado_servicio) VALUES ('$direccion','$lugar', '$equipo', '$celular', '$mantenimiento', '$correo', '$estado')";
-
-    if ($conn->query($sql) === TRUE) {
-      // echo "<script>alert('Datos almacenados correctamente.');</script>";
-      // echo "<script>setTimeout(function(){ alert('Datos almacenados correctamente.'); }, 2000);</script>";
-      echo "Datos almacenados correctamente";
     } else {
-      echo "Error: " . $sql . "\\n" . $conn->error . "";
+      // Manejar el caso cuando no se encuentra el id_cliente
+      echo("Cliente no encontrado");
     }
+
+
+    
 
     }
 
@@ -94,6 +154,12 @@ if(isset($_GET['accion'])){
             // Lógica para procesar el formulario
             poblarTabla();
             break;
+        case 'poblarN':
+          // Lógica para procesar el formulario
+          poblarTablaN();
+          break;
+
+            
         case 'enviar':
             // Lógica para procesar el envío del formulario
             insertar_Datos();

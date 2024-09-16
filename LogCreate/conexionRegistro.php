@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   // Preparar y ejecutar la consulta SQL para insertar los datos en la tabla
   
-  $sql = "INSERT INTO cliente (tipo_rol, cedula_cliente, tipo_cedula, nombre_cliente, apellido_cliente, telefono_cliente, correo_cliente, direccion_cliente, contraseña_cliente, estado_cliente) VALUES ('$type_rol', '$cedulaUsuario', '$tipoCedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario')";
-  $sqlTwo = "INSERT INTO usuarios (tipo_rol, cedula_usuario, tipo_cedula, nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, contraseña_usuario, estado_usuario) VALUES ('$type_rol', '$cedulaUsuario', '$tipoCedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario')";
+  $sql = "INSERT INTO cliente (tipo_rol, cedula_cliente, tipo_cedula, nombre_cliente, apellido_cliente, telefono_cliente, correo_cliente, direccion_cliente, contrasena_cliente, estado_cliente) VALUES ('$type_rol', '$cedulaUsuario', '$tipoCedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario')";
+  $sqlTwo = "INSERT INTO usuarios (tipo_rol, cedula_usuario, tipo_cedula, nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, contrasena_usuario, estado_usuario) VALUES ('$type_rol', '$cedulaUsuario', '$tipoCedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario')";
 
   //validamos que la consulta sea exitosa
   if ($conn->query($sql) === TRUE & $conn->query($sqlTwo) === TRUE ) {

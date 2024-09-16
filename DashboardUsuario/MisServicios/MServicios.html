@@ -17,7 +17,7 @@
             <div class="head">
                 <div class="menu-i">
                     <div class="item">
-                        <img src="../../images/logo PNG.png" alt="team-work">
+                        <img src="../../images/logoPNG.png" alt="team-work">
                     </div>
                     <div class="menu">
                         <ul>
@@ -35,7 +35,7 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-bars"></i>Menu</a></li>
+                        <li><a href="../ActualizarD/actualizarD.html"><i class="fa-solid fa-user"></i>Usuario</a></li>
                         <li><a href="../../Index.html"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
                     </ul>
                 </nav>
@@ -66,7 +66,13 @@
 
                             <!-- PRIMERA FILA INPUT -->
 
-                            <div class="user-details">
+                            <div class="title-tree">
+                                <h2>BUSCAR</h2>
+                            </div>
+
+                            <div class="line-tree"></div>
+
+                            <div class="user-details">  
 
                                 <div class="input-box">
                                     <span class="details">EQUIPO</span>
@@ -84,25 +90,30 @@
                                         <option value="TV">TV</option>
                                         <!-- Opción 5 -->
                                         <option value="EQUIPO">EQUIPO</option>
+                                        <!-- Opción 5 -->
+                                        <option value="REFRIGERADOR">REFRIGERADOR</option>
+                                        <!-- Opción 5 -->
+                                        <option value="ESTUFA">ESTUFA</option>
+                                        <!-- Opción 5 -->
+                                        <option value="CAFETERA">CAFETERA</option>
+                                        <!-- Opción 5 -->
+                                        <option value="LICUADORA    ">LICUADORA</option>
+                                        <!-- Opción 5 -->
+                                        <option value="ASPIRADORA">ASPIRADORA</option>
+                                        <!-- Opción 5 -->
+                                        <option value="FREIDORA ELECTRICA">FREIDORA ELECTRICA</option>
+                                        <!-- Opción 5 -->
+                                        <option value="VENTILADOR">VENTILADOR</option>
+                                        <!-- Opción 5 -->
+                                        <option value="AIRE ACONDICIONADO">AIRE ACONDICIONADO</option>
+                                        <!-- Opción 5 -->
+                                        <option value="CALENTADOR">CALENTADOR DE AGUA</option>
+                                        <!-- oPCION & -->
+                                        <option value="OTRO">OTRO...</option>
                                         </select>
                                     </div>
                                 </div>
     
-                            </div>
-  
-                            <!-- SEGUNDA FILA INPUT -->
-
-                            <div class="user-details-tree">
-                                            
-                                <div class="input-box">
-                                    <span class="details">FECHA INICIAL</span>
-                                    <input type="date" placeholder="dd/mm/aaaa" required>
-                                </div>
-
-                                <div class="input-box">
-                                    <span class="details">FECHA FINAL</span>
-                                    <input type="date" placeholder="Digite..." required>
-                                </div>
                             </div>
 
                         </div>
@@ -119,11 +130,14 @@
 
                         <div class="icon-options">
                             <img id="filtroB" src="../../ICON/file-magnifying-glass.svg" alt="">
+                            <span class="tooltip">Buscar</span>
                         </div>
 
                     </div>
+                    
                     <div class="right-icon">
-                        <i id="copiarExcel" class="fa-solid fa-circle-down"></i>
+                        <div id="updateMessage" style="display: none;">¡Actualizada!</div>
+                        <i id="refreshButton" class="fa-solid fa-arrows-rotate"></i>
                     </div>
                 </div>
             </div>
@@ -138,17 +152,17 @@
                             <table id="tablaDatos" class="table table-striped table-hover">
                                 <thead>
                                     <tr class="title-name">
-                                        <th class="name-table">NOMBRE</th>
-                                        <th class="name-table">E-MAIL</th>
-                                        <th class="name-table">EQUIPO</th>
-                                        <th class="name-table">LUGAR</th>
-                                        <th class="name-table">FECHA REGISTRO<i id="filterButton" class="fas fa-filter"></i></th>
-                                        <th class="name-table">ESTADO</th>
-                                        
+                                        <!-- <th class="name-table">NOMBRE <i class="fas fa-filter"></i></th> -->
+                                        <th id="filterButtonone" class="name-table">ID SERVICIO <i id="filterButtonone" class="fas fa-filter"></i></th>
+                                        <th id="filterButton" class="name-table">E-MAIL <i id="filterButton" class="fas fa-filter"></i></th>
+                                        <th id="filterButtontwo" class="name-table">EQUIPO <i id="filterButtontwo" class="fas fa-filter"></i></th>
+                                        <th id="filterButtonthree" class="name-table">LUGAR <i id="filterButtonthree" class="fas fa-filter"></i></th>
+                                        <th id="filterButtonfour" class="name-table">FECHA REGI STRO<i id="filterButtonfour" class="fas fa-filter"></i></th>
+                                        <th id="filterButtonfive" class="name-table">ESTADO <i id="filterButtonfive" class="fas fa-filter"></i></th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody> 
                                     <!--
                                     <tr>
                                         <th>JOSE JOSE PEREZ PERREZ</th>
@@ -167,32 +181,50 @@
                 </div>
             </div>
 
-            <!-- VALORACION Y COMENTARIO -->
-            
-                <div class="comment-form-principal">
-                    <div id="comment-form">
+            <div class="container-principal2">
+                <div class="container5">
+                    <form id="form">
                         
-                        <div id="rating-stars">
-                            <span class="star" onclick="rateStar(1)">★</span>
-                            <span class="star" onclick="rateStar(2)">★</span>
-                            <span class="star" onclick="rateStar(3)">★</span>
-                            <span class="star" onclick="rateStar(4)">★</span>
-                            <span class="star" onclick="rateStar(5)">★</span>
+                        <div class="user-details a">    
+                            <div class="user-details">
+                                <div class="input-box a">
+                                    <span for="idservicio" class="details">ID SERVICIO A CALIFICAR</span>
+                                    <input type="text" id="idservicio" name="idservicio" placeholder="ID servicio..." required>
+                                </div>
+                            </div>
                         </div>
 
-                        <form id="form">
-                        
-                            <input type="hidden" id="rating-value" name="rating" value="0">
+
+                        <div class="comment-form-principal">
+                            <div id="comment-form">
+                                
+                                <div id="rating-stars">
+                                    <span class="star" onclick="rateStar(1)">★</span>
+                                    <span class="star" onclick="rateStar(2)">★</span>
+                                    <span class="star" onclick="rateStar(3)">★</span>
+                                    <span class="star" onclick="rateStar(4)">★</span>
+                                    <span class="star" onclick="rateStar(5)">★</span>
+                                </div>
+                                
+                                <input type="hidden" id="rating-value" name="rating" value="0">
+                                
+                                <textarea id="comment" name="comment" placeholder="Escribe tu comentario..."></textarea>   
                             
-                            <textarea id="comment" name="comment" placeholder="Escribe tu comentario..."></textarea>   
-                        
-                            <button id="submit-btn" type="submit" onclick="submitComment()">Enviar<i class="fa-solid fa-paper-plane"></i></button>
+                                <button id="submit-btn" type="submit">Enviar<i class="fa-solid fa-paper-plane"></i></button>
+    
+                            </div>
+        
+                        </div>
 
-                        </form>
 
-                    </div>
 
-                </div>
+                    </form>
+                </div>                
+            </div>
+
+            <!-- VALORACION Y COMENTARIO -->
+            
+                
             
 
             <div class="popup" id="popup">

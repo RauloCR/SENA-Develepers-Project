@@ -85,7 +85,7 @@ body {
   .menu {
     background-color: #184b8f;
     height: 65px;
-    width: 813px;
+    width: 828px;
     margin-left: 80px;
     display: flex;
     text-align: center;
@@ -204,10 +204,6 @@ body {
 
 
 
-
-
-
-
 /* combo box */
 
     /* Estilo para el contenedor del combo box */
@@ -274,11 +270,28 @@ body {
   color: #000; /* Color de texto negro cuando el cuadro de selección está activo */
 }
 
+
+   
+.combo-box select:focus {
+  color: #000; /* Color de texto negro al enfocar el cuadro de selección */
+}
+.combo-box.select-active select {
+color: #000; /* Color de texto negro cuando el cuadro de selección está activo */
+}
+
+
+
     /* Estilo para la lista desplegable con dos columnas */
     .combo-box select option {
       padding: 8px;
     }
 
+    .combo-box select:focus {
+      color: #000; /* Color de texto negro al enfocar el cuadro de selección */
+    }
+  .combo-box.select-active select {
+    color: #000; /* Color de texto negro cuando el cuadro de selección está activo */
+  }
     
   
 
@@ -753,4 +766,73 @@ form .user-details .input-box-two{
 
 
 
+#filtro1, #filtro2, #filtro3, #filtro4, #filtro5, #filtro6, #filtro7{cursor: pointer;}
+
+
+table.table th i {
+  font-size: 13px;
+  margin: 6px 5px;
+  cursor: pointer;
+  color: #999;
+}
+
+
+
+
+/* ***************************************************************************************** */
+/* ************************** ESTILOS VENTANA FLOTANTE BOTONES ***************************** */
+/* ***************************************************************************************** */
+
+.icon-options-two {
+  position: relative; 
+  display: inline-block; 
+}
+
+.icon-options {
+  position: relative; 
+  display: inline-block; 
+}
+
+.tooltip {
+  visibility: hidden; 
+  width: 120px; 
+  background-color: #105d8d; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 6px; 
+  padding: 8px; 
+  position: absolute; 
+  bottom: 125%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  z-index: 10; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.icon-options-two:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.icon-options:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.left-icon .tooltip{
+  font-size: 18px;
+}
+   
+.right-icon .tooltip{
+  font-size: 18px;
+}
+
+
+.icon-options2 {
+  margin-right: 80px;
+}
 

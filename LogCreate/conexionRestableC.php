@@ -29,26 +29,9 @@ if (isset($_POST['tipoDocumento']) && isset($_POST['identificacion']) && isset($
 
   // $emailS = strtoupper($email);
 
-
-    // // Consulta SQL para verificar las credenciales
-    // $sql_usuario = "SELECT * FROM usuario WHERE type_cedula = '$tipoDocumentoS' AND cedula_user = '$identificacion' AND email_user = '$email'";
-    // $result = $conn->query($sql);
-
-    // if ($result && $result->num_rows === 1) {
-    //   // Guardar los datos del usuario en la variable de sesión
-    //   $_SESSION['usuario_validado'] = $result->fetch_assoc();
-
-    //   // La consulta devolvió exactamente una fila, lo que significa que los datos son correctos
-    //   echo "¡Datos validados!";
-    
-    // } else {
-    //   // La consulta no devolvió ninguna fila o más de una fila, lo que indica que los datos son incorrectos
-    //   echo "¡Favor ingresar información válida!";      
-    // }
-
     session_unset();
 
-    $sql_cliente = "SELECT * FROM cliente WHERE tipo_cedula = '$tipoDocumentoS' AND cedula_usuario = '$identificacion' AND correo_usuario = '$email'";
+    $sql_cliente = "SELECT * FROM cliente WHERE tipo_cedula = '$tipoDocumentoS' AND cedula_cliente = '$identificacion' AND correo_cliente = '$email'";
     $resultado_cliente = mysqli_query($conn, $sql_cliente);
 
     if (mysqli_num_rows($resultado_cliente) > 0) {
@@ -67,7 +50,19 @@ if (isset($_POST['tipoDocumento']) && isset($_POST['identificacion']) && isset($
             // El usuario es un administrador
             echo "¡Datos validados Administrador!";
         }else{
-            echo "¡Informacion incorrecta!";
+
+          $sql_tecnico = "SELECT * FROM tecnico WHERE tipo_cedula = '$tipoDocumentoS' AND cedula_tecnico = '$identificacion' AND correo_tecnico = '$email'";
+          $resultado_tecnico = mysqli_query($conn, $sql_tecnico);
+          if (mysqli_num_rows($resultado_tecnico) > 0) {
+            // Guardar los datos del usuario en la variable de sesión
+            $_SESSION['usuario_validado_T'] = $resultado_tecnico->fetch_assoc();
+              // El usuario es un administrador
+              echo "¡Datos validados Administrador!";
+              
+            }else{
+              echo "¡Informacion incorrecta!";
+            }
+            
         }
     }
 

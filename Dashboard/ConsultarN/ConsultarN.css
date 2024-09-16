@@ -85,7 +85,7 @@ body {
   .menu {
     background-color: #184b8f;
     height: 65px;
-    width: 813px;
+    width: 828px;
     margin-left: 80px;
     display: flex;
     text-align: center;
@@ -297,25 +297,17 @@ table.table tr .name-table{
   
 }
 
-
 table.table th i {
-	font-size: 17px;
-	margin: 6px 5px;
-	cursor: pointer;
-  
-}
-
-table.table th i {
-	font-size: 17px;
-	margin: 6px 5px;
-	cursor: pointer;
-  
+  font-size: 13px;
+  margin: 6px 5px;
+  cursor: pointer;
+  color: #999;
 }
 
 
 table.table td:last-child {
 	opacity: 0.9;
-	font-size: 22px;
+	font-size: 14px;
   
 }
 
@@ -390,7 +382,9 @@ table {
     background-color: rgba(0, 0, 0, .075)
 }
 
-
+tbody{
+  text-align: center;
+}
 
 .name-table {
   position: relative;
@@ -428,16 +422,17 @@ table {
   cursor: pointer;
 }
 
+img{
+  max-width: 280px;
+}
+
 
 
 
 /* -----------------------------------INPUT DEL LA PAGINA MENU PRINCIPAL -----------------------------------*/
 
 
-form{
-  display: flex;
-  flex-direction: column;
-}
+
 
 /* Estilos registro */
 
@@ -485,7 +480,12 @@ form{
 
 /* CONTENEDER INPUT */
 
-.container5 form .user-details{
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.container5 .form .user-details{
   display: flex;
   flex-wrap: wrap;
   width: 850px;
@@ -493,7 +493,7 @@ form{
   justify-content: space-between;
 }  
 
-.container5 form .user-details-tree{
+.container5 .form .user-details-tree{
   display: flex;
   flex-wrap: wrap;
   width: 430px;
@@ -501,20 +501,20 @@ form{
   justify-content: space-between;
 }
 
-form .user-details .input-box{
+.form .user-details .input-box{
   display: flex;
   width: 415px;
   align-items: center;
 }
 
-form .user-details-tree .input-box{
+.form .user-details-tree .input-box{
   display: flex;
   width: 200px;
   align-items: center;
   padding-right: 15px;
 }
 
-form .user-details .input-box-two{
+.form .user-details .input-box-two{
     display: flex;
     align-items: center;
   }
@@ -658,3 +658,121 @@ form .user-details .input-box-two{
    background-color: #ccc;
  }
 
+/* ***************************************************************************************** */
+/* ************************************ ESTILOS FILTRO ************************************* */
+/* ***************************************************************************************** */
+
+
+#filtro1, #filtro2, #filtro3, #filtro4, #filtro5{cursor: pointer;}   
+
+
+
+
+/* ***************************************************************************************** */
+/* ************************** ESTILOS VENTANA FLOTANTE BOTONES ***************************** */
+/* ***************************************************************************************** */
+
+.icon-options-two {
+  position: relative; 
+  display: inline-block; 
+}
+
+.icon-options {
+  position: relative; 
+  display: inline-block; 
+}
+
+.tooltip {
+  visibility: hidden; 
+  width: 120px; 
+  background-color: #105d8d; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 6px; 
+  padding: 8px; 
+  position: absolute; 
+  bottom: 125%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  z-index: 10; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.icon-options-two:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.icon-options:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.left-icon .tooltip{
+  font-size: 18px;
+}
+
+.right-icon .tooltip{
+  font-size: 18px;
+}
+
+
+.icon-options2 {
+  margin-right: 80px;
+}
+
+table.table th i {
+  font-size: 13px;
+  margin: 6px 5px;
+  cursor: pointer;
+  color: #999;
+}
+
+ 
+
+
+
+/* ----------------------------------- ESTILOS VENTANA FLOTANTE-------------------------------- */
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup p {
+  margin-top: 7px;
+  margin-bottom: 15px;
+}
+
+.popup button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+}

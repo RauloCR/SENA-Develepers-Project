@@ -50,11 +50,9 @@ pwShowHide.forEach(eyeIcon => {
 
 
 // ############################################################################################################
-// ############################################################################################################
+// ###################################### SCRIP - GUARDAR DATOS EN BD #########################################
 // ############################################################################################################
 
-
-//----------------------------------- SCRIP - GUARDAR DATOS EN BD -----------------------------------
 
 
 var formEnviado = false; // Bandera para controlar si el formulario ya se ha enviado
@@ -121,55 +119,79 @@ function cerrarVentanaI() {
 
 
 // *************************************************************************************************
-// *************************************** INICIO DE sesion ****************************************
+// *************************************** INICIO DE SESION ****************************************
 // *************************************************************************************************
 
-var resultadoElement = document.getElementById('inicioUsuario');
 
-if (resultadoElement) {
-    resultadoElement.addEventListener("click", function(){
+var formEnviado = false; // Bandera para controlar si el formulario ya se ha enviado
+var resultadoElementOne = document.getElementById('inicioUsuario');
+
+if (resultadoElementOne) {
+  
+    resultadoElementOne.addEventListener("click", function(event){
+        event.preventDefault()
         
-        document.getElementById('ingresoClientes').addEventListener('submit', function(event) {
-    
-            event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        if (!formEnviado) {
+            var usuario = document.getElementById('usuario').value;
+            var contrasena = document.getElementById('contrasena').value;
+
         
-            var formData = new FormData(this);
-        
-            // Crear objeto XMLHttpRequest
-            var xhr = new XMLHttpRequest();
-        
-            // Configurar la solicitud
-            xhr.open('POST', 'IngresoUsuario.php', true);
-        
-            
-            // Configurar la función de devolución de llamada
-            xhr.onload = function() {
-        
-                // alert("Código de estado del servidor: " + xhr.status);
-        
-                if (xhr.status >= 200 && xhr.status < 400) {
-                    // Éxito
-                    document.getElementById('resultadoTwo').innerHTML = xhr.responseText;
+            if (usuario !== '' && contrasena !== '') {
+                formEnviado = true; // Marcar el formulario como enviado
+
+                var f = document.getElementById('ingresoClientes')
+                          
+                        
+                        var formData = new FormData(f);
+                        
+                            // Crear objeto XMLHttpRequest
+                            var xhr = new XMLHttpRequest();
+                        
+                            // Configurar la solicitud
+                            xhr.open('POST', 'IngresoUsuario.php', true);
                     
-                    if (xhr.responseText.trim() === '¡Datos validados cliente!') {
-                        // Redirigir al usuario al archivo HTML para cliente
-                        window.location.href = '../DashboardUsuario/MisServicios/Mservicios.html'; // Cambia al archivo HTML deseado
-        
-                    }else if(xhr.responseText.trim() === '¡Datos validados Admin!') {
-                        // Redirigir al usuario al archivo HTML para admin
-                        window.location.href = '../Dashboard/MeinMenu.html';
-                    }else{
-                        abrirVentana()
-                    }
-                }
-        
-            };
-        
-            // Enviar la solicitud
-            xhr.send(formData);
-        });
-    })        
-}
+                            // Configurar la función de devolución de llamada
+                            xhr.onload = function() {
+                                if (xhr.status >= 200 && xhr.status < 400) {
+
+                                //   console.log(xhr.responseText)
+                                  
+                                    // Éxito
+                                    document.getElementById('resultadoTwo').innerHTML = xhr.responseText;
+                                    
+                                    if (xhr.responseText.trim() === '¡Datos validados cliente!') {
+                                        // Redirigir al usuario al archivo HTML para cliente
+                                        window.location.href = '../DashboardUsuario/MisServicios/MServicios.html'; // Cambia al archivo HTML deseado
+                        
+                                    }else if(xhr.responseText.trim() === '¡Datos validados Admin!') {
+                                        // Redirigir al usuario al archivo HTML para admin
+                                        window.location.href = '../Dashboard/MeinMenu.html';
+                                    
+                                    }else if(xhr.responseText.trim() === '¡Datos validados tecnico!') {
+                                        // Redirigir al usuario al archivo HTML para admin
+                                        window.location.href = '../DashboardTecnico/MenuC.html';
+                                    
+                                    }
+                                    else{
+                                        abrirVentana()
+                                    }
+
+                                } else {
+                                    // Error
+                                    alert('Error al procesar la solicitud.');
+                                }
+                            };  
+                            // Enviar la solicitud
+                            xhr.send(formData);
+                            
+            } else{
+                alert("Favor completar todos los campos")
+            } 
+
+        }
+    })
+} 
+
 
 
 
@@ -217,7 +239,7 @@ if (resultadoThreeElement) {
         
                 if (xhr.status >= 200 && xhr.status < 400) {
                     
-                    // Éxito
+                    // Éxito  
                     document.getElementById('resultado').innerHTML = xhr.responseText;
                     
                     if (xhr.responseText.trim() === "¡Datos validados cliente!") {
@@ -318,4 +340,23 @@ function cerrarVentanaIII() {
 }
 
 
+// *************************************************************************************************
+// *********************************** LIMITAR NUMERO TELEFONO *************************************
+// *************************************************************************************************
 
+
+function limitInput(element) {
+    // Obtener el valor del campo de entrada
+    let value = element.value;
+    
+    // Eliminar cualquier carácter no numérico
+    value = value.replace(/\D/g, '');
+    
+    // Limitar el valor a 10 caracteres
+    if (value.length > 10) {
+        value = value.slice(0, 10);
+    }
+    
+    // Asignar el valor filtrado al campo de entrada
+    element.value = value;
+}

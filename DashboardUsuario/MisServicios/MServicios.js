@@ -57,42 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-//-----------------------------------EVENTO PARA LOS BOTONES -CIRCLE- ------------------------------------------------
-
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     // Obtén todos los elementos con la clase 'fa-circle'
-    //     var circleIcons = document.querySelectorAll('.fa-regular.fa-circle');
-
-    //     // Agrega un evento de clic a cada elemento
-    //     circleIcons.forEach(function (circleIcon) {
-    //         circleIcon.addEventListener('click', function () {
-    //             // Cambia el icono de círculo a un chulito cuando se hace clic
-    //             if (this.classList.contains('fa-circle')) {
-    //                 this.classList.remove('fa-circle');
-    //                 this.classList.add('fa-check-circle');
-    //                 this.classList.add('fa-solid')
-    //             } else {
-    //                 // Si ya es un chulito, cambia de nuevo a círculo
-    //                 this.classList.remove('fa-check-circle');
-    //                 this.classList.remove('fa-solid')
-    //                 this.classList.add('fa-circle');
-    //             }
-    //         });
-    //     });
-    // });
-
 
 //--------------------------------------VALORACION ESTRELLAS--------------------------------------------
-
-    // let selectedStars = 0;
-
-    // function rateStar(star) {
-    //   selectedStars = star;
-    //   for (let i = 1; i <= 5; i++) {
-    //     const starElement = document.querySelector(`#rating-stars .star:nth-child(${i})`);
-    //     starElement.classList.toggle('active', i <= selectedStars);
-    //   }
-    // }
 
     let selectedStars = 0;
 
@@ -105,188 +71,9 @@ function rateStar(star) {
     }
 }
   
-    // function submitComment() {
-    //   const commentText = document.getElementById('comment').value;
-    //   if (selectedStars === 0 || commentText.trim() === '') {
-    //     alert('Por favor, selecciona una valoración y escribe un comentario.');
-    //   } else {
-    //     // alert(`Valoración: ${selectedStars}`);
-    //     document.getElementById('comment').value = ''; 
-    //     // Limpiar el campo de comentarios
-    //     // reiniciar las estrellas a su estado inicial.
-    //     selectedStars = 0;
-    //     rateStar(selectedStars);
-    //   }
-    // }
-  
-
-
-
-    
-
-
-
-// ----------------------POBLAR TABLA CON DATOS DEL LOCAL STORAGE---------------------
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-            
-//     // var nombreTitular = localStorage.getItem('nombreClienteLogueado');
-//     var tabla = document.querySelector("table tbody");
-//     cargarDatosGuardados();
-
-//     function cargarDatosGuardados() {
-//         // Obtener los datos almacenados en localStorage
-//         var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
-
-//         // Agregar las filas a la tabla
-//         solicitarServicios.forEach(function (dato) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//                 <th>${dato.titular}</th>
-//                 <th>${dato.email}</th>
-//                 <th>${dato.equipo}</th>
-//                 <th>${dato.lugar}</th>
-//                 <th>${dato.fecha}</th>
-//                 <th>${'ACTIVO'}</th>
-//             `;
-//             tabla.appendChild(nuevaFila);
-//         });
-
-
-// //-------------------------------------COPIAR AL PORTAPAPELES-------------------------------------------------
-
-//         document.getElementById("copiarExcel").addEventListener("click", function () {
-//             copiarTablaAlPortapapeles();
-//         });
-
-//         function copiarTablaAlPortapapeles() {
-//             var tablaHtml = tabla.outerHTML;
-//             var tablaTexto = tabla.innerText;
-
-//             // Crear un elemento de textarea para copiar el texto
-//             var textarea = document.createElement("textarea");
-//             textarea.value = tablaTexto;
-//             document.body.appendChild(textarea);
-//             textarea.select();
-
-//             // Copiar al portapapeles
-//             document.execCommand('copy');
-            
-//             // Eliminar el elemento de textarea
-//             document.body.removeChild(textarea);
-//             mostrarNotificacion("Los datos se han copiado al portapapeles. Ahora puedes pegarlos en Excel.", 3000);
-//         }
-    
-//     }
-
-
-
-// //------------------------------------- FILTRAR POR *** -------------------------------------------------
-    
-// document.getElementById("filtro").addEventListener("click", function () {
-//     var equipoSeleccionado = document.getElementById("equipoFiltrado");
-//     var textoSeleccionado = equipoSeleccionado.options[equipoSeleccionado.selectedIndex].text;
-
-//     // Verificar si se ha seleccionado un equipo
-//     if (textoSeleccionado.trim() === "Seleccione...") {
-//         alert("¡Debes seleccionar un equipo!");
-//         return;
-//     } else {
-//         filtrarRegistrosPorEquipo(textoSeleccionado);
-//     }
-
-//     filtrarRegistrosPorEquipo(textoSeleccionado);
-
-    
-// });
-
-// // ...
-
-// function filtrarRegistrosPorEquipo(textoSeleccionado) {
-    
-//     // Limpiar la tabla antes de aplicar el filtro
-//     while (tabla.firstChild) {
-//         tabla.removeChild(tabla.firstChild);
-//     }
-
-//     // Obtener los datos almacenados en localStorage
-//     var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
-
-//     // Filtrar y agregar las filas a la tabla
-//     solicitarServicios.forEach(function (dato) {
-//         if (dato.equipo.toLowerCase() === textoSeleccionado.toLowerCase()) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//                 <th>${dato.titular}</th>
-//                 <th>${dato.email}</th>
-//                 <th>${dato.equipo}</th>
-//                 <th>${dato.lugar}</th>
-//                 <th>${dato.fecha}</th>
-//                 <th>${'ACTIVO'}</th>
-//             `;
-//             tabla.appendChild(nuevaFila);
-//         }
-//     });
-// }
-
-
-
-
-    // document.getElementById("filtro").addEventListener("click", function () {
-    //     // Obtener el equipo seleccionado por el usuario
-    //     var equipoSeleccionado = document.getElementById("equipoFiltrado").value;
-
-    //     // Verificar si se ha seleccionado un equipo
-    //     if (equipoSeleccionado.trim() === "") {
-    //         alert("¡Debes seleccionar un equipo!");
-    //     } else {
-    //         filtrarRegistrosPorEquipo(equipoSeleccionado);
-    //     }
-    // });
-
-    // // ...
-
-    // function filtrarRegistrosPorEquipo(equipoFiltrado) {
-    //     // Limpiar la tabla antes de aplicar el filtro
-    //     while (tabla.firstChild) {
-    //         tabla.removeChild(tabla.firstChild);
-    //     }
-
-    //     // Obtener los datos almacenados en localStorage
-    //     var solicitarServicios = JSON.parse(localStorage.getItem('solicitarServicios')) || [];
-
-//     // Filtrar y agregar las filas a la tabla
-
-//     alert("HOLA!");
-   
-
-//         solicitarServicios.forEach(function (dato) {
-//             if (dato.equipo.toLowerCase() === equipoFiltrado.toLowerCase()) {
-//                 var nuevaFila = document.createElement("tr");
-//                 nuevaFila.innerHTML = `
-//                     <th>${dato.titular}</th>
-//                     <th>${dato.email}</th>
-//                     <th>${dato.equipo}</th>
-//                     <th>${dato.lugar}</th>
-//                     <th>${dato.fecha}</th>
-//                     <th>${'ACTIVO'}</th>
-//                 `;
-//                 tabla.appendChild(nuevaFila);
-//             }
-
-//     });
-// }
-
-
-
-
-// });
-
-
 
 // ####################################################################################################
-// ####################################################################################################
+// ######################################### POBLAR TABLA #############################################
 // ####################################################################################################
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -306,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 var tr = document.createElement("tr");
 
                 tr.innerHTML = `
-                    <td>NAME</td>
+                    <td>${row.id_servicio}</td>
                     <td>${row.correo_servicio.toUpperCase()}</td>
                     <td>${row.tipo_equipo.toUpperCase()}</td>
                     <td>${row.destino_servicio.toUpperCase()}</td>
@@ -333,16 +120,38 @@ document.addEventListener("DOMContentLoaded", function() {
     // Llamar a la función fetchData al cargar la página
     fetchData();
 
+    // ************************************************************************************
+    // ***********************************+BOTON REFRESC+**********************************
+    // ************************************************************************************
+
+    // Configurar el botón de actualización
+    document.getElementById("refreshButton").addEventListener("click", function() {
+        // Añadir la clase para la animación
+        var button = document.getElementById("refreshButton");
+        button.classList.add("spin");
+
+        // Mostrar el mensaje de actualización
+        var message = document.getElementById("updateMessage");
+        message.style.display = "block";
+
+        // Ocultar el mensaje después de 2 segundos
+        setTimeout(function() {
+            message.style.display = "none";
+        }, 1000);
+
+        // Eliminar la clase de animación después de que la animación termine
+        setTimeout(function() {
+            button.classList.remove("spin");
+        }, 1000);
+
+        // Llamar a fetchData para actualizar la tabla al hacer clic en el botón
+        fetchData();
+    });
+
     // Actualizar los datos cada 5 segundos (5000 ms)
     // setInterval(fetchData, 5000);
 });
 
-
-// -----------------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------------------------------
 
 
 
@@ -350,24 +159,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // ####################################################################################################
-// ####################################################################################################
+// #####################################CALIFICAR SERVICIO#############################################
 // ####################################################################################################
 
 
     var resultadoElement = document.getElementById('submit-btn');
     
     resultadoElement.addEventListener("click", function(){
-
+        
         document.getElementById('form').addEventListener('submit', function(event){
-
             event.preventDefault()
 
             const commentText = document.getElementById('comment').value;
+            const idservicioText = document.getElementById('idservicio').value;
           
-            if (selectedStars === 0 || commentText.trim() === '') {
+            if (selectedStars === 0 || commentText.trim() === '' || idservicioText === 0) {
                 
                 alert('Por favor, selecciona una valoración y escribe un comentario.');
-                location.reload();
+                location.reload()
 
             } else {
                 
@@ -407,76 +216,6 @@ function cerrarVentana() {
 
 
 
-
-
-
-
-    // ---------------------------------------------------------------------------------------------------------
-    // --------------------- Función para ordenar los datos por el campo destination_place ---------------------
-    // ---------------------------------------------------------------------------------------------------------
-
-
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        // Función para actualizar la tabla con los datos obtenidos
-
-        function updateTable(data) {
-
-            var tableBody = document.querySelector("#tablaDatos tbody");
-            
-            tableBody.innerHTML = "";  
-    
-            if (data.error) {
-                // Si hay un error, mostrar un mensaje en la tabla
-                var tr = document.createElement("tr");
-                tr.innerHTML = `<td colspan="6">${data.error}</td>`;
-                tableBody.appendChild(tr);
-            }else{
-                // Ordenar los datos por nombre de forma ascendente
-                data.sort((a, b) => a.correo_servicio.localeCompare(b.correo_servicio)); 
-                
-                data.forEach(function(row) {
-    
-                    var tr = document.createElement("tr");
-
-                    tr.innerHTML = `
-                        <td>NAME</td>
-                        <td>${row.correo_servicio.toUpperCase()}</td>
-                        <td>${row.tipo_equipo.toUpperCase()}</td>
-                        <td>${row.destino_servicio.toUpperCase()}</td>
-                        <td>${row.createTime_servicio.toUpperCase()}</td>
-                        <td>${row.estado_servicio.toUpperCase()}</td>
-                    `;
-                    tableBody.appendChild(tr);
-                });
-            } 
-            
-        }
-    
-        // Función para realizar la solicitud AJAX
-        function fetchData() {
-
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "getConexionMServicios.php", true);
-
-            
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    updateTable(data);
-                }
-            };
-            xhr.send();
-        }
-    
-        // Manejar el evento click del botón de filtrado
-        document.getElementById("filterButton").addEventListener("click", function() {
-
-            fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
-        });
-    });
-    
-
 // ###############################################################################################
 // #################################### BUSCAR SERVICIO ##########################################
 // ###############################################################################################
@@ -504,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 var tr = document.createElement("tr");
 
                 tr.innerHTML = `
-                    <td>NAME</td>
+                    <td>${row.id_servicio}</td>
                     <td>${row.correo_servicio.toUpperCase()}</td>
                     <td>${row.tipo_equipo.toUpperCase()}</td>
                     <td>${row.destino_servicio.toUpperCase()}</td>
@@ -553,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (input !=='') {
             event.preventDefault();
             fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+            limpiarFormulario()
         }else{
             alert('¡Favor ingresar un EQUIPO!')
         }
@@ -561,3 +301,339 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+// ###############################################################################################
+// #################################### ORDENAR DATOS CORREO ######################################
+// ###############################################################################################
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+
+    function updateTable(data) {
+
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            // Ordenar los datos por nombre de forma ascendente
+            data.sort((a, b) => a.correo_servicio.localeCompare(b.correo_servicio)); 
+            
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_servicio}</td>
+                    <td>${row.correo_servicio.toUpperCase()}</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                    <td>${row.estado_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+        
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "getConexionMServicios.php", true);
+
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de filtrado
+    document.getElementById("filterButton").addEventListener("click", function() {
+
+        fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+    });
+});
+
+
+// ###############################################################################################
+// #################################### ORDENAR DATOS EQUIPO ######################################
+// ###############################################################################################
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+    function updateTable(data) {
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        } else {
+            console.log("Datos antes de ordenar:", data);
+
+            // Ordenar los datos por la primera letra del tipo_equipo
+            data.sort((a, b) => {
+                const firstLetterA = a.tipo_equipo[0].toUpperCase();
+                const firstLetterB = b.tipo_equipo[0].toUpperCase();
+                return firstLetterA.localeCompare(firstLetterB);
+            });
+
+            console.log("Datos después de ordenar:", data);
+
+            data.forEach(function(row) {
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_servicio}</td>
+                    <td>${row.correo_servicio.toUpperCase()}</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                    <td>${row.estado_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "getConexionMServicios.php", true);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de filtrado
+    document.getElementById("filterButtontwo").addEventListener("click", function() {
+        fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+    });
+});
+
+
+
+// ###############################################################################################
+// #################################### ORDENAR DATOS LUGAR ######################################
+// ###############################################################################################
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+
+    function updateTable(data) {
+
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            // Ordenar los datos por nombre de forma ascendente
+            data.sort((a, b) => a.destino_servicio.localeCompare(b.destino_servicio)); 
+            
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_servicio}</td>
+                    <td>${row.correo_servicio.toUpperCase()}</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                    <td>${row.estado_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+        
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "getConexionMServicios.php", true);
+
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de filtrado
+    document.getElementById("filterButtonthree").addEventListener("click", function() {
+
+        fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+    });
+});
+
+
+// ###############################################################################################
+// #################################### ORDENAR DATOS FECHA ######################################
+// ###############################################################################################
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+    function updateTable(data) {
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        } else {
+            // Ordenar los datos por fecha de menor a mayor
+            data.sort((a, b) => {
+                // Convertir las fechas a objetos Date para comparación
+                const dateA = new Date(a.createTime_servicio);
+                const dateB = new Date(b.createTime_servicio);
+                return dateA - dateB;
+            });
+
+            data.forEach(function(row) {
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_servicio}</td>
+                    <td>${row.correo_servicio.toUpperCase()}</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                    <td>${row.estado_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "getConexionMServicios.php", true);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de filtrado
+    document.getElementById("filterButtonfour").addEventListener("click", function() {
+        fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+    });
+});
+
+
+
+// ###############################################################################################
+// #################################### ORDENAR DATOS ESTADO ######################################
+// ###############################################################################################
+
+    
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+
+    function updateTable(data) {
+
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="6">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        }else{
+            // Ordenar los datos por nombre de forma ascendente
+            data.sort((a, b) => a.estado_servicio.localeCompare(b.estado_servicio)); 
+            
+            data.forEach(function(row) {
+
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_servicio}</td>
+                    <td>${row.correo_servicio.toUpperCase()}</td>
+                    <td>${row.tipo_equipo.toUpperCase()}</td>
+                    <td>${row.destino_servicio.toUpperCase()}</td>
+                    <td>${row.createTime_servicio.toUpperCase()}</td>
+                    <td>${row.estado_servicio.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+        
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData() {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "getConexionMServicios.php", true);
+
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data);
+            }
+        };
+        xhr.send();
+    }
+
+    // Manejar el evento click del botón de filtrado
+    document.getElementById("filterButtonfive").addEventListener("click", function() {
+
+        fetchData(); // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
+    });
+});
+
+
+
+// ****************************************************************************************************
+// ************************************** FUNCION FORMULARIO ******************************************
+// ****************************************************************************************************
+
+
+function limpiarFormulario() {
+    // Obtiene el formulario por su ID
+    var formulario = document.getElementById('miFormulario');
+    // Limpia todos los campos del formulario
+    formulario.reset();
+}

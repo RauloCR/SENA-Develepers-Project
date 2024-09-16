@@ -31,7 +31,7 @@ if ($conn->connect_error) {
 }
 
 
-
+  
 
 // *******************************************************************************************
 // *********************************** DATOS DE LA TABALA ************************************
@@ -80,35 +80,104 @@ function obtenerUsuarioPorID() {
         $telefono = strtoupper($_GET['telefonoUsuario']);
         $direccion = strtoupper($_GET['direccionUsuario']);
         $correo = $_GET['correoUsuario'];
+        $rol = strtoupper(trim($_GET['rolUsuario'] ?? '')); 
 
-        $rol = strtoupper($_GET['rolUsuario']);
         $cedula = strtoupper($_GET['cedulaUsuario']);
         // $fecha = strtoupper($_GET['fechaUsuario']); 
         $id = strtoupper($_GET['idUsuario']); 
 
 
-        $sql = "SELECT id_usuario, tipo_rol, nombre_usuario, correo_usuario, createTime_usuario, estado_usuario FROM usuarios WHERE nombre_usuario = ? AND apellido_usuario = ? AND correo_usuario = ? AND tipo_rol = ? AND direccion_usuario = ? AND telefono_usuario = $telefono AND cedula_usuario = $cedula AND id_usuario = $id";
+        // Construir la consulta SQL dinámica
+        // $sql = "SELECT * FROM usuarios WHERE 1=1";
+        $sql = "SELECT id_usuario, tipo_rol, nombre_usuario, correo_usuario, createTime_usuario, estado_usuario FROM usuarios WHERE 1=1";
+        $params = [];
+
+        // Agregar condiciones solo si los parámetros tienen valor
+        if (!empty($nombre)) {  
+            $sql .= " AND nombre_usuario = ?";
+            $params[] = $nombre;
+        }
+        if (!empty($apellido)) {
+            $sql .= " AND apellido_usuario = ?";
+            $params[] = $apellido;
+        }
+        if (!empty($telefono)) {
+            $sql .= " AND telefono_usuario = ?";
+            $params[] = $telefono;
+        }
+        if (!empty($direccion)) {
+            $sql .= " AND direccion_usuario = ?";
+            $params[] = $direccion;
+        }
+        if (!empty($correo)) {
+            $sql .= " AND correo_usuario = ?";
+            $params[] = $correo;
+        }
+        if (!empty($rol)) {
+            $sql .= " AND tipo_rol = ?";
+            $params[] = $rol;
+        }
+        if (!empty($cedula)) {
+            $sql .= " AND cedula_usuario = ?";
+            $params[] = $cedula;
+        }
+        if (!empty($id)) {
+            $sql .= " AND id_usuario = ?";
+            $params[] = $id;
+        }
+
+        // Preparar la consulta
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $nombre, $apellido, $correo, $rol, $direccion);
+
+        // Verifica si la preparación de la consulta fue exitosa
+        if (!$stmt) {
+            echo json_encode(array('error' => 'Error en la preparación de la consulta: ' . $mysqli->error));
+            exit;
+        }
+
+        // Vincular los parámetros si hay alguno
+        if ($params) {
+            $types = str_repeat('s', count($params)); // Tipo de datos (s para string)
+            $stmt->bind_param($types, ...$params);
+        }
+
+        // Ejecutar la consulta
         $stmt->execute();
+
+        // Obtener el resultado
         $result = $stmt->get_result();
 
-        
-        if ($result && $result->num_rows === 1) {
-            $data = array();
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
+        // Inicializar un array para almacenar los datos
+        $data = array();
+
+        // Recuperar los resultados
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+
+        // Comprobar si se encontraron resultados
+        if (!empty($data)) {
+            // Enviar los datos en formato JSON
             echo json_encode($data);
         } else {
+            // Enviar mensaje de error en formato JSON
             echo json_encode(array('error' => 'No se encontraron resultados'));
         }
-        
-        // Cerrar la consulta preparada
+
+        // Cerrar la consulta y la conexión
         $stmt->close();
+
+        
+       
     }
     
 }
+
+
+
+
+
+
 
 
         

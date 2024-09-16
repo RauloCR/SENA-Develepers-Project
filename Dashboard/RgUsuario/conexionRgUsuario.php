@@ -32,7 +32,6 @@ if ($conn->connect_error) {
 
 
 
-
 // *******************************************************************************************
 // *********************************** DATOS DE LA TABALA ************************************
 // *******************************************************************************************
@@ -75,15 +74,18 @@ function insetar_Datos(){
       $nombreUsuario = strtoupper($_POST['nombreUsuario']);
       $apellidoUsuario = strtoupper($_POST['apellidoUsuario']);
       $telefonoUsuario = $_POST['telefonoUsuario'];
-      $correoUsuario = strtoupper($_POST['correoUsuario']);
+      $correoUsuario = $_POST['correoUsuario'];
       $direccionUsuario = strtoupper($_POST['direccionUsuario']);
       $contrasenaUsuario = $_POST['contrasenaUsuario'];
       $tipoSeleccionado = strtoupper($_POST['rolSelect']);
+      $tipocc = strtoupper($_POST['tipocc']);
       $estadoUsuario = "ACTIVO";
       
-      // Preparar y ejecutar la consulta SQL para insertar los datos en la tabla
-      $sql = "INSERT INTO usuarios (cedula_usuario, nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, contrasena_usuario, estado_usuario, tipo_rol) VALUES ('$cedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario', '$tipoSeleccionado')";
       
+      // Preparar y ejecutar la consulta SQL para insertar los datos en la tabla
+      $sql = "INSERT INTO usuarios (cedula_usuario, nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, contrasena_usuario, estado_usuario, tipo_rol, tipo_cedula) VALUES ('$cedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario', '$tipoSeleccionado', '$tipocc')";
+    //   $sqlTwo = "INSERT INTO cliente (cedula_usuario, nombre_usuario, apellido_usuario, telefono_usuario, correo_usuario, direccion_usuario, contrasena_usuario, estado_usuario, tipo_rol, tipo_cedula) VALUES ('$cedulaUsuario', '$nombreUsuario', '$apellidoUsuario', '$telefonoUsuario', '$correoUsuario', '$direccionUsuario', '$contrasenaUsuario', '$estadoUsuario', '$tipoSeleccionado', '$tipocc')";
+
       if ($conn->query($sql) === TRUE) {
 
         echo "Datos almacenados correctamente.";
@@ -162,15 +164,7 @@ function borrar_Datos(){
             echo "¡No se encontró ningún usuario con el ID proporcionado!";
         }
 
-        // if (isset($_POST['confirmarBorrado'])) {
-        //     // Consulta SQL para borrar al usuario
-        //     $sql_delete = "DELETE FROM usuario WHERE id_user = '$idUsuario'";
-        //     if ($conn->query($sql_delete) === TRUE) {
-        //         echo "<script>alert('El usuario ha sido borrado exitosamente'); window.location.href = 'RgUsuario.php';</script>";
-        //     } else {
-        //         echo "<p>Ocurrió un error al intentar borrar al usuario: " . $conn->error . "</p>";
-        //     }
-        // }
+       
     } 
 }
 

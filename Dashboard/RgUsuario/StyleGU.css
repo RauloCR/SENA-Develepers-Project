@@ -85,15 +85,17 @@ body {
   .menu {
     background-color: #184b8f;
     height: 65px;
-    width: 813px;
+    width: 828px;
     margin-left: 80px;
-    display: flex;
+    /* display: flex; */
     text-align: center;
     align-items: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   }
   
   .menu ul {
+    max-width: 833px;
+    min-width: 833px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -545,21 +547,6 @@ form .user-details .input-box{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----------------------------------ESTILOS REGISTROS INPUT - tree ---------------------------------- */
 
 
@@ -651,22 +638,6 @@ form .user-details .input-box-tree{
 
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------------TABLE INFORMATION----------------------------- */
 
 .main-content {
@@ -728,7 +699,6 @@ table.table td a:hover {
 	color: #2196F3;
   
 }
-
 
 
 
@@ -858,9 +828,9 @@ width: 130px;
 }
 
 
-#filtro_Rol, #filtro_nombre, #filtro_Email, #filtro_Fecha{
-  cursor: pointer;
-}
+#filtro_user, #filtro_estado, #filtro_Rol, #filtro_nombre, #filtro_Email, #filtro_Fecha,
+#filtro1, #filtro2, #filtro3, #filtro4, #filtro5, #filtro6{cursor: pointer;}
+
 
 
 /* ----------------------------------- ESTILOS VENTANA FLOTANTE-------------------------------- */
@@ -905,5 +875,140 @@ width: 130px;
 }
 
 
+/* ----------------------------------ESTILOS INPUT----------------------- */
+
+.user-details .input-box-five input{
+  height: 35px;
+  width: 130px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #BBB;
+  padding-left: 10px;
+  font-size: 12px;
+  border-bottom-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box-five .details{
+  display: block;
+  font-weight: 500;
+  width: 65px;
+  font-size: 10PX;
+}
 
 
+.user-details .input-box-five input:focus,
+.user-details .input-box-five input:valid{
+  border-color: #4a90e2;
+}
+
+.user-details .input-box-four input:focus,
+.user-details .input-box-four input:valid{
+  border-color: #4a90e2;
+}
+
+form .user-details .input-box-five{
+  display: flex;
+  align-items: center;
+}
+
+    /* Estilo para la lista desplegable */
+    .combo-box-five select {
+      color: #999;
+      width:145px;
+      height: 40px;
+      padding: 10px;
+      font-size: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      cursor: pointer;
+      outline: none;
+      border-bottom-width: 1.5px;
+      transition: all 0.3s ease;
+    } 
+
+
+    .user-details .a{ 
+    padding-left: 10px;
+    }
+
+/* --------------------------------------ESTILOS FOCUS combo-box---------------------------------- */
+
+.combo-box-five select {
+    color: #999; /* Puedes ajustar el color gris claro según tus preferencias */
+    font-size: 13px;
+}
+.combo-box-five select:focus {
+  color: #000; /* Color de texto negro al enfocar el cuadro de selección */
+}
+.combo-box-five.select-active select {
+  color: #000; /* Color de texto negro cuando el cuadro de selección está activo */
+}
+
+/* Estilo para la lista desplegable con dos columnas */
+.combo-box-five select option {
+  padding: 8px;
+}
+.combo-box-five select:focus, .combo-box-five select:valid {
+  border-color: #4a90e2;
+}
+
+
+
+
+/* ***************************************************************************************** */
+/* ************************** ESTILOS VENTANA FLOTANTE BOTONES ***************************** */
+/* ***************************************************************************************** */
+
+.icon-options-two {
+  position: relative; 
+  display: inline-block; 
+}
+
+.icon-options {
+  position: relative; 
+  display: inline-block; 
+}
+
+.tooltip {
+  visibility: hidden; 
+  width: 120px; 
+  background-color: #105d8d; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 6px; 
+  padding: 8px; 
+  position: absolute; 
+  bottom: 125%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  z-index: 10; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.icon-options-two:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.icon-options:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-10px); 
+}
+
+.left-icon .tooltip{
+  font-size: 18px;
+}
+
+.right-icon .tooltip{
+  font-size: 18px;
+}
+
+.icon-options2 {
+  margin-right: 80px;
+}

@@ -1,16 +1,3 @@
-// //--------------------------------------SCRIP PARA MOSTRAR NOTIFICACION--------------------------------------
-
-// function mostrarNotificacion(mensaje, tiempo) {
-//     var notificacion = document.createElement("div");
-//     notificacion.className = "notificacion";
-//     notificacion.textContent = mensaje;
-//     document.body.appendChild(notificacion);
-
-//     setTimeout(function () {
-//         document.body.removeChild(notificacion);
-//     }, tiempo);
-// }
-
 
 // //----------------------------------------- Evento para el combo-box ---------------------------------------
 
@@ -21,6 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
         comboBox.parentNode.classList.add('select-active');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var comboBox = document.querySelector('.combo-box-five select');
+
+    comboBox.addEventListener('change', function () {
+        comboBox.parentNode.classList.add('select-active');
+    });
+});
+
 
 // //---------------------------------------- Placeholder de fechas ------------------------------------------- 
 
@@ -38,222 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-
-// //------------------------------------- FUNCION PARA GENERAR UUID -------------------------------------
-
-// var iduserx = generateUUID()
-// function generateUUID() {
-//     return 'xxxx'.replace(/[xy]/g, function (c) {
-//         var r = (Math.random() * 16) | 0,
-//             v = c === 'x' ? r : (r & 0x3) | 0x8;
-//         return v.toString(16);
-//     });
-// }
-
-
-
-//     // -----------------------------------------FILTRAR USUARIOS POR ID-------------------------------------------
-
-//     document.getElementById("filtro").addEventListener("click", function () {
-//         var usuarioSeleccionado = document.getElementById("usuarioFiltrado").value;
-
-//         // Verificar si se ha seleccionado un ID
-//         if (usuarioSeleccionado === '') {
-//             alert("¡Debes seleccionar un ID!");
-//             return;
-//         } else {
-//             filtrarRegistrosPorEquipo(usuarioSeleccionado);
-//         }
-
-//         filtrarRegistrosPorEquipo(usuarioSeleccionado);
-
-//     });
-
-//     // ...
-
-//     function filtrarRegistrosPorEquipo(textoSeleccionado) {
-
-//         // Limpiar la tabla antes de aplicar el filtro
-//         while (tabla.firstChild) {
-//             tabla.removeChild(tabla.firstChild);
-//         }
-
-//         // Obtener los datos almacenados en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Filtrar y agregar las filas a la tabla
-//         tablaRegistro.forEach(function (dato) {
-//             if (dato.idUser.toLowerCase() === textoSeleccionado.toLowerCase()) {
-//                 var nuevaFila = document.createElement("tr");
-//                 nuevaFila.innerHTML = `
-//                 <th>${dato.idUser}</th>
-//                 <th>${dato.rol}</th>
-//                 <th>${dato.nombre}</th>
-//                 <th>${dato.correo}</th>
-//                 <th>${dato.fechaRegistro}</th>
-//                 <th>${'ACTIVO'}</th>
-//             `;
-//                 tabla.appendChild(nuevaFila);
-//             }
-//         });
-//     }
-
-
-
-//     // -----------------------------------------------FILTRO POR FECHA--------------------------------------
-
-
-//     let ordenAscendente = true; // Variable para rastrear el orden actual
-
-//     document.getElementById("filtro_Fecha").addEventListener("click", function () {
-//         filtrarRegistrosPorFechaRegistro();
-//         cambiarOrdenFecha();
-//     });
-
-//     function filtrarRegistrosPorFechaRegistro() {
-//         // Limpiar la tabla antes de aplicar el filtro
-//         while (tabla.firstChild) {
-//             tabla.removeChild(tabla.firstChild);
-//         }
-
-//         // Obtener los datos almacenados en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Ordenar el arreglo según el estado actual de la variable de orden
-//         tablaRegistro.sort((a, b) => {
-//             const convertirFecha = (fecha) => {
-//                 const partes = fecha.split('/');
-//                 return partes[2] + partes[1].padStart(2, '0') + partes[0].padStart(2, '0');
-//             };
-
-//             const fechaA = convertirFecha(a.fechaRegistro);
-//             const fechaB = convertirFecha(b.fechaRegistro);
-
-//             // Multiplicar por -1 si el orden es descendente para invertir el orden
-//             const multiplicadorOrden = ordenAscendente ? 1 : -1;
-//             return multiplicadorOrden * fechaA.localeCompare(fechaB);
-//         });
-
-//         // Agregar las filas ordenadas a la tabla
-//         tablaRegistro.forEach(function (dato) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//             <th>${dato.idUser}</th>
-//             <th>${dato.rol}</th>
-//             <th>${dato.nombre + ' ' + dato.apellido}</th>
-//             <th>${dato.correo}</th>
-//             <th>${dato.fechaRegistro}</th>
-//             <th>${'ACTIVO'}</th>
-//         `;
-//             tabla.appendChild(nuevaFila);
-//         });
-//     }
-
-//     function cambiarOrdenFecha() {
-//         // Cambiar el estado de la variable de orden en cada clic
-//         ordenAscendente = !ordenAscendente;
-//     }
-
-
-//     // -----------------------------------------------FILTRO A - Z--------------------------------------
-
-//     // Declarar la variable global ordenAscendente si no está declarada en otro lugar del código
-//     var ordenAscendenter = true;
-
-//     document.getElementById("filtro_nombre").addEventListener("click", function () {
-//         filtrarRegistrosPorNombre();
-//         cambiarOrdenAZ();
-//     });
-
-//     function filtrarRegistrosPorNombre() {
-//         // Limpiar la tabla antes de aplicar el filtro
-//         while (tabla.firstChild) {
-//             tabla.removeChild(tabla.firstChild);
-//         }
-
-//         // Obtener los datos almacenados en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Ordenar el arreglo según el estado actual de la variable de orden
-//         tablaRegistro.sort((a, b) => {
-//             const nombreA = a.nombre.toUpperCase();
-//             const nombreB = b.nombre.toUpperCase();
-
-//             // Multiplicar por -1 si el orden es descendente para invertir el orden
-//             const multiplicadorOrden = ordenAscendenter ? 1 : -1;
-//             return multiplicadorOrden * nombreA.localeCompare(nombreB);
-//         });
-
-//         // Agregar las filas ordenadas a la tabla
-//         tablaRegistro.forEach(function (dato) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//             <th>${dato.idUser}</th>
-//             <th>${dato.rol}</th>
-//             <th>${dato.nombre + ' ' + dato.apellido}</th>
-//             <th>${dato.correo}</th>
-//             <th>${dato.fechaRegistro}</th>
-//             <th>${'ACTIVO'}</th>
-//         `;
-//             tabla.appendChild(nuevaFila);
-//         });
-//     }
-
-//     function cambiarOrdenAZ() {
-//         // Cambiar el estado de la variable de orden (ascendente a descendente o viceversa)
-//         ordenAscendenter = !ordenAscendenter;
-//     }
-
-
-
-//     // ----------------------------------------------- FILTRO ROL --------------------------------------
-
-//     let ordenAscendenteRol = true; // Variable para rastrear el orden actual
-
-//     document.getElementById("filtro_Rol").addEventListener("click", function () {
-//         cambiarOrdenRol();
-//         filtrarRegistrosPorRol();
-//     });
-
-//     function filtrarRegistrosPorRol() {
-//         // Limpiar la tabla antes de aplicar el filtro
-//         while (tabla.firstChild) {
-//             tabla.removeChild(tabla.firstChild);
-//         }
-
-//         // Obtener los datos almacenados en localStorage
-//         var tablaRegistro = JSON.parse(localStorage.getItem('tablaRegistro')) || [];
-
-//         // Ordenar el arreglo según el estado actual de la variable de orden y el campo "rol"
-//         tablaRegistro.sort((a, b) => {
-//             const rolA = a.rol.toUpperCase();  // Convertir a mayúsculas para hacer la comparación sin distinción de mayúsculas/minúsculas
-//             const rolB = b.rol.toUpperCase();
-
-//             // Multiplicar por -1 si el orden es descendente para invertir el orden
-//             const multiplicadorOrden = ordenAscendenteRol ? 1 : -1;
-//             return multiplicadorOrden * rolA.localeCompare(rolB);
-//         });
-
-//         // Agregar las filas ordenadas a la tabla
-//         tablaRegistro.forEach(function (dato) {
-//             var nuevaFila = document.createElement("tr");
-//             nuevaFila.innerHTML = `
-//             <th>${dato.idUser}</th>
-//             <th>${dato.rol}</th>
-//             <th>${dato.nombre + ' ' + dato.apellido}</th>
-//             <th>${dato.correo}</th>
-//             <th>${dato.fechaRegistro}</th>
-//             <th>${'ACTIVO'}</th>
-//         `;
-//             tabla.appendChild(nuevaFila);
-//         });
-//     }
-
-//     function cambiarOrdenRol() {
-//         // Cambiar el estado de la variable de orden en cada clic
-//         ordenAscendenteRol = !ordenAscendenteRol;
-//     }
 
 
 
@@ -474,6 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();    
             // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
             fetchData(); 
+            limpiarFormulario()
         }else{
             alert('¡Favor ingresaer un ID!')
         }
@@ -481,7 +263,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-  
+
+
+// ****************************************************************************************************
+// ************************************** FUNCION FORMULARIO ******************************************
+// ****************************************************************************************************
+
+
+function limpiarFormulario() {
+    // Obtiene el formulario por su ID
+    var formulario = document.getElementById('miFormulario');
+    // Limpia todos los campos del formulario
+    formulario.reset();
+}
+
 
 
 // ****************************************************************************************************
@@ -557,6 +352,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();    
             // Llamar a fetchData para actualizar los datos al hacer clic en el botón de filtrado
             fetchData(); 
+            limpiarFormulario()
         }else{
             alert('¡Favor ingresaer un ID!')
         }
@@ -566,4 +362,133 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
   
+
+
+// ###############################################################################################
+// ####################################### ORDENAR DATOS #########################################
+// ###############################################################################################
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Función para actualizar la tabla con los datos obtenidos
+    function updateTable(data, filterType) {
+        var tableBody = document.querySelector("#tablaDatos tbody");
+        tableBody.innerHTML = "";  
+
+        if (data.error) {
+            // Si hay un error, mostrar un mensaje en la tabla
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td colspan="8">${data.error}</td>`;
+            tableBody.appendChild(tr);
+        } else {
+            console.log("Datos antes de ordenar:", data);
+
+            // Ordenar los datos por el campo correspondiente
+            data.sort((a, b) => {
+                const valueA = a[filterType];
+                const valueB = b[filterType];
+
+                // Determinar si los datos son numéricos
+                const isNumeric = !isNaN(parseFloat(valueA)) && isFinite(valueA);
+
+                if (isNumeric) {
+                    // Comparar numéricamente
+                    return parseFloat(valueA) - parseFloat(valueB);
+                } else {
+                    // Comparar alfabéticamente (texto)
+                    const firstLetterA = valueA.toUpperCase();
+                    const firstLetterB = valueB.toUpperCase();
+                    return firstLetterA.localeCompare(firstLetterB);
+                }
+            });
+
+            console.log("Datos después de ordenar:", data);
+
+            data.forEach(function(row) {
+                var tr = document.createElement("tr");
+
+                tr.innerHTML = ` 
+                    <td>${row.id_usuario.toUpperCase()}</td>
+                    <td>${row.tipo_rol.toUpperCase()}</td>
+                    <td>${row.nombre_usuario.toUpperCase()}</td>
+                    <td>${row.correo_usuario.toUpperCase()}</td>
+                    <td>${row.createTime_usuario.toUpperCase()}</td>
+                    <td>${row.estado_usuario.toUpperCase()}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        } 
+    }  
+
+    // Función para realizar la solicitud AJAX
+    function fetchData(filterType) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'conexionRgUsuario.php?accion=poblar', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                updateTable(data, filterType);
+            }
+        };
+        xhr.send();
+    }
+
+    // Función para manejar el clic en los botones de filtrado
+    function handleFilterButtonClick(filterType) {
+        fetchData(filterType);
+    }
+
+    // Asignar eventos a los botones de filtrado
+    document.getElementById("filtro_user").addEventListener("click", function() {
+        handleFilterButtonClick("id_usuario");
+    });
+    document.getElementById("filtro_Rol").addEventListener("click", function() {
+        handleFilterButtonClick("tipo_rol");
+    });
+    document.getElementById("filtro_nombre").addEventListener("click", function() {
+        handleFilterButtonClick("nombre_usuario");
+    });
+    document.getElementById("filtro_Email").addEventListener("click", function() {
+        handleFilterButtonClick("correo_usuario");
+    });
+    document.getElementById("filtro_Fecha").addEventListener("click", function() {
+        handleFilterButtonClick("createTime_usuario");
+    });
+    document.getElementById("filtro_estado").addEventListener("click", function() {
+        handleFilterButtonClick("estado_usuario");
+    });
+});
+
+
+// ****************************************************************************************************
+// ************************************** FUNCION EXPORTAR INF ****************************************
+// ****************************************************************************************************
+
+
+
+document.getElementById('export-btn').addEventListener('click', function() {
+    // Llamar a la API PHP para obtener los datos
+    fetch('conexionRgUsuario.php?accion=poblar')
+        .then(response => response.json())
+        .then(data => {
+            // Verificar si la respuesta contiene datos o un error
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            // Crear una hoja de cálculo
+            const ws = XLSX.utils.json_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Datos");
+
+            // Generar el archivo Excel
+            XLSX.writeFile(wb, 'Datos_usuarios.xlsx');
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos:', error);
+        });
+});
 

@@ -20,20 +20,23 @@ if ($conn->connect_error) {
 
 // Obtener los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
   $observation_service = $_POST['comment'];
-  
+  $servicio = $_POST['idservicio'];
   // $calificacionE = ('5');
   $calificacionE = $_POST['rating'];
 
+    
+        $sql = "INSERT INTO detalleservicio (comentarioT, id_servicio, id_cliente, id_tecnico, calificacion_servicio, observacion_servicio)
+                SELECT s.comentarioT, s.id_servicio, s.id_cliente, s.id_tecnico, $calificacionE, '$observation_service'
+                FROM servicio s
+                WHERE s.id_servicio = $servicio";
 
-  // Preparar y ejecutar la consulta SQL para insertar los datos en la tabla
-  $sql = "INSERT INTO detalleservicio (observation_service, qualify_service) VALUES ('$observation_service', '$calificacionE')";
-  
-  if ($conn->query($sql) === TRUE) {
-    echo "Servicio calificado correctamente.";
-} else {
-    echo "Error: " . $sql . "\\n" . $conn->error . " ";
-}
+        if ($conn->query($sql) === TRUE) {
+          echo "Servicio calificado correctamente.";
+          } else {
+              echo "Error: " . $result . "\\n" . $conn->error . " ";
+          }
 
 }
 
